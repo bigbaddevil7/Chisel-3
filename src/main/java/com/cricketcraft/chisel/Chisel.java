@@ -36,7 +36,7 @@ import java.io.File;
 public class Chisel {
 	public static final String MOD_ID = "chisel";
 
-	public static final String MOD_NAME = "Chisel 2";
+	public static final String MOD_NAME = "Chisel 3";
 
 	public static final String VERSION = "@VERSION@";
 
