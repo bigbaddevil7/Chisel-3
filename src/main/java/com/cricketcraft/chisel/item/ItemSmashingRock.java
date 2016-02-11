@@ -1,16 +1,15 @@
 package com.cricketcraft.chisel.item;
 
+import com.cricketcraft.chisel.entity.EntitySmashingRock;
+import com.cricketcraft.chisel.init.ChiselTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-import com.cricketcraft.chisel.entity.EntitySmashingRock;
-
 public class ItemSmashingRock extends BaseItem {
-
 	public ItemSmashingRock() {
 		super();
-		setUnlocalizedName("smashingRock");
+		setCreativeTab(ChiselTabs.tabChisel);
 	}
 
 	@Override

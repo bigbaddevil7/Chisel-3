@@ -11,15 +11,18 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT'
         classpath 'org.ajoberstar:gradle-git:0.10.1'
     }
 
 }
 
-apply plugin: 'forge'
+//plugins {
+//    id "net.minecraftforge.gradle.forge" version "2.1"
+//}
+apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'maven-publish'
-apply plugin: 'curseforge'
+//apply plugin: 'curseforge'
 
 import org.ajoberstar.grgit.Grgit
 
@@ -33,50 +36,36 @@ project.buildnumber = System.getenv('BUILD_NUMBER') != null ? System.getenv('BUI
 
 version = "${mod_version}.${buildnumber}"
 group = "com.cricketcraft.chisel" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = dev ? "Chisel2_DEV" : "Chisel2"
+//archivesBaseName = dev ? "Chisel2_DEV" : "Chisel2"
 
 minecraft {
     version = "${minecraft_version}-${forge_version}"
+    mappings = "${forge_mappings}"
     runDir = "run"
 
     replaceIn "Chisel.java"
     replace "@VERSION@", project.version
 }
 
-configurations {
-    shade
-    compile.extendsFrom shade
-    compile.extendsFrom exportedCompile
-}
-
 repositories {
-	maven {
-		name 'Chicken Bones Repo'
-		url "http://chickenbones.net/maven/"
-	}
+    maven {
+        name 'Chicken Bones Repo'
+        url "http://chickenbones.net/maven/"
+    }
 
     maven {
-		name 'Prof Mobius Repo'
-		url "http://mobiusstrip.eu/maven"
-	}
-    
-    maven {
-        name 'Chisel Repo'
-        url "http://coloredlightscore.us.to/maven/chisel-2"
+        name 'Prof Mobius Repo'
+        url "http://mobiusstrip.eu/maven"
     }
 }
 
 dependencies {
     //compile "mcp.mobius.waila:Waila:${waila_version}_${minecraft_version}:dev"
-	compile "codechicken:CodeChickenLib:${minecraft_version}-${ccl_version}:dev"
-	compile "codechicken:CodeChickenCore:${minecraft_version}-${ccc_version}:dev"
-	compile "codechicken:NotEnoughItems:${minecraft_version}-${nei_version}:dev"
-    compile "codechicken:ForgeMultipart:${minecraft_version}-${fmp_version}:dev"
-    compile "com.pahimar.ee3:EquivalentExchange3:1.7.10-0.3.505:dev"
-    
-    shade ("com.cricketcraft.ctmlib:CTMLib:${ctmlib_version}") {
-        transitive = false
-    }
+//    compile "codechicken:CodeChickenLib:${minecraft_version}-${ccl_version}:dev"
+//    compile "codechicken:CodeChickenCore:${minecraft_version}-${ccc_version}:dev"
+//    compile "codechicken:NotEnoughItems:${minecraft_version}-${nei_version}:dev"
+    //compile "codechicken:ForgeMultipart:${minecraft_version}-${fmp_version}:dev"
+    //compile "com.pahimar.ee3:EquivalentExchange3:1.7.10-0.3.505:dev"
 }
 
 processResources
@@ -98,14 +87,6 @@ processResources
                 exclude 'mcmod.info'
             }
         }
-        
-jar {
-    configurations.shade.each { dep ->
-        from(project.zipTree(dep)){
-            exclude 'META-INF', 'META-INF/**', '*.info'
-        }
-    }
-}
 
 // Create deobf dev jars
 task deobfJar(type: Jar) {
@@ -117,7 +98,7 @@ task deobfJar(type: Jar) {
 task apiJar(type: Jar) {
     from sourceSets.main.allSource
     from sourceSets.main.output
-	include 'com/cricketcraft/chisel/api/**/*'
+    include 'com/cricketcraft/chisel/api/**/*'
     classifier = 'api'
 }
 
@@ -145,13 +126,14 @@ publishing {
     }
 
     repositories {
-        if (project.hasProperty('mavendir')) {
-            maven { url mavendir }
+        String prop = dev ? "chisel_dev_mavendir" : "chisel_mavendir"
+        if (project.hasProperty(prop)) {
+            maven { url project.getProperty(prop) }
         }
     }
 }
 
-println('Changelog:\n' + getChangelogText())
+//println('Changelog:\n' + getChangelogText())
 
 String getChangelogText() {
     def changelogFile = new File('changelog')
@@ -174,19 +156,19 @@ String getChangelogText() {
     return str
 }
 
-curse {
-    dependsOn 'reobf'
-
-    onlyIf {
-        return project.hasProperty('chisel_curseforge_key') && System.getenv("CURSE") != null && System.getenv("CURSE").equalsIgnoreCase("true")
-    }
-
-    if (project.hasProperty('chisel_curseforge_key')) apiKey = project.chisel_curseforge_key
-    projectId = project.projectId
-    changelog = System.getenv("CHANGELOG").equals("none") ? getChangelogText() : System.getenv("CHANGELOG")
-    releaseType = 'release'
-    displayName = "Chisel 2 - ${mod_version}"
-    additionalArtifact deobfJar, sourcesJar, apiJar
-}
+//curse {
+//    dependsOn 'reobf'
+//
+//    onlyIf {
+//        return project.hasProperty('chisel_curseforge_key') && System.getenv("CURSE") != null && System.getenv("CURSE").equalsIgnoreCase("true")
+//    }
+//
+//    if (project.hasProperty('chisel_curseforge_key')) apiKey = project.chisel_curseforge_key
+//    projectId = project.projectId
+//    changelog = System.getenv("CHANGELOG").equals("none") ? getChangelogText() : System.getenv("CHANGELOG")
+//    releaseType = 'release'
+//    displayName = "Chisel 2 - ${mod_version}"
+//    additionalArtifact deobfJar, sourcesJar, apiJar
+//}
 
 idea { module { inheritOutputDirs = true } }

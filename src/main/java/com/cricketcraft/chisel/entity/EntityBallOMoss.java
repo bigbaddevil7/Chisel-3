@@ -1,19 +1,19 @@
 package com.cricketcraft.chisel.entity;
 
+import com.cricketcraft.chisel.Chisel;
+import com.cricketcraft.chisel.client.GeneralChiselClient;
 import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.BlockPos;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
-import com.cricketcraft.chisel.Chisel;
-import com.cricketcraft.chisel.client.GeneralChiselClient;
-import com.cricketcraft.chisel.init.ChiselBlocks;
-import com.cricketcraft.chisel.utils.General;
+import java.util.Random;
 
 public class EntityBallOMoss extends EntityThrowable {
-
 	public EntityBallOMoss(World par1World) {
 		super(par1World);
 	}
@@ -27,12 +27,13 @@ public class EntityBallOMoss extends EntityThrowable {
 	}
 
 	@Override
-	protected void onImpact(MovingObjectPosition movingobjectposition) {
-		int x = movingobjectposition.blockX;
-		int y = movingobjectposition.blockY;
-		int z = movingobjectposition.blockZ;
+	protected void onImpact(MovingObjectPosition mop) {
+		BlockPos pos = mop.getBlockPos();
+		int x = pos.getX();
+		int y = pos.getY();
+		int z = pos.getZ();
 
-		switch (movingobjectposition.sideHit) {
+		switch (mop.sideHit.getIndex()) {
 		case 0:
 			y--;
 			break;
@@ -72,7 +73,7 @@ public class EntityBallOMoss extends EntityThrowable {
 				for (int zz = -radius; zz < radius; zz++) {
 					double dist = (xx < 0 ? -xx : xx) + (yy < 0 ? -yy : yy) + (zz < 0 ? -zz : zz);
 
-					if (!(dist < falloff || General.rand.nextInt(radius * 3 - falloff) >= dist * 2))
+					if (!(dist < falloff || new Random().nextInt(radius * 3 - falloff) >= dist * 2))
 						continue;
 
 					if (!worldObj.isRemote)
@@ -84,8 +85,11 @@ public class EntityBallOMoss extends EntityThrowable {
 	}
 
 	public static void turnToMoss(World world, int x, int y, int z) {
-		Block block = world.getBlock(x, y, z);
-		int meta = world.getBlockMetadata(x, y, z);
+		BlockPos pos = new BlockPos(x, y, z);
+		IBlockState state = world.getBlockState(pos);
+
+		Block block = state.getBlock();
+		int meta = block.getMetaFromState(state);
 		Block resBlock = block;
 		int resMeta = meta;
 
@@ -93,17 +97,22 @@ public class EntityBallOMoss extends EntityThrowable {
 			resBlock = Blocks.mossy_cobblestone;
 		} else if (block.equals(Blocks.cobblestone_wall) && meta == 0) {
 			resMeta = 1;
-		} else if (block.equals(ChiselBlocks.cobblestone)) {
-			resBlock = ChiselBlocks.mossy_cobblestone;
-		} else if (block.equals(ChiselBlocks.templeblock)) {
-			resBlock = ChiselBlocks.mossy_templeblock;
-		} else if (block.equals(Blocks.stonebrick)) {
+		}
+		/*else if (block.equals(ChiselBlocks.cobblestone))
+		{
+		    resBlock = ChiselBlocks.mossy_cobblestone;
+		}
+		else if (block.equals(ChiselBlocks.templeblock))
+		{
+		    resBlock = ChiselBlocks.mossy_templeblock;
+		}*/
+		else if (block.equals(Blocks.stonebrick)) {
 			resMeta = 1;
 		}
 
 		if (resBlock.equals(block) && resMeta == meta)
 			return;
-		world.setBlock(x, y, z, resBlock, resMeta, 3);
+		world.setBlockState(pos, resBlock.getStateFromMeta(resMeta), 3);
 	}
 
 }

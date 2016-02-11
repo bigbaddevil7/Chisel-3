@@ -1,40 +1,41 @@
 package com.cricketcraft.chisel.entity;
 
-import java.util.Random;
-
+import com.cricketcraft.chisel.init.ChiselBlocks;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityThrowable;
+import net.minecraft.util.BlockPos;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
-import com.cricketcraft.chisel.init.ChiselBlocks;
+import java.util.Random;
 
 public class EntityCloudInABottle extends EntityThrowable {
+	private Random random = new Random();
 
-	Random rand = new Random();
-
-	public EntityCloudInABottle(World par1World) {
-		super(par1World);
+	public EntityCloudInABottle(World world) {
+		super(world);
 	}
 
-	public EntityCloudInABottle(World par1World, EntityLivingBase par2EntityLiving) {
-		super(par1World, par2EntityLiving);
+	public EntityCloudInABottle(World world, EntityLivingBase entityLivingBase) {
+		super(world, entityLivingBase);
 	}
 
-	public EntityCloudInABottle(World par1World, double x, double y, double z) {
-		super(par1World, x, y, z);
+	public EntityCloudInABottle(World world, double x, double y, double z) {
+		super(world, x, y, z);
 	}
 
 	@Override
-	protected void onImpact(MovingObjectPosition movingobjectposition) {
-		if (worldObj.isRemote)
+	protected void onImpact(MovingObjectPosition mop) {
+		if (worldObj.isRemote) {
 			return;
+		}
 
-		int x = movingobjectposition.blockX;
-		int y = movingobjectposition.blockY;
-		int z = movingobjectposition.blockZ;
+		BlockPos pos = mop.getBlockPos();
+		int x = pos.getX();
+		int y = pos.getY();
+		int z = pos.getZ();
 
-		switch (movingobjectposition.sideHit) {
+		switch (mop.sideHit.getIndex()) {
 		case 0:
 			y--;
 			break;
@@ -55,47 +56,52 @@ public class EntityCloudInABottle extends EntityThrowable {
 			break;
 		}
 
-		generate(worldObj, rand, x, y, z, 40);
-
-		worldObj.playAuxSFX(2002, (int) Math.round(this.posX), (int) Math.round(this.posY), (int) Math.round(this.posZ), 2);
+		generate(worldObj, random, x, y, z, 40);
+		worldObj.playAuxSFX(2002, new BlockPos((int) Math.round(this.posX), (int) Math.round(this.posY), (int) Math.round(this.posZ)), 2);
 		setDead();
 	}
 
-	public boolean generate(World world, Random random, int gx, int gy, int gz, int numberOfBlocks) {
+	public boolean generate(World world, Random random, int x, int y, int z, int numberOfBlocks) {
 		int X[] = new int[9];
 		int Y[] = new int[9];
 		int Z[] = new int[9];
 
 		for (int dir = 0; dir < 9; dir++) {
-			X[dir] = gx;
-			Y[dir] = gy;
-			Z[dir] = gz;
+			X[dir] = x;
+			Y[dir] = y;
+			Z[dir] = z;
 		}
+
 		int count = 0;
+
 		while (count < numberOfBlocks) {
 			for (int dir = 0; dir < 9; dir++) {
-				if (count >= numberOfBlocks)
+				if (count >= numberOfBlocks) {
 					break;
+				}
 
 				int dx = dir % 3 - 1;
 				int dz = dir / 3 - 1;
 
-				if (dx == 0 && dz == 0)
+				if (dx == 0 && dz == 0) {
 					continue;
+				}
 
 				X[dir] += random.nextInt(3) - 1 + dx;
-				Z[dir] += random.nextInt(3) - 1 + dz;
 				Y[dir] += random.nextInt(2) * (random.nextInt(3) - 1);
+				Z[dir] += random.nextInt(3) - 1 + dz;
 
-				int x = X[dir];
-				int y = Y[dir];
-				int z = Z[dir];
+				int nx = X[dir];
+				int ny = Y[dir];
+				int nz = Z[dir];
 
-				for (int j2 = x; j2 < x + random.nextInt(4) + 1; j2++) {
-					for (int k2 = y; k2 < y + random.nextInt(1) + 2; k2++) {
-						for (int l2 = z; l2 < z + random.nextInt(4) + 1; l2++) {
-							if (world.getBlock(j2, k2, l2).isAir(world, j2, k2, l2) && Math.abs(j2 - x) + Math.abs(k2 - y) + Math.abs(l2 - z) < 4 * 1 + random.nextInt(2)) {
-								world.setBlock(j2, k2, l2, ChiselBlocks.cloud);
+				for (int c = nx; c < nx + random.nextInt(4) + 1; c++) {
+					for (int d = ny; d < ny + random.nextInt(1) + 2; d++) {
+						for (int e = nz; e < nz + random.nextInt(4) + 1; e++) {
+							BlockPos positionToLook = new BlockPos(c, d, e);
+
+							if (world.getBlockState(positionToLook).getBlock().isAir(world, positionToLook) && Math.abs(c - nx) + Math.abs(d - ny) + Math.abs(e - nz) < 4 * 1 + random.nextInt(2)) {
+								world.setBlockState(positionToLook, ChiselBlocks.cloud.getDefaultState());
 								count++;
 							}
 						}
@@ -103,10 +109,6 @@ public class EntityCloudInABottle extends EntityThrowable {
 				}
 			}
 		}
-
-		// System.out.println("Created " + count + " cloud blocks.");
-
 		return true;
 	}
-
 }

@@ -1,16 +1,15 @@
 package com.cricketcraft.chisel.item;
 
+import com.cricketcraft.chisel.entity.EntityBallOMoss;
+import com.cricketcraft.chisel.init.ChiselTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-import com.cricketcraft.chisel.entity.EntityBallOMoss;
-
 public class ItemBallOMoss extends BaseItem {
-
 	public ItemBallOMoss() {
 		super();
-		setUnlocalizedName("ballMoss");
+		this.setCreativeTab(ChiselTabs.tabChisel);
 	}
 
 	@Override

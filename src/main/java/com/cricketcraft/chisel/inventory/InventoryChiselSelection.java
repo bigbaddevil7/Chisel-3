@@ -1,176 +1,184 @@
 package com.cricketcraft.chisel.inventory;
 
-import java.util.List;
-
+import com.cricketcraft.chisel.api.CarvingRegistry;
+import com.cricketcraft.chisel.item.chisel.ItemChisel;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
-
-import com.cricketcraft.chisel.api.IChiselItem;
-import com.cricketcraft.chisel.item.chisel.ItemChisel;
-import com.cricketcraft.chisel.utils.General;
+import net.minecraft.util.IChatComponent;
 
 public class InventoryChiselSelection implements IInventory {
+    ItemStack chisel = null;
+    public static final int normalSlots = 60;
+    public int activeVariations = 0;
+    ContainerChisel container;
+    ItemStack[] inventory;
 
-	ItemStack chisel = null;
-	public final static int normalSlots = 60;
-	public int activeVariations = 0;
-	ContainerChisel container;
-	ItemStack[] inventory;
+    public InventoryChiselSelection(ItemStack c) {
+        super();
+        inventory = new ItemStack[normalSlots + 1];
+        chisel = c;
+    }
 
-	public InventoryChiselSelection(ItemStack c) {
-		super();
+    public void onInventoryUpdate(int slot) {
 
-		inventory = new ItemStack[normalSlots + 1];
-		chisel = c;
-	}
+    }
 
-	public void onInventoryUpdate(int slot) {
+    @Override
+    public int getSizeInventory() {
+        return normalSlots + 1;
+    }
 
-	}
+    @Override
+    public ItemStack getStackInSlot(int slot) {
+        return inventory[slot];
+    }
 
-	@Override
-	public int getSizeInventory() {
-		return normalSlots + 1;
-	}
+    public void updateInventoryState(int slot) {
+        onInventoryUpdate(slot);
+    }
 
-	@Override
-	public ItemStack getStackInSlot(int var1) {
-		return inventory[var1];
-	}
+    @Override
+    public ItemStack decrStackSize(int slot, int amount) {
+        if (inventory[slot] != null) {
+            ItemStack stack;
+            if (inventory[slot].stackSize <= amount) {
+                stack = inventory[slot];
+                inventory[slot] = null;
+                updateInventoryState(slot);
+                return stack;
+            } else {
+                stack = inventory[slot].splitStack(amount);
+                if (inventory[slot].stackSize == 0)
+                    inventory[slot] = null;
+                updateInventoryState(slot);
+                return stack;
+            }
+        } else
+            return null;
+    }
 
-	public void updateInventoryState(int slot) {
-		onInventoryUpdate(slot);
-	}
+    @Override
+    public ItemStack removeStackFromSlot(int index) {
+        return null;
+    }
 
-	@Override
-	public ItemStack decrStackSize(int slot, int amount) {
-		if (this.inventory[slot] != null) {
-			ItemStack stack;
-			if (this.inventory[slot].stackSize <= amount) {
-				stack = this.inventory[slot];
-				this.inventory[slot] = null;
-				updateInventoryState(slot);
-				return stack;
-			} else {
-				stack = this.inventory[slot].splitStack(amount);
+    @Override
+    public void setInventorySlotContents(int index, ItemStack stack) {
 
-				if (this.inventory[slot].stackSize == 0)
-					this.inventory[slot] = null;
+    }
 
-				updateInventoryState(slot);
+    @Override
+    public String getName() {
+        return "container.chisel";
+    }
 
-				return stack;
-			}
-		} else
-			return null;
-	}
+    @Override
+    public boolean hasCustomName() {
+        return false;
+    }
 
-	@Override
-	public String getInventoryName() {
-		return "container.chisel";
-	}
+    @Override
+    public IChatComponent getDisplayName() {
+        return null;
+    }
 
-	@Override
-	public boolean hasCustomInventoryName() {
-		return false;
-	}
+    @Override
+    public int getInventoryStackLimit() {
+        return 64;
+    }
 
-	@Override
-	public int getInventoryStackLimit() {
-		return 64;
-	}
+    @Override
+    public void markDirty() {
 
-	@Override
-	public void markDirty() {
+    }
 
-	}
+    @Override
+    public boolean isUseableByPlayer(EntityPlayer player) {
+        return false;
+    }
 
-	@Override
-	public boolean isUseableByPlayer(EntityPlayer entityplayer) {
-		return true;
-	}
+    @Override
+    public void openInventory(EntityPlayer player) {
 
-	public void clearItems() {
-		activeVariations = 0;
-		for (int i = 0; i < normalSlots; i++) {
-			inventory[i] = null;
-		}
-	}
+    }
 
-	public ItemStack getStackInSpecialSlot() {
-		return inventory[normalSlots];
-	}
+    @Override
+    public void closeInventory(EntityPlayer player) {
 
-	public void updateItems() {
-		ItemStack chiseledItem = inventory[normalSlots];
-		clearItems();
+    }
 
-		if (chiseledItem == null) {
-			container.onChiselSlotChanged();
-			return;
-		}
+    public void clearItems() {
+        activeVariations = 0;
+        for (int c = 0; c < normalSlots; c++) {
+            inventory[c] = null;
+        }
+    }
 
-		Item item = chiseledItem.getItem();
-		if (item == null)
-			return;
+    public ItemStack getStackInSpecialSlot() {
+        return inventory[normalSlots];
+    }
 
-		if (Block.getBlockFromItem(item) == null)
-			return;
+    public void updateItems(ItemStack stackInChiselSlot) {
+        ItemStack chiseledItem = inventory[normalSlots];
+        clearItems();
 
-		if (!((IChiselItem) chisel.getItem()).canChisel(container.playerInventory.player.worldObj, chisel, General.getVariation(chiseledItem)))
-			return;
+        if (chiseledItem == null) {
+            container.onChiselSlotChanged();
+            return;
+        }
 
-		List<ItemStack> list = container.carving.getItemsForChiseling(chiseledItem);
+        Item item = chiseledItem.getItem();
+        if (item == null)
+            return;
 
-		activeVariations = 0;
-		while (activeVariations < normalSlots && activeVariations < list.size()) {
-			if(Block.blockRegistry.getNameForObject(Block.getBlockFromItem(list.get(activeVariations).getItem())) != null) {
-				inventory[activeVariations] = list.get(activeVariations);
-				activeVariations++;
-			}
-		}
+        if (Block.getBlockFromItem(item) == null)
+            return;
+        ItemStack[] stacks;
+        if (CarvingRegistry.getRecipeFromFirstItem(stackInChiselSlot) != null) {
+            stacks = CarvingRegistry.getRecipeFromFirstItem(stackInChiselSlot).getChiselResults();
 
-		container.onChiselSlotChanged();
-	}
+            activeVariations = 0;
+            while (activeVariations < normalSlots && activeVariations < stacks.length) {
+                if (Block.blockRegistry.getNameForObject(Block.getBlockFromItem(stacks[activeVariations].getItem())) != null) {
+                    inventory[activeVariations] = stacks[activeVariations];
+                    activeVariations++;
+                }
+            }
+        }
 
-	@Override
-	public ItemStack getStackInSlotOnClosing(int slot) {
-		ItemStack stack = getStackInSlot(slot);
+        container.onChiselSlotChanged();
+    }
 
-		if (stack == null)
-			return null;
-		inventory[slot] = null;
+    @Override
+    public boolean isItemValidForSlot(int slot, ItemStack stack) {
+        if (stack.getItem() instanceof ItemTool) {
+            return false;
+        }
 
-		updateInventoryState(slot);
-		return stack;
-	}
+        return !(stack != null && (stack.getItem() instanceof ItemChisel)) && slot == normalSlots;
+    }
 
-	@Override
-	public void setInventorySlotContents(int slot, ItemStack stack) {
-		inventory[slot] = stack;
-		updateInventoryState(slot);
-	}
+    @Override
+    public int getField(int id) {
+        return 0;
+    }
 
-	@Override
-	public void openInventory() {
-	}
+    @Override
+    public void setField(int id, int value) {
 
-	@Override
-	public void closeInventory() {
-	}
+    }
 
-	@Override
-	public boolean isItemValidForSlot(int i, ItemStack stack) {
-		//Really didn't think people would chisel a shovel
-		if (stack.getItem() instanceof ItemTool) {
-			return false;
-		}
+    @Override
+    public int getFieldCount() {
+        return 0;
+    }
 
-		return !(stack != null && (stack.getItem() instanceof ItemChisel)) && i == normalSlots;
-	}
+    @Override
+    public void clear() {
 
+    }
 }

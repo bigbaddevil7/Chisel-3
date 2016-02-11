@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "chisel:blocks/bookshelf/redtomes-top",
+    "side": "chisel:blocks/bookshelf/redtomes"
+  }
+}

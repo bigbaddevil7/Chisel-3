@@ -1,53 +1,40 @@
 package com.cricketcraft.chisel.item;
 
-import java.util.List;
-
-import net.minecraft.client.renderer.texture.IIconRegister;
+import com.cricketcraft.chisel.init.ChiselTabs;
+import com.cricketcraft.chisel.util.IItemWithVariants;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.IIcon;
+import net.minecraft.util.MathHelper;
 
-import com.cricketcraft.chisel.Chisel;
-import com.cricketcraft.chisel.block.tileentity.TileEntityAutoChisel.Upgrade;
+import java.util.List;
 
-public class ItemUpgrade extends BaseItem {
+public class ItemUpgrade extends BaseItem implements IItemWithVariants {
+	public static String[] variantNames = new String[]{"speed", "automation", "stack", "reversion"};
 
-	public IIcon[] icons = new IIcon[4];
-
-	public ItemUpgrade(String unlocalizedName) {
+	public ItemUpgrade() {
 		super();
-		this.setUnlocalizedName(unlocalizedName);
-		this.setCreativeTab(CreativeTabs.tabMaterials);
-		setHasSubtypes(true);
-		setMaxStackSize(1); // it's easier this way
+		this.setMaxDamage(0);
+		this.setHasSubtypes(true);
+		this.setCreativeTab(ChiselTabs.tabChisel);
 	}
 
 	@Override
-	public IIcon getIconFromDamage(int meta) {
-		// using modulo throughout to prevent AIOB
-		return this.icons[meta % Upgrade.values().length];
-	}
-
-	@Override
-	public void registerIcons(IIconRegister reg) {
-		Upgrade[] upgrades = Upgrade.values();
-		for (int i = 0; i < upgrades.length; i++) {
-			this.icons[i] = reg.registerIcon(Chisel.MOD_ID + ":upgrade_" + upgrades[i].name().toLowerCase());
-		}
-	}
-
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	@Override
-	public void getSubItems(Item item, CreativeTabs tab, List list) {
-		for (int i = 0; i < Upgrade.values().length; i++) {
-			list.add(new ItemStack(item, 1, i));
-		}
+	public String[] getVariantNames() {
+		return variantNames;
 	}
 
 	@Override
 	public String getUnlocalizedName(ItemStack stack) {
-		Upgrade[] upgrades = Upgrade.values();
-		return upgrades[stack.getItemDamage() % upgrades.length].getUnlocalizedName();
+		int arr = MathHelper.clamp_int(stack.getItemDamage(), 0, variantNames.length);
+		return getUnlocalizedName() + "_" + variantNames[arr];
 	}
+
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@Override
+	public void getSubItems(Item id, CreativeTabs tab, List list) {
+		for (int i = 0; i < variantNames.length; i++)
+			list.add(new ItemStack(id, 1, i));
+	}
+
 }

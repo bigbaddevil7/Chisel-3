@@ -1,16 +1,17 @@
 package com.cricketcraft.chisel.entity;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.BlockPos;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
-import com.cricketcraft.chisel.utils.General;
+import java.util.Random;
 
 public class EntitySmashingRock extends EntityThrowable {
-
 	public EntitySmashingRock(World par1World) {
 		super(par1World);
 	}
@@ -24,12 +25,13 @@ public class EntitySmashingRock extends EntityThrowable {
 	}
 
 	@Override
-	protected void onImpact(MovingObjectPosition movingobjectposition) {
-		int x = movingobjectposition.blockX;
-		int y = movingobjectposition.blockY;
-		int z = movingobjectposition.blockZ;
+	protected void onImpact(MovingObjectPosition mop) {
+		BlockPos pos = mop.getBlockPos();
+		int x = pos.getX();
+		int y = pos.getY();
+		int z = pos.getZ();
 
-		switch (movingobjectposition.sideHit) {
+		switch (mop.sideHit.getIndex()) {
 		case 0:
 			y--;
 			break;
@@ -53,10 +55,7 @@ public class EntitySmashingRock extends EntityThrowable {
 		setDead();
 
 		if (worldObj.isRemote) {
-			worldObj.playSound(x, y, z, "chisel:squash", 1.0f, 1.0f, false);
-
-			// for(int i = 0; i < 32; i++)
-			// GeneralChiselClient.spawn
+			worldObj.playSound(x, y, z, "chisel:random.squash", 1.0f, 1.0f, false);
 
 			return;
 		}
@@ -69,7 +68,7 @@ public class EntitySmashingRock extends EntityThrowable {
 				for (int zz = -radius; zz < radius; zz++) {
 					double dist = (xx < 0 ? -xx : xx) + (yy < 0 ? -yy : yy) + (zz < 0 ? -zz : zz);
 
-					if (!(dist < falloff || General.rand.nextInt(radius * 3 - falloff) >= dist * 2))
+					if (!(dist < falloff || new Random().nextInt(radius * 3 - falloff) >= dist * 2))
 						continue;
 
 					if (!worldObj.isRemote)
@@ -81,8 +80,10 @@ public class EntitySmashingRock extends EntityThrowable {
 	}
 
 	public static void smash(World world, int x, int y, int z) {
-		Block block = world.getBlock(x, y, z);
-		int meta = world.getBlockMetadata(x, y, z);
+		BlockPos pos = new BlockPos(x, y, z);
+		IBlockState state = world.getBlockState(pos);
+		Block block = state.getBlock();
+		int meta = block.getMetaFromState(state);
 		Block resBlock = block;
 		int resMeta = meta;
 
@@ -98,7 +99,7 @@ public class EntitySmashingRock extends EntityThrowable {
 
 		if (resBlock.equals(block) && resMeta == meta)
 			return;
-		world.setBlock(x, y, z, resBlock, resMeta, 3);
+		world.setBlockState(pos, resBlock.getStateFromMeta(resMeta), 3);
 	}
 
 }
