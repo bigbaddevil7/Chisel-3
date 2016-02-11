@@ -3,7 +3,7 @@ Contributing
 ___
 Setting up a Development Environment
 ------------------------------------
-Chisel is open-source under the GPL v2 license.  As a result, you may contribute to the development of the mod via pull requests.
+Chisel is visible source under a custom license. As a result, you may contribute to the development of the mod via pull requests.
 
 To set up the mod as to allow you to make changes, do the following:
 
@@ -29,4 +29,4 @@ ___
 Formatting
 ----------
 
-When coding for Chisel 2, please use the provided [formatter settings](eclipseFormat.xml) to format your code. Poorly formatted code, or PRs which reformat existing code will likely not be accepted.
+When coding for Chisel 3, please use the provided [formatter settings](eclipseFormat.xml) to format your code. Poorly formatted code, or PRs which reformat existing code will likely not be accepted.
