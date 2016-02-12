@@ -36,6 +36,10 @@ public class ContainerChisel extends Container {
             addSlotToContainer(new Slot(inventoryPlayer, c + 9, left + ((c % 9) * 18), top + (c / 9) * 18));
         }
 
+        for (int c = 0; c < 9; c++) {
+            addSlotToContainer(new Slot(inventoryPlayer, c, left + c * 18, 178));
+        }
+
         chisel = inventoryPlayer.getCurrentItem();
         if (chisel != null && chisel.getTagCompound() != null) {
             ItemStack stack = ItemStack.loadItemStackFromNBT(chisel.getTagCompound().getCompoundTag("chiselTarget"));
@@ -137,6 +141,6 @@ public class ContainerChisel extends Container {
 
     @Override
     public boolean canInteractWith(EntityPlayer playerIn) {
-        return false;
+        return true;
     }
 }

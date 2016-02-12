@@ -26,7 +26,6 @@ public class GuiChisel extends GuiContainer {
 		player = iinventory.player;
 		xSize = 252;
 		ySize = 202;
-
 		container = (ContainerChisel) inventorySlots;
 	}
 

@@ -43,7 +43,7 @@
       "model": "chisel:mossy_cobblestone_panel_light"
     },
     "variant=mossy_cobblestone_panel_dark": {
-      "model": "chisel:cobblestone_panel_dark"
+      "model": "chisel:mossy_cobblestone_panel_dark"
     }
   }
 }

@@ -22,6 +22,17 @@ public class CarvingRegistry {
     }
 
     private CarvingRegistry() {
+
+    }
+
+    public static void preInit() {
+        //Load the class
+    }
+
+    /**
+     * For internal use only
+     */
+    public static void init() {
         addRecipeForPropVariant(acacia, ACACIA_VARIANTS);
         addRecipeForPropVariant(aluminum, ALUMINUM_VARIANTS);
         addRecipeForPropVariant(andesite, ANDESITE_VARIANTS);
@@ -142,16 +153,12 @@ public class CarvingRegistry {
         addRecipeForPropVariant(woolen_clay, WOOLEN_CLAY_VARIANTS);
     }
 
-    public static void init() {
-        //Empty method to load
-    }
-
-    public void addRecipe(ItemStack... group) {
+    public static void addRecipe(ItemStack... group) {
         ChiselRecipe recipe = new ChiselRecipe(group);
         recipes.add(recipe);
     }
 
-    private void addRecipeForPropVariant(Block block, PropertyVariant variants) {
+    private static void addRecipeForPropVariant(Block block, PropertyVariant variants) {
         List<ItemStack> list = new ArrayList<ItemStack>();
         for (BlockVariant variant : variants.getAllowedValues()) {
             list.add(new ItemStack(block, 1, variant.getMeta()));

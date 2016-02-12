@@ -1,5 +1,6 @@
 package com.cricketcraft.chisel.item.chisel;
 
+import com.cricketcraft.chisel.Chisel;
 import com.cricketcraft.chisel.api.IChiselItem;
 import com.cricketcraft.chisel.config.Configurations;
 import com.cricketcraft.chisel.init.ChiselTabs;
@@ -49,6 +50,14 @@ public class ItemChisel extends Item implements IChiselItem {
         }
 
         return 0;
+    }
+
+    @Override
+    public ItemStack onItemRightClick(ItemStack held, World world, EntityPlayer player) {
+        if (!world.isRemote && canOpenGui(world, player, held)) {
+            player.openGui(Chisel.instance, 0, world, 0, 0, 0);
+        }
+        return held;
     }
 
     @Override

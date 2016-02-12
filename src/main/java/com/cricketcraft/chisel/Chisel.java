@@ -78,6 +78,7 @@ public class Chisel {
 		ChiselItems.preInit();
 		ChiselTabs.preInit();
 		ChiselController.INSTANCE.preInit();
+		CarvingRegistry.preInit();
 
 		proxy.preInit();
 	}
