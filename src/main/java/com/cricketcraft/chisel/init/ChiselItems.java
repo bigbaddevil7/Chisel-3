@@ -4,10 +4,7 @@ import com.cricketcraft.chisel.Chisel;
 import com.cricketcraft.chisel.entity.EntityBallOMoss;
 import com.cricketcraft.chisel.entity.EntityCloudInABottle;
 import com.cricketcraft.chisel.entity.EntitySmashingRock;
-import com.cricketcraft.chisel.item.ItemBallOMoss;
-import com.cricketcraft.chisel.item.ItemCloudInABottle;
-import com.cricketcraft.chisel.item.ItemSmashingRock;
-import com.cricketcraft.chisel.item.ItemUpgrade;
+import com.cricketcraft.chisel.item.*;
 import com.cricketcraft.chisel.item.chisel.ItemChisel;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
@@ -16,7 +13,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 
 @ObjectHolder(Chisel.MOD_ID)
 public final class ChiselItems {
-	public static Item cloudInABottle, smashing_rock, ballOMoss, upgrade;
+	public static Item cloudInABottle, smashing_rock, ballOMoss, upgrade, ctmConnector;
 
 	public static ItemChisel chisel, diamondChisel, obsidianChisel;
 
@@ -25,6 +22,7 @@ public final class ChiselItems {
 		smashing_rock = registerItem("smashingRock", new ItemSmashingRock());
 		ballOMoss = registerItem("ballMoss", new ItemBallOMoss());
 		upgrade = registerItem("upgrade", new ItemUpgrade());
+		ctmConnector = registerItem("ctmConnector", new ItemCTMConnector());
 
 		chisel = new ItemChisel(ItemChisel.ChiselType.IRON);
 		diamondChisel = new ItemChisel(ItemChisel.ChiselType.DIAMOND);

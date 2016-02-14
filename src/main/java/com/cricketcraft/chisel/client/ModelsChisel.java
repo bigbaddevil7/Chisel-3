@@ -149,6 +149,7 @@ public class ModelsChisel {
         registerItemModel(chisel);
         registerItemModel(diamondChisel);
         registerItemModel(obsidianChisel);
+        registerItemModel(ctmConnector);
     }
 
     private static void addVariantNames(Item item, String... names) {
