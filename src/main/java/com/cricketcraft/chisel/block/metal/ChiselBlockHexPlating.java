@@ -8,6 +8,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -18,6 +19,11 @@ public class ChiselBlockHexPlating extends BlockCarvableMetal implements IChisel
     public ChiselBlockHexPlating() {
         super();
         setDefaultState(this.getBlockState().getBaseState().withProperty(ChiselProperties.HEX_PLATING_VARIANTS, ChiselProperties.HEX_PLATING_VARIANTS.fromMeta(0)));
+    }
+    
+    @Override
+    public EnumWorldBlockLayer getBlockLayer() {
+        return EnumWorldBlockLayer.CUTOUT;
     }
 
     @Override

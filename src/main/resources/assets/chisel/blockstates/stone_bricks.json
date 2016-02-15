@@ -12,7 +12,7 @@
     "variant=stone_bricks_small": {
       "model": "chisel:stone_bricks_small"
     },
-    "variant=stone_brick_wide": {
+    "variant=stone_bricks_wide": {
       "model": "chisel:stone_bricks_wide"
     },
     "variant=stone_bricks_disordered_small": {

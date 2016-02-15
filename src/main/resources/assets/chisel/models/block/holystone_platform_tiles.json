@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "particle": "chisel:blocks/holystone/particles/star",
+    "all": "chisel:blocks/holystone/platform-tiles"
+  }
+}

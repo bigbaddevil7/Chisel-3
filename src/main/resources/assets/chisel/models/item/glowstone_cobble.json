@@ -1,5 +1,5 @@
 {
-  "parent": "chisel:block/temple_bricks_weared",
+  "parent": "chisel:block/glowstone_cobble",
   "display": {
     "thirdperson": {
       "rotation": [

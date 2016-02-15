@@ -19,7 +19,7 @@ import java.util.List;
 public class ChiselBlockGlowstone extends BlockCarvable implements IChiselBlock {
     public ChiselBlockGlowstone() {
         super(Material.glass);
-        setLightLevel(10.0F);
+        setLightLevel(1.0F);
         setCreativeTab(ChiselTabs.tabOtherChiselBlocks);
         setDefaultState(this.getBlockState().getBaseState().withProperty(ChiselProperties.GLOWSTONE_VARIANTS, ChiselProperties.GLOWSTONE_VARIANTS.fromMeta(0)));
     }

@@ -106,7 +106,6 @@ public final class ChiselBlocks {
 			technical,
 			temple,
 			tin,
-			torch,
 			transparent_technical,
 			tyrian,
 			uranium,
@@ -134,6 +133,7 @@ public final class ChiselBlocks {
 			stained_glass_pane_orange,
 			stained_glass_pane_white;
 	public static Block litpumpkin, pumpkin;
+	public static ChiselBlockCarvableTorch torch;
 
 	public static void preInit() {
 		acacia = (BlockCarvable) registerBlock("acacia_planks", new ChiselBlockAcacia());
@@ -245,7 +245,7 @@ public final class ChiselBlocks {
 		technical = (BlockCarvable) registerBlock("technical", new ChiselBlockTechnical());
 		temple = (BlockCarvable) registerBlock("temple", new ChiselBlockTemple());
 		tin = (BlockCarvable) registerBlock("tinblock", new ChiselBlockTin());
-		torch = (BlockCarvable) registerBlock("torch", new ChiselBlockCarvableTorch());
+		torch = (ChiselBlockCarvableTorch) registerBlock("torch", new ChiselBlockCarvableTorch());
 		transparent_technical = (BlockCarvable) registerBlock("technical2", new ChiselBlockTransparentTechnical());
 		tyrian = (BlockCarvable) registerBlock("tyrian", new ChiselBlockTyrian());
 		uranium = (BlockCarvable) registerBlock("uraniumblock", new ChiselBlockUranium());
