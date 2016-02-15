@@ -1,14 +1,14 @@
 {
   "parent": "builtin/generated",
   "textures": {
-    "layer0": "chisel:items/paintbrushCyan"
+    "layer0": "chisel:items/ctmConnector"
   },
   "display": {
     "thirdperson": {
       "rotation": [
-        -90,
-        0,
-        0
+        180,
+        90,
+        -35
       ],
       "translation": [
         0,
