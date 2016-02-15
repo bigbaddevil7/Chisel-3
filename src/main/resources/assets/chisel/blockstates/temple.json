@@ -40,7 +40,7 @@
       "model": "chisel:temple_tiles"
     },
     "variant=temple_tiles_small": {
-      "model": "chisel:temple_small_light"
+      "model": "chisel:temple_tiles_small"
     },
     "variant=temple_tiles_light": {
       "model": "chisel:temple_tiles_light"

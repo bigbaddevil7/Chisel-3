@@ -1,7 +1,8 @@
 package com.cricketcraft.chisel.block.other;
 
-import com.cricketcraft.chisel.block.BlockCarvable;
+import com.cricketcraft.chisel.block.BlockCarvablePane;
 import com.cricketcraft.chisel.init.ChiselProperties;
+import com.cricketcraft.chisel.init.ChiselTabs;
 import com.cricketcraft.chisel.util.BlockVariant;
 import com.cricketcraft.chisel.util.IChiselBlock;
 import net.minecraft.block.material.Material;
@@ -15,11 +16,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.List;
 
-public class ChiselBlockIronBars extends BlockCarvable implements IChiselBlock {
+public class ChiselBlockIronBars extends BlockCarvablePane implements IChiselBlock {
     public ChiselBlockIronBars() {
         super(Material.iron);
-        //TODO: Make the block function like actual iron bars
-        //This is going to be a pane in the bars? Nah that doesn't work
+        setCreativeTab(ChiselTabs.tabOtherChiselBlocks);
+        //TODO: getActualState()
         setDefaultState(this.getBlockState().getBaseState().withProperty(ChiselProperties.IRON_BARS_VARIANTS, ChiselProperties.IRON_BARS_VARIANTS.fromMeta(0)));
     }
 
@@ -49,6 +50,6 @@ public class ChiselBlockIronBars extends BlockCarvable implements IChiselBlock {
 
     @Override
     protected BlockState createBlockState() {
-        return new BlockState(this, ChiselProperties.IRON_BARS_VARIANTS);
+        return new BlockState(this, ChiselProperties.IRON_BARS_VARIANTS, NORTH, SOUTH, EAST, WEST);
     }
 }

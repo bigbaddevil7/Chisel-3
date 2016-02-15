@@ -4,7 +4,7 @@
       "model": "chisel:waterstone_bricks"
     },
     "variant=waterstone_black": {
-      "model": "chisel:waterstone_block"
+      "model": "chisel:waterstone_black"
     },
     "variant=waterstone_tiles": {
       "model": "chisel:waterstone_tiles"

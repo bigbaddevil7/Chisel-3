@@ -2,6 +2,7 @@ package com.cricketcraft.chisel.block.other;
 
 import com.cricketcraft.chisel.block.BlockCarvable;
 import com.cricketcraft.chisel.init.ChiselProperties;
+import com.cricketcraft.chisel.init.ChiselTabs;
 import com.cricketcraft.chisel.util.BlockVariant;
 import com.cricketcraft.chisel.util.IChiselBlock;
 import net.minecraft.block.material.Material;
@@ -18,6 +19,8 @@ import java.util.List;
 public class ChiselBlockGlowstone extends BlockCarvable implements IChiselBlock {
     public ChiselBlockGlowstone() {
         super(Material.glass);
+        setLightLevel(10.0F);
+        setCreativeTab(ChiselTabs.tabOtherChiselBlocks);
         setDefaultState(this.getBlockState().getBaseState().withProperty(ChiselProperties.GLOWSTONE_VARIANTS, ChiselProperties.GLOWSTONE_VARIANTS.fromMeta(0)));
     }
 

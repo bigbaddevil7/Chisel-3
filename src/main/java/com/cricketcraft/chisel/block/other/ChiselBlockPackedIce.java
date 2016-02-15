@@ -2,6 +2,7 @@ package com.cricketcraft.chisel.block.other;
 
 import com.cricketcraft.chisel.block.BlockCarvable;
 import com.cricketcraft.chisel.init.ChiselProperties;
+import com.cricketcraft.chisel.init.ChiselTabs;
 import com.cricketcraft.chisel.util.BlockVariant;
 import com.cricketcraft.chisel.util.IChiselBlock;
 import net.minecraft.block.material.Material;
@@ -18,6 +19,7 @@ import java.util.List;
 public class ChiselBlockPackedIce extends BlockCarvable implements IChiselBlock {
     public ChiselBlockPackedIce() {
         super(Material.packedIce);
+        setCreativeTab(ChiselTabs.tabOtherChiselBlocks);
         setDefaultState(this.getBlockState().getBaseState().withProperty(ChiselProperties.PACKED_ICE_VARIANTS, ChiselProperties.PACKED_ICE_VARIANTS.fromMeta(0)));
     }
 

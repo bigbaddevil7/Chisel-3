@@ -1,7 +1,8 @@
 package com.cricketcraft.chisel.block.other.stained.panes;
 
-import com.cricketcraft.chisel.block.BlockCarvable;
+import com.cricketcraft.chisel.block.BlockCarvablePane;
 import com.cricketcraft.chisel.init.ChiselProperties;
+import com.cricketcraft.chisel.init.ChiselTabs;
 import com.cricketcraft.chisel.util.BlockVariant;
 import com.cricketcraft.chisel.util.IChiselBlock;
 import net.minecraft.block.material.Material;
@@ -15,9 +16,10 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.List;
 
-public class ChiselBlockStainedGlassPaneRed extends BlockCarvable implements IChiselBlock {
+public class ChiselBlockStainedGlassPaneRed extends BlockCarvablePane implements IChiselBlock {
     public ChiselBlockStainedGlassPaneRed() {
         super(Material.glass);
+        setCreativeTab(ChiselTabs.tabOtherChiselBlocks);
         setDefaultState(this.getBlockState().getBaseState().withProperty(ChiselProperties.STAINED_GLASS_PANE_RED_VARIANTS, ChiselProperties.STAINED_GLASS_PANE_RED_VARIANTS.fromMeta(0)));
     }
 
@@ -47,6 +49,6 @@ public class ChiselBlockStainedGlassPaneRed extends BlockCarvable implements ICh
 
     @Override
     protected BlockState createBlockState() {
-        return new BlockState(this, ChiselProperties.STAINED_GLASS_PANE_RED_VARIANTS);
+        return new BlockState(this, ChiselProperties.STAINED_GLASS_PANE_RED_VARIANTS, NORTH, SOUTH, EAST, WEST);
     }
 }

@@ -17,9 +17,6 @@ buildscript {
 
 }
 
-//plugins {
-//    id "net.minecraftforge.gradle.forge" version "2.1"
-//}
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'maven-publish'
 //apply plugin: 'curseforge'
@@ -60,12 +57,7 @@ repositories {
 }
 
 dependencies {
-    //compile "mcp.mobius.waila:Waila:${waila_version}_${minecraft_version}:dev"
-//    compile "codechicken:CodeChickenLib:${minecraft_version}-${ccl_version}:dev"
-//    compile "codechicken:CodeChickenCore:${minecraft_version}-${ccc_version}:dev"
-//    compile "codechicken:NotEnoughItems:${minecraft_version}-${nei_version}:dev"
-    //compile "codechicken:ForgeMultipart:${minecraft_version}-${fmp_version}:dev"
-    //compile "com.pahimar.ee3:EquivalentExchange3:1.7.10-0.3.505:dev"
+
 }
 
 processResources
@@ -154,6 +146,20 @@ String getChangelogText() {
         }
     }
     return str
+}
+
+repositories {
+    maven {
+        url "http://dvs1.progwml6.com/files/maven"
+    }
+}
+
+minecraft {
+    useDepAts = true
+}
+
+dependencies {
+    deobfCompile "mezz.jei:jei_1.8.9:2.25.12.152"
 }
 
 //curse {

@@ -21,9 +21,9 @@ public class ChiselBlockCarpetFloor extends BlockCarvable implements IChiselBloc
 
     public ChiselBlockCarpetFloor() {
         super(Material.cloth);
-        this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.0625F, 1.0F);
-        this.setTickRandomly(true);
-        this.setCreativeTab(ChiselTabs.tabOtherChiselBlocks);
+        setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.0625F, 1.0F);
+        setTickRandomly(true);
+        setCreativeTab(ChiselTabs.tabOtherChiselBlocks);
         setDefaultState(this.getBlockState().getBaseState().withProperty(ChiselProperties.CARPET_FLOOR_VARIANTS, ChiselProperties.CARPET_FLOOR_VARIANTS.fromMeta(0)));
     }
 

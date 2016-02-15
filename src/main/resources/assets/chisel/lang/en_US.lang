@@ -171,22 +171,22 @@ tile.voidstonePillar.name=Voidstone Pillar
 tile.voidstonePillar.0.desc=Striped Voidstone Pillar
 
 #Warning
-tile.warningSign.name=Warning Sign
-tile.warningSign.0.desc=Radiation
-tile.warningSign.1.desc=Biohazard
-tile.warningSign.2.desc=Fire
-tile.warningSign.3.desc=Explosion
+tile.warning.name=Warning Sign
+tile.warning.0.desc=Radiation
+tile.warning.1.desc=Biohazard
+tile.warning.2.desc=Fire
+tile.warning.3.desc=Explosion
 tile.warningSign.4.desc=Death
-tile.warningSign.5.desc=Falling Objects
-tile.warningSign.6.desc=Danger of Falling
-tile.warningSign.7.desc=High Voltage
-tile.warningSign.8.desc=Generic Warning
-tile.warningSign.9.desc=Dangerous Chemicals
-tile.warningSign.10.desc=Under Construction
-tile.warningSign.11.desc=Loud Sounds
-tile.warningSign.12.desc=No Entry
-tile.warningSign.13.desc=Cryogenic Freezing in progress
-tile.warningSign.14.desc=Oxygen Required
+tile.warning.5.desc=Falling Objects
+tile.warning.6.desc=Danger of Falling
+tile.warning.7.desc=High Voltage
+tile.warning.8.desc=Generic Warning
+tile.warning.9.desc=Dangerous Chemicals
+tile.warning.10.desc=Under Construction
+tile.warning.11.desc=Loud Sounds
+tile.warning.12.desc=No Entry
+tile.warning.13.desc=Cryogenic Freezing in progress
+tile.warning.14.desc=Oxygen Required
 
 #Energised Void Stone Blocks
 tile.voidstone2.name=Energised Voidstone

@@ -40,10 +40,6 @@ public class Chisel {
 
 	public static final String VERSION = "@VERSION@";
 
-	public static boolean multipartLoaded = false;
-
-	public static int renderEldritchId, renderAutoChiselId, renderGlowId, renderLayeredId, roadLineId;
-
 	public static final Logger logger = LogManager.getLogger(MOD_NAME);
 
 	@Instance(MOD_ID)
