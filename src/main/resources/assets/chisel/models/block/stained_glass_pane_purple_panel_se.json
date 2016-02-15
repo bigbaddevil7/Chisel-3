@@ -1,0 +1,7 @@
+{
+  "parent": "block/pane_se",
+  "textures": {
+    "edge": "chisel:blocks/glasspanedyed/purple-panel-top",
+    "pane": "chisel:blocks/glasspanedyed/purple-panel-side"
+  }
+}

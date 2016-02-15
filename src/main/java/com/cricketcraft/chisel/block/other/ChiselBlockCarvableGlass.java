@@ -11,6 +11,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -21,8 +22,12 @@ public class ChiselBlockCarvableGlass extends BlockCarvable implements IChiselBl
     public ChiselBlockCarvableGlass() {
         super(Material.glass);
         setCreativeTab(ChiselTabs.tabOtherChiselBlocks);
-        //TODO: This may not function like glass, will have to look at this again once I get to the glass JSON's
         this.setDefaultState(this.getBlockState().getBaseState().withProperty(ChiselProperties.GLASS_VARIANTS, ChiselProperties.GLASS_VARIANTS.fromMeta(0)));
+    }
+
+    @Override
+    public EnumWorldBlockLayer getBlockLayer() {
+        return EnumWorldBlockLayer.CUTOUT_MIPPED;
     }
 
     @Override

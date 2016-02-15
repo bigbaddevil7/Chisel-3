@@ -1,0 +1,7 @@
+{
+  "parent": "block/pane_nsew",
+  "textures": {
+    "edge": "chisel:blocks/glasspanedyed/pink-panel-top",
+    "pane": "chisel:blocks/glasspanedyed/pink-panel-side"
+  }
+}

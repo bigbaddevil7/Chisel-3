@@ -1,0 +1,7 @@
+{
+  "parent": "block/pane_nw",
+  "textures": {
+    "edge": "chisel:blocks/glasspanedyed/yellow-bubble-top",
+    "pane": "chisel:blocks/glasspanedyed/yellow-bubble-side"
+  }
+}
