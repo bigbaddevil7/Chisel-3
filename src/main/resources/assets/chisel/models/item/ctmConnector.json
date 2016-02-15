@@ -1,7 +1,7 @@
 {
   "parent": "builtin/generated",
   "textures": {
-    "layer0": "chisel:items/ctmConnector"
+    "layer0": "chisel:items/paintbrushCyan"
   },
   "display": {
     "thirdperson": {
