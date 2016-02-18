@@ -1,7 +1,5 @@
 package com.cricketcraft.chisel.config;
 
-import com.cricketcraft.chisel.Chisel;
-import net.minecraft.item.ItemDye;
 import net.minecraftforge.common.config.Configuration;
 
 public class Configurations {
@@ -14,8 +12,6 @@ public class Configurations {
 	public static String getRoadLineTool;
 
 	public static double concreteVelocity;
-
-	public static int[] configColors = new int[ItemDye.dyeColors.length];
 
 	public static boolean refreshConfig() {
 		String category;
@@ -65,19 +61,6 @@ public class Configurations {
 		useRoadLineTool = config.get(category, "useRoadLineTool", false, "Should the road line require a tool to break (If false, road lines can be broken in Adventure)").getBoolean();
 		getRoadLineTool = config.get(category, "getRoadLineTool", "pickaxe", "The tool that is able to break roadLines (requires useRoadLineTool to be true to take effect)").getString();
 		roadLineToolLevel = config.get(category, "roadLineToolLevel", 0, "The lowest harvest level of the tool able to break the road lines (requires useRoadLineTool to be true to take effect) (0 = Wood/Gold, 1 = Stone, 2 = Iron, 3 = Diamond) Default: 0").getInt();
-
-		/* hexColors */
-		category = "hexColors";
-
-		for (int i = 0; i < ItemDye.dyeColors.length; i++) {
-			String temp = config.get(category, "hex" + ItemDye.dyeColors[i], "#" + Integer.toHexString(ItemDye.dyeColors[i]), Character.toUpperCase(ItemDye.dyeColors[i]) + ItemDye.dyeColors[i] + " color for hex block overlay #RRGGBB").getString();
-			try {
-				configColors[i] = Integer.decode(temp);
-			} catch (NumberFormatException e) {
-				Chisel.logger.warn("Configuration error, " + temp + " was not recognized as a color.  Using default: #" + Integer.toHexString(ItemDye.dyeColors[i]));
-				configColors[i] = ItemDye.dyeColors[i];
-			}
-		}
 
 		if (config.hasChanged()) {
 			config.save();

@@ -42,6 +42,18 @@ item.upgrade_reversion.desc=Reverts the base slot to its original form
 
 #Chisel 2
 
+#Torch
+tile.torch.0.desc=Wax Candle
+tile.torch.1.desc=Tall Wax Candle
+tile.torch.2.desc=White Lamp
+tile.torch.3.desc=Embroidered White Lamp
+tile.torch.4.desc=Small Black Lamp
+tile.torch.5.desc=Tall Black Lamp
+tile.torch.6.desc=Red Lamp
+tile.torch.7.desc=Embroidered Red Lamp
+tile.torch.8.desc=Light Bulb
+tile.torch.9.desc=Clear Light Bulb
+
 #Nation
 tile.imperial.name=Imperialistic Block
 tile.rebel.name=Rebellious Block
@@ -70,6 +82,14 @@ tile.shingles.5.desc=Black Big Squares
 tile.valentines.name=Valentines Block
 tile.valentines.0.desc=Valentines Bricks
 tile.valentines.1.desc=If it speaks, I wouldn't touch it
+tile.valentines.2.desc=Heart in stone
+tile.valentines.3.desc=Pink Tinted Heart in stone
+tile.valentines.4.desc=Pink Heart in stone
+tile.valentines.5.desc=Pink Panel
+tile.valentines.6.desc=Pink Cobble
+tile.valentines.7.desc=Pink Dotted
+tile.valentines.8.desc=There's a flame in my heart
+tile.valentines.9.desc=Pink Chunk
 
 #AntiBlocks
 tile.antiBlock.name=Anti Block
@@ -130,14 +150,14 @@ autoslot.stack.tooltip=Stack Upgrade
 autoslot.reversion.tooltip=Reversion Upgrade
 
 #Leaves
-tile.leaves.name=Leaf
-tile.leaves.6.desc=Dead Leaves
-tile.leaves.7.desc=Fancy Leaves
-tile.leaves.8.desc=Pink Petals
-tile.leaves.9.desc=Red Rose
-tile.leaves.10.desc=White Rose
-tile.leaves.11.desc=Christmas Balls
-tile.leaves.12.desc=Christmas Lights
+tile.leaf.name=Leaf
+tile.leaf.0.desc=Dead Leaves
+tile.leaf.1.desc=Fancy Leaves
+tile.leaf.2.desc=Pink Petals
+tile.leaf.3.desc=Red Rose
+tile.leaf.4.desc=White Rose
+tile.leaf.5.desc=Christmas Balls
+tile.leaf.6.desc=Christmas Lights
 
 #Void Stone Blocks
 tile.voidstone.name=Voidstone
@@ -150,6 +170,7 @@ tile.voidstone.5.desc=Metal-Bordered Voidstone
 tile.voidstone.6.desc=Eye Voidstone
 tile.voidstone.7.desc=Beveled Voidstone
 tile.runic_voidstone.name=Runic Voidstone
+tile.runic_voidstone.15.desc=Voidstone - White Rune
 tile.runic_voidstone.14.desc=Voidstone - Orange Rune
 tile.runic_voidstone.13.desc=Voidstone - Magenta Rune
 tile.runic_voidstone.12.desc=Voidstone - Light Blue Rune
@@ -249,6 +270,8 @@ tile.futura.0.desc=Glowing Screen with Metallic Borders
 tile.futura.1.desc=Glowing Screen with Cyan Borders
 tile.futura.2.desc=Applied Labyrinthic Neon Lines
 tile.futura.3.desc=Poptart Rainbow
+tile.futura.4.desc=Poptart Rainbow Screen
+
 tile.futuraCircuit.black.desc=Black
 tile.futuraCircuit.blue.desc=Blue
 tile.futuraCircuit.brown.desc=Brown
@@ -278,25 +301,41 @@ tile.waterstone.6.desc=Ornate Water Panel
 
 #Hex Plating
 tile.hex_plating.name=Hex Plating
-tile.hex_plating.black.desc=Black Plating
-tile.hex_plating.blue.desc=Blue Plating
-tile.hex_plating.brown.desc=Brown Plating
-tile.hex_plating.cyan.desc=Cyan Plating
-tile.hex_plating.green.desc=Green Plating
-tile.hex_plating.light_blue.desc=Light Blue Plating
-tile.hex_plating.silver.desc=Light Gray Plating
-tile.hex_plating.lime.desc=Lime Plating
-tile.hex_plating.magenta.desc=Magenta Plating
-tile.hex_plating.orange.desc=Orange Plating
-tile.hex_plating.pink.desc=Pink Plating
-tile.hex_plating.purple.desc=Purple Plating
-tile.hex_plating.red.desc=Red Plating
-tile.hex_plating.white.desc=White Plating
-tile.hex_plating.yellow.desc=Yellow Plating
-tile.hex_plating.gray.desc=Gray Plating
+tile.hex_plating.0.desc=Black Plating
+tile.hex_plating.1.desc=Blue Plating
+tile.hex_plating.2.desc=Brown Plating
+tile.hex_plating.3.desc=Cyan Plating
+tile.hex_plating.4.desc=Green Plating
+tile.hex_plating.5.desc=Light Blue Plating
+tile.hex_plating.6.desc=Light Gray Plating
+tile.hex_plating.7.desc=Lime Plating
+tile.hex_plating.8.desc=Magenta Plating
+tile.hex_plating.9.desc=Orange Plating
+tile.hex_plating.10.desc=Pink Plating
+tile.hex_plating.11.desc=Purple Plating
+tile.hex_plating.12.desc=Red Plating
+tile.hex_plating.13.desc=White Plating
+tile.hex_plating.14.desc=Yellow Plating
+tile.hex_plating.15.desc=Gray Plating
 
 #Hex Large Plating
 tile.large_hex_plating.name=Large Hex Plating
+tile.large_hex_plating.0.desc=Black Plating
+tile.large_hex_plating.1.desc=Blue Plating
+tile.large_hex_plating.2.desc=Brown Plating
+tile.large_hex_plating.3.desc=Cyan Plating
+tile.large_hex_plating.4.desc=Green Plating
+tile.large_hex_plating.5.desc=Light Blue Plating
+tile.large_hex_plating.6.desc=Light Gray Plating
+tile.large_hex_plating.7.desc=Lime Plating
+tile.large_hex_plating.8.desc=Magenta Plating
+tile.large_hex_plating.9.desc=Orange Plating
+tile.large_hex_plating.10.desc=Pink Plating
+tile.large_hex_plating.11.desc=Purple Plating
+tile.large_hex_plating.12.desc=Red Plating
+tile.large_hex_plating.13.desc=White Plating
+tile.large_hex_plating.14.desc=Yellow Plating
+tile.large_hex_plating.15.desc=Gray Plating
 
 #Grimstone
 tile.grimstone.name=Grimstone
@@ -424,7 +463,21 @@ tile.uraniumblock.5.desc=Fancy Bolted Plating
 
 #Present Chest
 tile.present.name=Present
-tile.present.desc=A pretty present chest
+tile.present.0.desc=A pretty present chest
+tile.present.1.desc=A pretty present chest
+tile.present.2.desc=A pretty present chest
+tile.present.3.desc=A pretty present chest
+tile.present.4.desc=A pretty present chest
+tile.present.5.desc=A pretty present chest
+tile.present.6.desc=A pretty present chest
+tile.present.7.desc=A pretty present chest
+tile.present.8.desc=A pretty present chest
+tile.present.9.desc=A pretty present chest
+tile.present.10.desc=A pretty present chest
+tile.present.11.desc=A pretty present chest
+tile.present.12.desc=A pretty present chest
+tile.present.13.desc=A pretty present chest
+tile.present.14.desc=A pretty present chest
 
 #Brick
 tile.brickCustom.name=Brick Block
@@ -694,41 +747,45 @@ tile.factory2.3.desc=Blue Wireframing
 
 #Diamond blocks
 tile.diamond_block.name=Diamond Block
-tile.diamond_block.1.desc=Embossed Diamond Block
-tile.diamond_block.2.desc=Diamond Block with Panel
-tile.diamond_block.3.desc=Diamond Cells
-tile.diamond_block.4.desc=Diamonds in Purple Obsidian
-tile.diamond_block.5.desc=Diamonds in Obsidian
-tile.diamond_block.6.desc=Simple Diamond Block
-tile.diamond_block.7.desc=Bismuth Diamond Block
-tile.diamond_block.8.desc=Crushed Diamond
-tile.diamond_block.9.desc=Small Diamond Blocks
-tile.diamond_block.10.desc=Small Ornate Diamond Blocks
-tile.diamond_block.11.desc=Zelda Diamond Block
-tile.diamond_block.12.desc=Diamond Block with Ornate Layer
+tile.diamond_block.0.desc=Embossed Diamond Block
+tile.diamond_block.1.desc=Diamond Block with Panel
+tile.diamond_block.2.desc=Diamond Cells
+tile.diamond_block.3.desc=Diamonds in Purple Obsidian
+tile.diamond_block.4.desc=Diamonds in Obsidian
+tile.diamond_block.5.desc=Simple Diamond Block
+tile.diamond_block.6.desc=Bismuth Diamond Block
+tile.diamond_block.7.desc=Crushed Diamond
+tile.diamond_block.8.desc=Small Diamond Blocks
+tile.diamond_block.9.desc=Small Ornate Diamond Blocks
+tile.diamond_block.10.desc=Zelda Diamond Block
+tile.diamond_block.11.desc=Diamond Block with Ornate Layer
 
 #Snakestone
 tile.snakestone_sand.name=Sand Snakestone
+tile.snakestone_sand.0.desc=Snakestone Head
+tile.snakestone_sand.1.desc=Snakestone Body
 tile.snakestone_stone.name=Stone Snakestone
+tile.snakestone_stone.0.desc=Snakestone Head
+tile.snakestone_stone.1.desc=Snakestone Body
 tile.obsidianSnakestone.name=Obsidian Snakestone
 
 #Glass blocks
 tile.glass.name=Glass
-tile.glass.1.desc=Bubble Glass
-tile.glass.2.desc=Chinese Glass
-tile.glass.3.desc=Japanese(?) Glass
-tile.glass.4.desc=Dungeon Glass
-tile.glass.5.desc=Light Glass
-tile.glass.6.desc=Borderless Glass
-tile.glass.7.desc=Ornate Steel Glass
-tile.glass.8.desc=Screen
-tile.glass.9.desc=Shale Glass
-tile.glass.10.desc=Steel Frame Glass
-tile.glass.11.desc=Stone Frame Glass
-tile.glass.12.desc=Streak Glass
-tile.glass.13.desc=Thick Grid Glass
-tile.glass.14.desc=Thin Grid Glass
-tile.glass.15.desc=Modern Iron Fence
+tile.glass.0.desc=Bubble Glass
+tile.glass.1.desc=Chinese Glass
+tile.glass.2.desc=Japanese Glass
+tile.glass.3.desc=Dungeon Glass
+tile.glass.4.desc=Light Glass
+tile.glass.5.desc=Borderless Glass
+tile.glass.6.desc=Ornate Steel Glass
+tile.glass.7.desc=Screen
+tile.glass.8.desc=Shale Glass
+tile.glass.9.desc=Steel Frame Glass
+tile.glass.10.desc=Stone Frame Glass
+tile.glass.11.desc=Streak Glass
+tile.glass.12.desc=Thick Grid Glass
+tile.glass.13.desc=Thin Grid Glass
+tile.glass.14.desc=Modern Iron Fence
 
 tile.glass2.name=Glass
 tile.glass2.0.desc=Asymmetrical Leaded Glass
@@ -756,7 +813,21 @@ tile.sandstone.15.desc=Stacked Sandstone Tiles
 
 #Sandstone scribbles
 tile.sandstone_scribbles.name=Sandstone Scribbles
-tile.sandstone_scribbles.desc=Sandstone Scribbles
+tile.sandstone_scribbles.0.desc=Sandstone Scribbles
+tile.sandstone_scribbles.1.desc=Sandstone Scribbles
+tile.sandstone_scribbles.2.desc=Sandstone Scribbles
+tile.sandstone_scribbles.3.desc=Sandstone Scribbles
+tile.sandstone_scribbles.4.desc=Sandstone Scribbles
+tile.sandstone_scribbles.5.desc=Sandstone Scribbles
+tile.sandstone_scribbles.6.desc=Sandstone Scribbles
+tile.sandstone_scribbles.7.desc=Sandstone Scribbles
+tile.sandstone_scribbles.8.desc=Sandstone Scribbles
+tile.sandstone_scribbles.9.desc=Sandstone Scribbles
+tile.sandstone_scribbles.10.desc=Sandstone Scribbles
+tile.sandstone_scribbles.11.desc=Sandstone Scribbles
+tile.sandstone_scribbles.12.desc=Sandstone Scribbles
+tile.sandstone_scribbles.13.desc=Sandstone Scribbles
+tile.sandstone_scribbles.14.desc=Sandstone Scribbles
 
 #Concrete
 tile.concrete.name=Concrete
@@ -774,88 +845,88 @@ tile.concrete.10.desc=Asphalt
 
 #Road Line
 tile.road_line.name=Road Lines
-tile.roadLine.0.desc=White
-tile.roadLine.1.desc=Yellow
-tile.roadLine.2.desc=Double White
-tile.roadLine.3.desc=Double Yellow
+tile.road_line.0.desc=White
+tile.road_line.1.desc=Yellow
+tile.road_line.2.desc=Double White
+tile.road_line.3.desc=Double Yellow
 
 #Iron Blocks
 tile.iron_block.name=Iron Block
-tile.iron.1.desc=Large Iron Ingots
-tile.iron.2.desc=Small Iron Ingots
-tile.iron.3.desc=Iron Gears
-tile.iron.4.desc=Iron Bricks
-tile.iron.5.desc=Iron Plates
-tile.iron.6.desc=Iron Plates with Rivets
-tile.iron.7.desc=Iron Coin Stack Heads-up
-tile.iron.8.desc=Iron Coin Stack Heads-down
-tile.iron.9.desc=Dark Iron Crate
-tile.iron.10.desc=Light Iron Crate
-tile.iron.11.desc=Iron Block with Moon Decoration
-tile.iron.12.desc=Iron Moon in Purple Obsidian
-tile.iron.13.desc=Iron Moon in Obsidian
-tile.iron.14.desc=Iron Vents
-tile.iron.15.desc=Simple Iron Block
+tile.iron_block.0.desc=Large Iron Ingots
+tile.iron_block.1.desc=Small Iron Ingots
+tile.iron_block.2.desc=Iron Gears
+tile.iron_block.3.desc=Iron Bricks
+tile.iron_block.4.desc=Iron Plates
+tile.iron_block.5.desc=Iron Plates with Rivets
+tile.iron_block.6.desc=Iron Coin Stack Heads-up
+tile.iron_block.7.desc=Iron Coin Stack Heads-down
+tile.iron_block.8.desc=Dark Iron Crate
+tile.iron_block.9.desc=Light Iron Crate
+tile.iron_block.10.desc=Iron Block with Moon Decoration
+tile.iron_block.11.desc=Iron Moon in Purple Obsidian
+tile.iron_block.12.desc=Iron Moon in Obsidian
+tile.iron_block.13.desc=Iron Vents
+tile.iron_block.14.desc=Simple Iron Block
 
 #Gold Blocks
 tile.gold_block.name=Gold Block
-tile.gold.1.desc=Large Golden Ingots
-tile.gold.2.desc=Small Golden Ingots
-tile.gold.3.desc=Golden Bricks
-tile.gold.4.desc=Gold Cart
-tile.gold.5.desc=Golden Coin Stack Heads-up
-tile.gold.6.desc=Golden Coin Stack Heads-down
-tile.gold.7.desc=Dark Gold Crate
-tile.gold.8.desc=Light Gold Crate
-tile.gold.9.desc=Golden Plates
-tile.gold.10.desc=Gold Plates with Rivets
-tile.gold.11.desc=Gold Block with Star Decoration
-tile.gold.12.desc=Golden Star in Purple Obsidian
-tile.gold.13.desc=Golden Star in Obsidian
-tile.gold.14.desc=Simple Gold Block
+tile.gold_block.1.desc=Large Golden Ingots
+tile.gold_block.2.desc=Small Golden Ingots
+tile.gold_block.3.desc=Golden Bricks
+tile.gold_block.4.desc=Gold Cart
+tile.gold_block.5.desc=Golden Coin Stack Heads-up
+tile.gold_block.6.desc=Golden Coin Stack Heads-down
+tile.gold_block.7.desc=Dark Gold Crate
+tile.gold_block.8.desc=Light Gold Crate
+tile.gold_block.9.desc=Golden Plates
+tile.gold_block.10.desc=Gold Plates with Rivets
+tile.gold_block.11.desc=Gold Block with Star Decoration
+tile.gold_block.12.desc=Golden Star in Purple Obsidian
+tile.gold_block.13.desc=Golden Star in Obsidian
+tile.gold_block.14.desc=Simple Gold Block
 
 #Glowstone
 tile.glowstone.name=Glowstone
-tile.lightstone.1.desc=Cobble Glowstone Block
-tile.lightstone.2.desc=Corroded Glowstone Blocks
-tile.lightstone.3.desc=Glowstone Blocks with Glass
-tile.lightstone.4.desc=Neon Glowstone
-tile.lightstone.5.desc=Ornate Glowstone Blocks
-tile.lightstone.6.desc=Rocky Glowstone
-tile.lightstone.7.desc=Shale-Shaped Glowstone
-tile.lightstone.8.desc=Glowstone Tiles
-tile.lightstone.9.desc=Fancy Glowstone Lantern
-tile.lightstone.10.desc=Crumbling Glowstone Block
-tile.lightstone.11.desc=Organic Glowstone Growth Block
-tile.lightstone.12.desc=Glowstone Layers
-tile.lightstone.13.desc=Corroded Glowstone Tiles
-tile.lightstone.14.desc=Glowstone Bismuth
-tile.lightstone.15.desc=Glowstone Bismuth Panel
+tile.glowstone.1.desc=Cobble Glowstone Block
+tile.glowstone.2.desc=Corroded Glowstone Blocks
+tile.glowstone.3.desc=Glowstone Blocks with Glass
+tile.glowstone.4.desc=Neon Glowstone
+tile.glowstone.5.desc=Ornate Glowstone Blocks
+tile.glowstone.6.desc=Rocky Glowstone
+tile.glowstone.7.desc=Shale-Shaped Glowstone
+tile.glowstone.8.desc=Glowstone Tiles
+tile.glowstone.9.desc=Fancy Glowstone Lantern
+tile.glowstone.10.desc=Crumbling Glowstone Block
+tile.glowstone.11.desc=Organic Glowstone Growth Block
+tile.glowstone.12.desc=Glowstone Layers
+tile.glowstone.13.desc=Corroded Glowstone Tiles
+tile.glowstone.14.desc=Glowstone Bismuth
+tile.glowstone.15.desc=Glowstone Bismuth Panel
 
 #Lapis blocks
 tile.lapis_block.name=Lapis Block
-tile.lapis.1.desc=Chunky Lapis Block
-tile.lapis.2.desc=Dark Lapis Block
-tile.lapis.3.desc=Zelda Lapis Block
-tile.lapis.4.desc=Ornate Lapis Block
-tile.lapis.5.desc=Lapis Tile
-tile.lapis.6.desc=Lapis Panel
-tile.lapis.7.desc=Smooth Lapis
-tile.lapis.8.desc=Lapis with Ornate Layer
+tile.lapis_block.0.desc=Chunky Lapis Block
+tile.lapis_block.1.desc=Dark Lapis Block
+tile.lapis_block.2.desc=Zelda Lapis Block
+tile.lapis_block.3.desc=Ornate Lapis Block
+tile.lapis_block.4.desc=Lapis Tile
+tile.lapis_block.5.desc=Lapis Panel
+tile.lapis_block.6.desc=Smooth Lapis
+tile.lapis_block.7.desc=Lapis with Ornate Layer
 
 #Emerald Blocks
-tile.emerald_block.name=Emerald Block
-tile.emerald_block.1.desc=Emerald Panel
-tile.emerald_block.2.desc=Classic emerald Panel
-tile.emerald_block.3.desc=Smooth Emerald
-tile.emerald_block.4.desc=Emerald Chunk
-tile.emerald_block.5.desc=Emerald with Ornate Layer
-tile.emerald_block.6.desc=Zelda Emerald Block
-tile.emerald_block.7.desc=Emerald Cell
-tile.emerald_block.8.desc=Emerald Bismuth
-tile.emerald_block.9.desc=Small Emerald Blocks
-tile.emerald_block.10.desc=Small Ornate Emerald Blocks
-tile.emerald_block.11.desc=Ornate Emerald Block
+tile.emerald.name=Emerald Block
+tile.emerald.0.desc=Emerald Panel
+tile.emerald.1.desc=Classic emerald Panel
+tile.emerald.2.desc=Smooth Emerald
+tile.emerald.3.desc=Emerald Chunk
+tile.emerald.4.desc=Emerald with Ornate Layer
+tile.emerald.5.desc=Zelda Emerald Block
+tile.emerald.6.desc=Emerald Cell
+tile.emerald.7.desc=Emerald Bismuth
+tile.emerald.8.desc=Small Emerald Blocks
+tile.emerald.9.desc=Small Ornate Emerald Blocks
+tile.emerald.10.desc=Ornate Emerald Block
 
 #Nether Brick
 tile.netherbrick.name=Nether Brick
@@ -877,38 +948,38 @@ tile.netherbrick.15.desc=Small Red Nether Brick
 
 #Netherrack
 tile.netherrack.name=Netherrack
-tile.netherrack.1.desc=Nethergravel with Blood
-tile.netherrack.2.desc=Netherrack with Blood
-tile.netherrack.3.desc=Darker Netherrack with Blood
-tile.netherrack.4.desc=Blue Netherrack
-tile.netherrack.5.desc=Shale Blue Netherrack
-tile.netherrack.6.desc=Classic Netherrack
-tile.netherrack.7.desc=Spattered Netherrack
-tile.netherrack.8.desc=Netherrack made of Guts
-tile.netherrack.9.desc=Dark Netherrack made of Guts
-tile.netherrack.10.desc=Netherrack made of Meat
-tile.netherrack.11.desc=Red Netherrack made of Meat
-tile.netherrack.12.desc=Netherrack made of Smaller Meat Chunks
-tile.netherrack.13.desc=Dark Red Netherrack
-tile.netherrack.14.desc=Netherrack with Flowing Lava
+tile.netherrack.0.desc=Nethergravel with Blood
+tile.netherrack.1.desc=Netherrack with Blood
+tile.netherrack.2.desc=Darker Netherrack with Blood
+tile.netherrack.3.desc=Blue Netherrack
+tile.netherrack.4.desc=Shale Blue Netherrack
+tile.netherrack.5.desc=Classic Netherrack
+tile.netherrack.6.desc=Spattered Netherrack
+tile.netherrack.7.desc=Netherrack made of Guts
+tile.netherrack.8.desc=Dark Netherrack made of Guts
+tile.netherrack.9.desc=Netherrack made of Meat
+tile.netherrack.10.desc=Red Netherrack made of Meat
+tile.netherrack.11.desc=Netherrack made of Smaller Meat Chunks
+tile.netherrack.12.desc=Dark Red Netherrack
+tile.netherrack.13.desc=Netherrack with Flowing Lava
 
 #Mossy Stone
 tile.mossy_cobblestone.name=Mossy Cobblestone
-tile.mossy_cobblestone.1.desc=Aligned Mossy Cobblestone Bricks
-tile.mossy_cobblestone.2.desc=Detailed Mossy Cobblestone Bricks
-tile.mossy_cobblestone.3.desc=Small Mossy Cobblestone Bricks
-tile.mossy_cobblestone.4.desc=Large Mossy Cobblestone Tiles
-tile.mossy_cobblestone.5.desc=Small Mossy Cobblestone Tiles
+tile.mossy_cobblestone.0.desc=Aligned Mossy Cobblestone Bricks
+tile.mossy_cobblestone.1.desc=Detailed Mossy Cobblestone Bricks
+tile.mossy_cobblestone.2.desc=Small Mossy Cobblestone Bricks
+tile.mossy_cobblestone.3.desc=Large Mossy Cobblestone Tiles
+tile.mossy_cobblestone.4.desc=Small Mossy Cobblestone Tiles
+tile.mossy_cobblestone.5.desc=French Mossy Cobblestone Tiles
 tile.mossy_cobblestone.6.desc=French Mossy Cobblestone Tiles
-tile.mossy_cobblestone.7.desc=French Mossy Cobblestone Tiles
-tile.mossy_cobblestone.8.desc=Creeper Mossy Cobblestone Tiles
-tile.mossy_cobblestone.9.desc=Damaged Mossy Cobblestone Tiles
-tile.mossy_cobblestone.10.desc=Huge Mossy Cobblestone Tiles
-tile.mossy_cobblestone.11.desc=Mossy Cobblestone with Creeper Panel
-tile.mossy_cobblestone.12.desc=Mossy Cobblestone with Dent
-tile.mossy_cobblestone.13.desc=Mossy Cobblestone with Pane
-tile.mossy_cobblestone.14.desc=Mossy Cobblestone with Light Panel
-tile.mossy_cobblestone.15.desc=Mossy Cobblestone with Dark Panel
+tile.mossy_cobblestone.7.desc=Creeper Mossy Cobblestone Tiles
+tile.mossy_cobblestone.8.desc=Damaged Mossy Cobblestone Tiles
+tile.mossy_cobblestone.9.desc=Huge Mossy Cobblestone Tiles
+tile.mossy_cobblestone.10.desc=Mossy Cobblestone with Creeper Panel
+tile.mossy_cobblestone.11.desc=Mossy Cobblestone with Dent
+tile.mossy_cobblestone.12.desc=Mossy Cobblestone with Pane
+tile.mossy_cobblestone.13.desc=Mossy Cobblestone with Light Panel
+tile.mossy_cobblestone.14.desc=Mossy Cobblestone with Dark Panel
 
 #Stone Bricks
 tile.stone_bricks.name=Stone Bricks
@@ -944,24 +1015,26 @@ tile.dirt.9.desc=Horizontal Dirt
 tile.dirt.10.desc=Vertical Dirt
 tile.dirt.11.desc=Dirt Layers
 tile.dirt.12.desc=Crumbling Dirt
+tile.dirt.13.desc=Decayed Bricks
+tile.dirt.14.desc=Dried Farmland
 
 #Ice
 tile.ice.name=Ice
-tile.ice.1.desc=Rough Ice Block
-tile.ice.2.desc=Cobble-Ice
-tile.ice.3.desc=Large Rough Ice Bricks
-tile.ice.4.desc=Large Ice Bricks
-tile.ice.5.desc=Small Ice Bricks
-tile.ice.6.desc=Fancy Glass Wall
-tile.ice.7.desc=Large Ice Tiles
-tile.ice.8.desc=Fancy Ice Tiles
-tile.ice.9.desc=Sunken Ice Tiles
-tile.ice.10.desc=Disordered Ice Tiles
-tile.ice.11.desc=Ice Panel
-tile.ice.12.desc=Ice Double Slab
-tile.ice.13.desc=Ice Zelda Block
-tile.ice.14.desc=Ice Bismuth Block
-tile.ice.15.desc=Ice Poison Block
+tile.ice.0.desc=Rough Ice Block
+tile.ice.1.desc=Cobble-Ice
+tile.ice.2.desc=Large Rough Ice Bricks
+tile.ice.3.desc=Large Ice Bricks
+tile.ice.4.desc=Small Ice Bricks
+tile.ice.5.desc=Fancy Glass Wall
+tile.ice.6.desc=Large Ice Tiles
+tile.ice.7.desc=Fancy Ice Tiles
+tile.ice.8.desc=Sunken Ice Tiles
+tile.ice.9.desc=Disordered Ice Tiles
+tile.ice.10.desc=Ice Panel
+tile.ice.11.desc=Ice Double Slab
+tile.ice.12.desc=Ice Zelda Block
+tile.ice.13.desc=Ice Bismuth Block
+tile.ice.14.desc=Ice Poison Block
 
 #Ice Pillars
 tile.ice_pillar.name=Ice Pillar
@@ -1001,32 +1074,32 @@ tile.ice_stairs.14.desc=Ice Bismuth Stairs
 tile.ice_stairs.15.desc=Ice Poison Stairs
 
 #Packed Ice
-tile.packedice.name=Packed Ice
-tile.packedice.1.desc=Rough Packed Ice Block
-tile.packedice.2.desc=Cobble-Packed Ice
-tile.packedice.3.desc=Large Rough Packed Ice Bricks
-tile.packedice.4.desc=Large Packed Ice Bricks
-tile.packedice.5.desc=Small Packed Ice Bricks
-tile.packedice.6.desc=Fancy Glass Wall
-tile.packedice.7.desc=Large Packed Ice Tiles
-tile.packedice.8.desc=Fancy Packed Ice Tiles
-tile.packedice.9.desc=Sunken Packed Ice Tiles
-tile.packedice.10.desc=Disordered Packed Ice Tiles
-tile.packedice.11.desc=Packed Ice Panel
-tile.packedice.12.desc=Packed Ice Double Slab
-tile.packedice.13.desc=Packed Ice Zelda Block
-tile.packedice.14.desc=Packed Ice Bismuth Block
-tile.packedice.15.desc=Packed Ice Poison Block
+tile.packed_ice.name=Packed Ice
+tile.packed_ice.0.desc=Rough Packed Ice Block
+tile.packed_ice.1.desc=Cobble-Packed Ice
+tile.packed_ice.2.desc=Large Rough Packed Ice Bricks
+tile.packed_ice.3.desc=Large Packed Ice Bricks
+tile.packed_ice.4.desc=Small Packed Ice Bricks
+tile.packed_ice.5.desc=Fancy Glass Wall
+tile.packed_ice.6.desc=Large Packed Ice Tiles
+tile.packed_ice.7.desc=Fancy Packed Ice Tiles
+tile.packed_ice.8.desc=Sunken Packed Ice Tiles
+tile.packed_ice.9.desc=Disordered Packed Ice Tiles
+tile.packed_ice.10.desc=Packed Ice Panel
+tile.packed_ice.11.desc=Packed Ice Double Slab
+tile.packed_ice.12.desc=Packed Ice Zelda Block
+tile.packed_ice.13.desc=Packed Ice Bismuth Block
+tile.packed_ice.14.desc=Packed Ice Poison Block
 
 #Packed Ice Pillars
-tile.packedice_pillar.name=Packed Ice Pillar
-tile.packedice_pillar.0.desc=Plain Packed Ice Pillar with Plain Capstone
-tile.packedice_pillar.1.desc=Plain Packed Ice Pillar with Greek Capstone
-tile.packedice_pillar.2.desc=Greek Packed Ice Pillar with Plain Capstone
-tile.packedice_pillar.3.desc=Greek Packed Ice Pillar with Greek Capstone
-tile.packedice_pillar.4.desc=Carved Packed Ice Pillar Capstone
-tile.packedice_pillar.5.desc=Ornamental Packed Ice Pillar Capstone
-tile.packedice_pillar.6.desc=Inscribed Packed Ice Pillar
+tile.packed_ice_pillar.name=Packed Ice Pillar
+tile.packed_ice_pillar.0.desc=Plain Packed Ice Pillar with Plain Capstone
+tile.packed_ice_pillar.1.desc=Plain Packed Ice Pillar with Greek Capstone
+tile.packed_ice_pillar.2.desc=Greek Packed Ice Pillar with Plain Capstone
+tile.packed_ice_pillar.3.desc=Greek Packed Ice Pillar with Greek Capstone
+tile.packed_ice_pillar.4.desc=Carved Packed Ice Pillar Capstone
+tile.packed_ice_pillar.5.desc=Ornamental Packed Ice Pillar Capstone
+tile.packed_ice_pillar.6.desc=Inscribed Packed Ice Pillar
 
 #Packed Ice Stairs
 tile.packedice_stairs.name=Packed Ice Stairs
@@ -1057,21 +1130,21 @@ tile.packedice_stairs.15.desc=Packed Ice Poison Stairs
 
 #Obsidian
 tile.obsidian.name=Obsidian
-tile.obsidian.1.desc=Large Obsidian Pillar
-tile.obsidian.2.desc=Obsidian Pillar
-tile.obsidian.3.desc=Chiseled Obsidian
-tile.obsidian.4.desc=Shiny Obsidian Panel
-tile.obsidian.5.desc=Obsidian Panel
-tile.obsidian.6.desc=Organic-Looking Obsidian Chunks
-tile.obsidian.7.desc=Organic-Looking Obsidian Growth
-tile.obsidian.8.desc=Obsidian Crystal
-tile.obsidian.9.desc=Obsidian Panel with Map
-tile.obsidian.10.desc=Obsidian Panel with Region Map
-tile.obsidian.11.desc=Bright Obsidian Panel
-tile.obsidian.12.desc=Obsidian Blocks
-tile.obsidian.13.desc=Obsidian Tiles
-tile.obsidian.14.desc=Light Obsidian Blocks with Greek Decor
-tile.obsidian.15.desc=Small Obsidian Blocks inside an Oak Wood Crate
+tile.obsidian.0.desc=Large Obsidian Pillar
+tile.obsidian.1.desc=Obsidian Pillar
+tile.obsidian.2.desc=Chiseled Obsidian
+tile.obsidian.3.desc=Shiny Obsidian Panel
+tile.obsidian.4.desc=Obsidian Panel
+tile.obsidian.5.desc=Organic-Looking Obsidian Chunks
+tile.obsidian.6.desc=Organic-Looking Obsidian Growth
+tile.obsidian.7.desc=Obsidian Crystal
+tile.obsidian.8.desc=Obsidian Panel with Map
+tile.obsidian.9.desc=Obsidian Panel with Region Map
+tile.obsidian.10.desc=Bright Obsidian Panel
+tile.obsidian.11.desc=Obsidian Blocks
+tile.obsidian.12.desc=Obsidian Tiles
+tile.obsidian.13.desc=Light Obsidian Blocks with Greek Decor
+tile.obsidian.14.desc=Small Obsidian Blocks inside an Oak Wood Crate
 
 #Wood
 tile.oak_planks.name=Oak Wood Planks
@@ -1083,147 +1156,147 @@ tile.acacia_planks.name=Acacia Wood Planks
 
 #Planks (They go in order of creative tab appearance if that helps)
 #Oak
-tile.oak_planks.1.desc=Smooth Oak Wood Planks
-tile.oak_planks.2.desc=Short Oak Wood Planks
-tile.oak_planks.6.desc=Fancy Oak Wood Plank Arrangement
-tile.oak_planks.8.desc=Oak Wood Panel
-tile.oak_planks.9.desc=Oak Wood Double Slab
-tile.oak_planks.10.desc=Oak Wood Crate
-tile.oak_planks.11.desc=Fancy Oak Wood Crate
-tile.oak_planks.13.desc=Large Long Oak Wood Planks
-tile.oak_planks.3.desc=Vertical Oak Wood Planks
-tile.oak_planks.4.desc=Vertical Uneven Oak Wood Planks
-tile.oak_planks.5.desc=Oak Wood Parquet
-tile.oak_planks.7.desc=Oak Wood Plank Blinds
-tile.oak_planks.12.desc=Oak Wood Scaffold
-tile.oak_planks.14.desc=Oak Wood Planks in Disarray
-tile.oak_planks.15.desc=Vertical Oak Wood Planks in Disarray
+tile.oak_planks.0.desc=Smooth Oak Wood Planks
+tile.oak_planks.1.desc=Short Oak Wood Planks
+tile.oak_planks.2.desc=Vertical Oak Wood Planks
+tile.oak_planks.3.desc=Vertical Uneven Oak Wood Planks
+tile.oak_planks.4.desc=Oak Wood Parquet
+tile.oak_planks.5.desc=Fancy Oak Wood Plank Arrangement
+tile.oak_planks.6.desc=Oak Wood Plank Blinds
+tile.oak_planks.7.desc=Oak Wood Panel
+tile.oak_planks.8.desc=Oak Wood Double Slab
+tile.oak_planks.9.desc=Oak Wood Crate
+tile.oak_planks.10.desc=Fancy Oak Wood Crate
+tile.oak_planks.11.desc=Oak Wood Scaffold
+tile.oak_planks.12.desc=Large Long Oak Wood Planks
+tile.oak_planks.13.desc=Oak Wood Planks in Disarray
+tile.oak_planks.14.desc=Vertical Oak Wood Planks in Disarray
 
 #Spruce
-tile.spruce_planks.1.desc=Smooth Spruce Wood Planks
-tile.spruce_planks.2.desc=Short Spruce Wood Planks
-tile.spruce_planks.6.desc=Fancy Spruce Wood Plank Arrangement
-tile.spruce_planks.8.desc=Spruce Wood Panel
-tile.spruce_planks.9.desc=Spruce Wood Double Slab
-tile.spruce_planks.10.desc=Spruce Wood Crate
-tile.spruce_planks.11.desc=Fancy Spruce Wood Crate
-tile.spruce_planks.13.desc=Large Long Spruce Wood Planks
-tile.spruce_planks.3.desc=Vertical Spruce Wood Planks
-tile.spruce_planks.4.desc=Vertical Uneven Spruce Wood Planks
-tile.spruce_planks.5.desc=Spruce Wood Parquet
-tile.spruce_planks.7.desc=Spruce Wood Plank Blinds
-tile.spruce_planks.12.desc=Spruce Wood Scaffold
-tile.spruce_planks.14.desc=Spruce Wood Planks in Disarray
-tile.spruce_planks.15.desc=Vertical Spruce Wood Planks in Disarray
+tile.spruce_planks.0.desc=Smooth Spruce Wood Planks
+tile.spruce_planks.1.desc=Short Spruce Wood Planks
+tile.spruce_planks.2.desc=Vertical Spruce Wood Planks
+tile.spruce_planks.3.desc=Vertical Uneven Spruce Wood Planks
+tile.spruce_planks.4.desc=Spruce Wood Parquet
+tile.spruce_planks.5.desc=Fancy Spruce Wood Plank Arrangement
+tile.spruce_planks.6.desc=Spruce Wood Plank Blinds
+tile.spruce_planks.7.desc=Spruce Wood Panel
+tile.spruce_planks.8.desc=Spruce Wood Double Slab
+tile.spruce_planks.9.desc=Spruce Wood Crate
+tile.spruce_planks.10.desc=Fancy Spruce Wood Crate
+tile.spruce_planks.11.desc=Spruce Wood Scaffold
+tile.spruce_planks.12.desc=Large Long Spruce Wood Planks
+tile.spruce_planks.13.desc=Spruce Wood Planks in Disarray
+tile.spruce_planks.14.desc=Vertical Spruce Wood Planks in Disarray
 
 #Birch
-tile.birch_planks.1.desc=Smooth Birch Wood Planks
-tile.birch_planks.2.desc=Short Birch Wood Planks
-tile.birch_planks.6.desc=Fancy Birch Wood Plank Arrangement
-tile.birch_planks.8.desc=Birch Wood Panel
-tile.birch_planks.9.desc=Birch Wood Double Slab
-tile.birch_planks.10.desc=Birch Wood Crate
-tile.birch_planks.11.desc=Fancy Birch Wood Crate
-tile.birch_planks.13.desc=Large Long Birch Wood Planks
-tile.birch_planks.3.desc=Vertical Birch Wood Planks
-tile.birch_planks.4.desc=Vertical Uneven Birch Wood Planks
-tile.birch_planks.5.desc=Birch Wood Parquet
-tile.birch_planks.7.desc=Birch Wood Plank Blinds
-tile.birch_planks.12.desc=Birch Wood Scaffold
-tile.birch_planks.14.desc=Birch Wood Planks in Disarray
-tile.birch_planks.15.desc=Vertical Birch Wood Planks in Disarray
+tile.birch_planks.0.desc=Smooth Birch Wood Planks
+tile.birch_planks.1.desc=Short Birch Wood Planks
+tile.birch_planks.2.desc=Vertical Birch Wood Planks
+tile.birch_planks.3.desc=Vertical Uneven Birch Wood Planks
+tile.birch_planks.4.desc=Birch Wood Parquet
+tile.birch_planks.5.desc=Fancy Birch Wood Plank Arrangement
+tile.birch_planks.6.desc=Birch Wood Plank Blinds
+tile.birch_planks.7.desc=Birch Wood Panel
+tile.birch_planks.8.desc=Birch Wood Double Slab
+tile.birch_planks.9.desc=Birch Wood Crate
+tile.birch_planks.10.desc=Fancy Birch Wood Crate
+tile.birch_planks.11.desc=Birch Wood Scaffold
+tile.birch_planks.12.desc=Large Long Birch Wood Planks
+tile.birch_planks.13.desc=Birch Wood Planks in Disarray
+tile.birch_planks.14.desc=Vertical Birch Wood Planks in Disarray
 
 #Jungle
-tile.jungle_planks.1.desc=Smooth Jungle Wood Planks
-tile.jungle_planks.2.desc=Short Jungle Wood Planks
-tile.jungle_planks.6.desc=Fancy Jungle Wood Plank Arrangement
-tile.jungle_planks.8.desc=Jungle Wood Panel
-tile.jungle_planks.9.desc=Jungle Wood Double Slab
-tile.jungle_planks.10.desc=Oak Wood Crate
-tile.jungle_planks.11.desc=Fancy jungle Wood Crate
-tile.jungle_planks.13.desc=Large Long Jungle Wood Planks
-tile.jungle_planks.3.desc=Vertical Jungle Wood Planks
-tile.jungle_planks.4.desc=Vertical Uneven Jungle Wood Planks
-tile.jungle_planks.5.desc=Jungle Wood Parquet
-tile.jungle_planks.7.desc=Jungle Wood Plank Blinds
-tile.jungle_planks.12.desc=Jungle Wood Scaffold
-tile.jungle_planks.14.desc=Jungle Wood Planks in Disarray
-tile.jungle_planks.15.desc=Vertical Jungle Wood Planks in Disarray
+tile.jungle_planks.0.desc=Smooth Jungle Wood Planks
+tile.jungle_planks.1.desc=Short Jungle Wood Planks
+tile.jungle_planks.2.desc=Vertical Jungle Wood Planks
+tile.jungle_planks.3.desc=Vertical Uneven Jungle Wood Planks
+tile.jungle_planks.4.desc=Jungle Wood Parquet
+tile.jungle_planks.5.desc=Fancy Jungle Wood Plank Arrangement
+tile.jungle_planks.6.desc=Jungle Wood Plank Blinds
+tile.jungle_planks.7.desc=Jungle Wood Panel
+tile.jungle_planks.8.desc=Jungle Wood Double Slab
+tile.jungle_planks.9.desc=Oak Wood Crate
+tile.jungle_planks.10.desc=Fancy jungle Wood Crate
+tile.jungle_planks.11.desc=Jungle Wood Scaffold
+tile.jungle_planks.12.desc=Large Long Jungle Wood Planks
+tile.jungle_planks.13.desc=Jungle Wood Planks in Disarray
+tile.jungle_planks.14.desc=Vertical Jungle Wood Planks in Disarray
 
 #Acacia
-tile.acacia_planks.1.desc=Smooth Acacia Wood Planks
-tile.acacia_planks.2.desc=Short Acacia Wood Planks
-tile.acacia_planks.6.desc=Fancy Acacia Wood Plank Arrangement
-tile.acacia_planks.8.desc=Acacia Wood Panel
-tile.acacia_planks.9.desc=Acacia Wood Double Slab
-tile.acacia_planks.10.desc=Acacia Wood Crate
-tile.acacia_planks.11.desc=Fancy Acacia Wood Crate
-tile.acacia_planks.13.desc=Large Long Acacia Wood Planks
-tile.acacia_planks.3.desc=Vertical Acacia Wood Planks
-tile.acacia_planks.4.desc=Vertical Uneven Acacia Wood Planks
-tile.acacia_planks.5.desc=Acacia Wood Parquet
-tile.acacia_planks.7.desc=Acacia Wood Plank Blinds
-tile.acacia_planks.12.desc=Acacia Wood Scaffold
-tile.acacia_planks.14.desc=Acacia Wood Planks in Disarray
-tile.acacia_planks.15.desc=Vertical Acacia Wood Planks in Disarray
+tile.acacia_planks.0.desc=Smooth Acacia Wood Planks
+tile.acacia_planks.1.desc=Short Acacia Wood Planks
+tile.acacia_planks.2.desc=Vertical Acacia Wood Planks
+tile.acacia_planks.3.desc=Vertical Uneven Acacia Wood Planks
+tile.acacia_planks.4.desc=Acacia Wood Parquet
+tile.acacia_planks.5.desc=Fancy Acacia Wood Plank Arrangement
+tile.acacia_planks.6.desc=Acacia Wood Plank Blinds
+tile.acacia_planks.7.desc=Acacia Wood Panel
+tile.acacia_planks.8.desc=Acacia Wood Double Slab
+tile.acacia_planks.9.desc=Acacia Wood Crate
+tile.acacia_planks.10.desc=Fancy Acacia Wood Crate
+tile.acacia_planks.11.desc=Acacia Wood Scaffold
+tile.acacia_planks.12.desc=Large Long Acacia Wood Planks
+tile.acacia_planks.13.desc=Acacia Wood Planks in Disarray
+tile.acacia_planks.14.desc=Vertical Acacia Wood Planks in Disarray
 
 #Dark Oak
-tile.dark_oak_planks.1.desc=Smooth Dark Oak Wood Planks
-tile.dark_oak_planks.2.desc=Short Dark Oak Wood Planks
-tile.dark_oak_planks.6.desc=Fancy Dark Oak Wood Plank Arrangement
-tile.dark_oak_planks.8.desc=Dark Oak Wood Panel
-tile.dark_oak_planks.9.desc=Dark Oak Wood Double Slab
-tile.dark_oak_planks.10.desc=Dark Oak Wood Crate
-tile.dark_oak_planks.11.desc=Fancy Dark Oak Wood Crate
-tile.dark_oak_planks.13.desc=Large Long Dark Oak Wood Planks
-tile.dark_oak_planks.3.desc=Vertical Dark Oak Wood Planks
-tile.dark_oak_planks.4.desc=Vertical Uneven Dark Oak Wood Planks
-tile.dark_oak_planks.5.desc=Dark Oak Wood Parquet
-tile.dark_oak_planks.7.desc=Dark Oak Wood Plank Blinds
-tile.dark_oak_planks.12.desc=Dark Oak Wood Scaffold
-tile.dark_oak_planks.14.desc=Dark Oak Wood Planks in Disarray
-tile.dark_oak_planks.15.desc=Vertical Dark Oak Wood Planks in Disarray
+tile.dark_oak_planks.0.desc=Smooth Dark Oak Wood Planks
+tile.dark_oak_planks.1.desc=Short Dark Oak Wood Planks
+tile.dark_oak_planks.2.desc=Vertical Dark Oak Wood Planks
+tile.dark_oak_planks.3.desc=Vertical Uneven Dark Oak Wood Planks
+tile.dark_oak_planks.4.desc=Dark Oak Wood Parquet
+tile.dark_oak_planks.5.desc=Fancy Dark Oak Wood Plank Arrangement
+tile.dark_oak_planks.6.desc=Dark Oak Wood Plank Blinds
+tile.dark_oak_planks.7.desc=Dark Oak Wood Panel
+tile.dark_oak_planks.8.desc=Dark Oak Wood Double Slab
+tile.dark_oak_planks.9.desc=Dark Oak Wood Crate
+tile.dark_oak_planks.10.desc=Fancy Dark Oak Wood Crate
+tile.dark_oak_planks.11.desc=Dark Oak Wood Scaffold
+tile.dark_oak_planks.12.desc=Large Long Dark Oak Wood Planks
+tile.dark_oak_planks.13.desc=Dark Oak Wood Planks in Disarray
+tile.dark_oak_planks.14.desc=Vertical Dark Oak Wood Planks in Disarray
 
 #Iron Fence
 tile.iron_bars.name=Iron Bars
-tile.iron_bars.1.desc=Iron Bars without Frame
-tile.iron_bars.2.desc=Menacing Iron Bars
-tile.iron_bars.3.desc=Iron Cage Bars
-tile.iron_bars.4.desc=Menacing Iron Spikes
-tile.iron_bars.5.desc=Thick Iron Grid
-tile.iron_bars.6.desc=Thin Iron Grid
-tile.iron_bars.7.desc=Ornate Iron Pane Fence
-tile.iron_bars.8.desc=Vertical Iron Bars
-tile.iron_bars.9.desc=Iron Spikes
+tile.iron_bars.0.desc=Iron Bars without Frame
+tile.iron_bars.1.desc=Menacing Iron Bars
+tile.iron_bars.2.desc=Iron Cage Bars
+tile.iron_bars.3.desc=Menacing Iron Spikes
+tile.iron_bars.4.desc=Thick Iron Grid
+tile.iron_bars.5.desc=Thin Iron Grid
+tile.iron_bars.6.desc=Ornate Iron Pane Fence
+tile.iron_bars.7.desc=Vertical Iron Bars
+tile.iron_bars.8.desc=Iron Spikes
 
 #Glass Panes
 tile.glass_pane.name=Glass Pane
-tile.glass_pane.1.desc=Bubble Glass Pane
-tile.glass_pane.2.desc=Borderless Glass Pane
-tile.glass_pane.3.desc=Screen Pane
-tile.glass_pane.4.desc=Streak Glass Pane
-tile.glass_pane.12.desc=Chinese Glass Pane
-tile.glass_pane.13.desc=Chinese Glass Pane with Golden Frame
-tile.glass_pane.14.desc=Japanese Glass Pane
-tile.glass_pane.15.desc=Ornate Japanese Glass Pane
+tile.glass_pane.0.desc=Bubble Glass Pane
+tile.glass_pane.1.desc=Borderless Glass Pane
+tile.glass_pane.2.desc=Screen Pane
+tile.glass_pane.3.desc=Streak Glass Pane
+tile.glass_pane.4.desc=Chinese Glass Pane
+tile.glass_pane.5.desc=Chinese Glass Pane with Golden Frame
+tile.glass_pane.6.desc=Japanese Glass Pane
+tile.glass_pane.7.desc=Ornate Japanese Glass Pane
 
 #Redstone block
 tile.redstone_block.name=Redstone Block
-tile.redstone_block.1.desc=Smooth Redstone
-tile.redstone_block.2.desc=Large Redstone Block
-tile.redstone_block.3.desc=Small Redstone Block
-tile.redstone_block.4.desc=Redstone Bricks
-tile.redstone_block.5.desc=Small Redstone Bricks
-tile.redstone_block.6.desc=Chaotic Redstone Bricks
-tile.redstone_block.7.desc=Chiseled Redstone
-tile.redstone_block.8.desc=Redstone Greek Decoration
-tile.redstone_block.9.desc=Ornate Redstone Tiles
-tile.redstone_block.10.desc=Redstone Pillar
-tile.redstone_block.11.desc=Redstone Tiles
-tile.redstone_block.12.desc=Redstone Circuit
-tile.redstone_block.13.desc=Redstone Supaplex Circuit
-tile.redstone_block.14.desc=Redstone Skulls
-tile.redstone_block.15.desc=Redstone Zelda Block
+tile.redstone_block.0.desc=Smooth Redstone
+tile.redstone_block.1.desc=Large Redstone Block
+tile.redstone_block.2.desc=Small Redstone Block
+tile.redstone_block.3.desc=Redstone Bricks
+tile.redstone_block.4.desc=Small Redstone Bricks
+tile.redstone_block.5.desc=Chaotic Redstone Bricks
+tile.redstone_block.6.desc=Chiseled Redstone
+tile.redstone_block.7.desc=Redstone Greek Decoration
+tile.redstone_block.8.desc=Ornate Redstone Tiles
+tile.redstone_block.9.desc=Redstone Pillar
+tile.redstone_block.10.desc=Redstone Tiles
+tile.redstone_block.11.desc=Redstone Circuit
+tile.redstone_block.12.desc=Redstone Supaplex Circuit
+tile.redstone_block.13.desc=Redstone Skulls
+tile.redstone_block.14.desc=Redstone Zelda Block
 
 #Holystone
 tile.holystone.name=Holystone
@@ -1453,25 +1526,34 @@ tile.paperwall.5.desc=Horizontally Striked Paperwall
 tile.paperwall.6.desc=Floral Adorned Paperwall
 tile.paperwall.7.desc=Plain Paperwall
 tile.paperwall.8.desc=Door Shaped Paperwall
+tile.paperwall_block.0.desc=Boxed Paperwall
+tile.paperwall_block.1.desc=Middle Striked Paperwall
+tile.paperwall_block.2.desc=Crossed Paperwall
+tile.paperwall_block.3.desc=Six Sectioned Paperwall
+tile.paperwall_block.4.desc=Vertically Striked Paperwall
+tile.paperwall_block.5.desc=Horizontally Striked Paperwall
+tile.paperwall_block.6.desc=Floral Adorned Paperwall
+tile.paperwall_block.7.desc=Plain Paperwall
+tile.paperwall_block.8.desc=Door Shaped Paperwall
 
 #Woolen Clay
 tile.woolen_clay.name=Woolen Clay
-tile.woolenClay.0.desc=White Woolen Clay
-tile.woolenClay.1.desc=Orange Woolen Clay
-tile.woolenClay.2.desc=Magenta Woolen Clay
-tile.woolenClay.3.desc=Light Blue Woolen Clay
-tile.woolenClay.4.desc=Yellow Woolen Clay
-tile.woolenClay.5.desc=Lime Woolen Clay
-tile.woolenClay.6.desc=Pink Woolen Clay
-tile.woolenClay.7.desc=Grey Woolen Clay
-tile.woolenClay.8.desc=Light Grey Woolen Clay
-tile.woolenClay.9.desc=Cyan Woolen Clay
-tile.woolenClay.10.desc=Purple Woolen Clay
-tile.woolenClay.11.desc=Blue Woolen Clay
-tile.woolenClay.12.desc=Brown Woolen Clay
-tile.woolenClay.13.desc=Green Woolen Clay
-tile.woolenClay.14.desc=Red Woolen Clay
-tile.woolenClay.15.desc=Black Woolen Clay
+tile.woolen_clay.0.desc=White Woolen Clay
+tile.woolen_clay.1.desc=Orange Woolen Clay
+tile.woolen_clay.2.desc=Magenta Woolen Clay
+tile.woolen_clay.3.desc=Light Blue Woolen Clay
+tile.woolen_clay.4.desc=Yellow Woolen Clay
+tile.woolen_clay.5.desc=Lime Woolen Clay
+tile.woolen_clay.6.desc=Pink Woolen Clay
+tile.woolen_clay.7.desc=Grey Woolen Clay
+tile.woolen_clay.8.desc=Light Grey Woolen Clay
+tile.woolen_clay.9.desc=Cyan Woolen Clay
+tile.woolen_clay.10.desc=Purple Woolen Clay
+tile.woolen_clay.11.desc=Blue Woolen Clay
+tile.woolen_clay.12.desc=Brown Woolen Clay
+tile.woolen_clay.13.desc=Green Woolen Clay
+tile.woolen_clay.14.desc=Red Woolen Clay
+tile.woolen_clay.15.desc=Black Woolen Clay
 
 #Colored Sand
 tile.colored_sand.name=Colored Sand
@@ -1510,6 +1592,10 @@ tile.laboratory.12.desc=Small Steel Tiles
 tile.laboratory.13.desc=Direction Console (Right)
 tile.laboratory.14.desc=Direction Console (Left)
 tile.laboratory.15.desc=Information Console
+
+#JackOLantern
+tile.litpumpkin.0.desc=:p
+tile.litpumpkin.1.desc=Derp
 
 # Creative Tab localizations
 itemGroup.tabOtherChiselBlocks=Other Chisel Blocks

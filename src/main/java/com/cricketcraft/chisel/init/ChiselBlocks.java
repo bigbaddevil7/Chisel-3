@@ -146,7 +146,7 @@ public final class ChiselBlocks {
 		bookshelf = (BlockCarvable) registerBlock("bookshelf", new ChiselBlockBookshelf());
 		carpet = (BlockCarvable) registerBlock("carpet_block", new ChiselBlockCarvableCarpet());
 		carpet_floor = (BlockCarvable) registerBlock("carpet_floor", new ChiselBlockCarpetFloor());
-		chest = (BlockCarvable) registerBlock("chest", new ChiselBlockCarvableChest());
+		chest = (BlockCarvable) registerBlock("present", new ChiselBlockCarvableChest());
 		cobblestone = (BlockCarvable) registerBlock("cobblestone", new ChiselBlockCobblestone());
 		concrete = (BlockCarvable) registerBlock("concrete", new ChiselBlockConcrete());
 		copper = (BlockCarvable) registerBlock("copperblock", new ChiselBlockCopper());
