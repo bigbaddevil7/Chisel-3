@@ -11,6 +11,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -21,6 +22,11 @@ public class ChiselBlockIce extends BlockCarvable implements IChiselBlock {
         super(Material.ice);
         setCreativeTab(ChiselTabs.tabOtherChiselBlocks);
         setDefaultState(this.getBlockState().getBaseState().withProperty(ChiselProperties.ICE_VARIANTS, ChiselProperties.ICE_VARIANTS.fromMeta(0)));
+    }
+
+    @Override
+    public EnumWorldBlockLayer getBlockLayer() {
+        return EnumWorldBlockLayer.CUTOUT;
     }
 
     @Override

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "particle": "chisel:blocks/military/imperialCamoSecluded",
+    "all": "chisel:blocks/military/imperialCamoSecluded"
+  }
+}
