@@ -1594,8 +1594,22 @@ tile.laboratory.14.desc=Direction Console (Left)
 tile.laboratory.15.desc=Information Console
 
 #JackOLantern
-tile.litpumpkin.0.desc=:p
-tile.litpumpkin.1.desc=Derp
+tile.litpumpkin.0.desc=Suprised
+tile.litpumpkin.1.desc=Smiling open
+tile.litpumpkin.2.desc=Cheeky
+tile.litpumpkin.3.desc=Pensive
+tile.litpumpkin.4.desc=Disappointed
+tile.litpumpkin.5.desc=Smirking
+tile.litpumpkin.6.desc=Curious
+tile.litpumpkin.7.desc=Bored
+tile.litpumpkin.8.desc=Sad
+tile.litpumpkin.9.desc=Evil
+tile.litpumpkin.10.desc=Exited
+tile.litpumpkin.11.desc=Sleeping
+tile.litpumpkin.12.desc=Astonished
+tile.litpumpkin.13.desc=Neutral
+tile.litpumpkin.14.desc=Laughing out loud
+tile.litpumpkin.15.desc=Smiling Closed
 
 # Creative Tab localizations
 itemGroup.tabOtherChiselBlocks=Other Chisel Blocks
