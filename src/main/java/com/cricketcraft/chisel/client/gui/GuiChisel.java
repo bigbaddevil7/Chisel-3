@@ -1,7 +1,6 @@
 package com.cricketcraft.chisel.client.gui;
 
 import com.cricketcraft.chisel.api.IChiselItem;
-import com.cricketcraft.chisel.client.GeneralChiselClient;
 import com.cricketcraft.chisel.inventory.ContainerChisel;
 import com.cricketcraft.chisel.inventory.InventoryChiselSelection;
 import com.cricketcraft.chisel.inventory.slots.SlotChiselInput;
@@ -91,7 +90,6 @@ public class GuiChisel extends GuiContainer {
 
 		String texture = "chisel:textures/chisel2Gui.png";
 
-		GeneralChiselClient.bind(texture);
 		drawTexturedModalRect(i, j, 0, 0, xSize, ySize);
 
 		int x = (width - xSize) / 2;

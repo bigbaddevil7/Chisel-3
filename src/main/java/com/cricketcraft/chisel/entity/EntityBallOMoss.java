@@ -1,7 +1,6 @@
 package com.cricketcraft.chisel.entity;
 
 import com.cricketcraft.chisel.Chisel;
-import com.cricketcraft.chisel.client.GeneralChiselClient;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
@@ -58,9 +57,6 @@ public class EntityBallOMoss extends EntityThrowable {
 
 		if (worldObj.isRemote) {
 			worldObj.playSound(x, y, z, Chisel.MOD_ID + ":random.squash", 1.0f, 1.0f, false);
-
-			for (int i = 0; i < 32; i++)
-				GeneralChiselClient.spawnBallOMossFX(worldObj, posX, posY, posZ);
 
 			return;
 		}
