@@ -168,7 +168,7 @@ public class CarvingRegistry {
         addRecipe(recipe);
     }
 
-    public static ChiselRecipe getRecipeFromFirstItem(ItemStack stack) {
+    public static ChiselRecipe getRecipeFromItemStack(ItemStack stack) {
         for (int c = 0; c < recipes.size(); c++) {
             ItemStack[] results = recipes.get(c).getChiselResults();
             for (int d = 0; d < results.length; d++) {

@@ -1,6 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
+    "particle": "chisel:blocks/fantasy/brick",
     "all": "chisel:blocks/fantasy/brick"
   }
 }

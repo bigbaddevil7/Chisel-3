@@ -1,5 +1,6 @@
 package com.cricketcraft.chisel.block.stone;
 
+import com.cricketcraft.chisel.Chisel;
 import com.cricketcraft.chisel.block.BlockCarvable;
 import com.cricketcraft.chisel.init.ChiselProperties;
 import com.cricketcraft.chisel.init.ChiselTabs;
@@ -21,6 +22,7 @@ public class ChiselBlockTemple extends BlockCarvable implements IChiselBlock {
     public ChiselBlockTemple() {
         super(Material.rock);
         setCreativeTab(ChiselTabs.tabStoneChiselBlocks);
+        setStepSound(Chisel.soundTypeTemple);
         setDefaultState(this.getBlockState().getBaseState().withProperty(ChiselProperties.TEMPLE_VARIANTS, ChiselProperties.TEMPLE_VARIANTS.fromMeta(0)));
     }
 

@@ -35,7 +35,7 @@ public class ChiselBlockNetherrack extends BlockCarvable implements IChiselBlock
 
     @Override
     public IBlockState getStateFromMeta(int meta) {
-        return this.getDefaultState().withProperty(ChiselProperties.NETHERBRICK_VARIANTS, ChiselProperties.NETHERBRICK_VARIANTS.fromMeta(meta));
+        return this.getDefaultState().withProperty(ChiselProperties.NETHERRACK_VARIANTS, ChiselProperties.NETHERRACK_VARIANTS.fromMeta(meta));
     }
 
     @Override

@@ -22,6 +22,9 @@
       "model": "chisel:netherrack_spattered"
     },
     "variant=netherrack_guts": {
+      "model": "chisel:netherrack_guts"
+    },
+    "variant=netherrack_guts_dark": {
       "model": "chisel:netherrack_guts_dark"
     },
     "variant=netherrack_meat": {

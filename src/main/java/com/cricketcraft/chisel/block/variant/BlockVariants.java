@@ -866,6 +866,7 @@ public class BlockVariants {
             SANDSTONE_SCRIBBLES_12 = new BlockVariant(12, "sandstone_scribbles_12"),
             SANDSTONE_SCRIBBLES_13 = new BlockVariant(13, "sandstone_scribbles_13"),
             SANDSTONE_SCRIBBLES_14 = new BlockVariant(14, "sandstone_scribbles_14"),
+            SANDSTONE_SCRIBBLES_15 = new BlockVariant(15, "sandstone_scribbles_15"),
 
             SILVER_CAUTION = new BlockVariant(0, "silver_caution"),
             SILVER_SHIPPING = new BlockVariant(1, "silver_shipping"),

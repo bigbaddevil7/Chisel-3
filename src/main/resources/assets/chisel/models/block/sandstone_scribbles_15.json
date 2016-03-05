@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "particle": "chisel:blocks/sandstone-scribbles/scribbles-15",
+    "all": "chisel:blocks/sandstone-scribbles/scribbles-15"
+  }
+}

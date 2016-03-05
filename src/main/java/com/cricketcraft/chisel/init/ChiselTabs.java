@@ -68,11 +68,11 @@ public class ChiselTabs {
 
 	// this serves mostly just to load the static initializers
 	public static void preInit() {
-		//tabStoneChiselBlocks.setTabIconItemStack(new ItemStack(ChiselBlocks.holystone, 1));
-		//tabWoodChiselBlocks.setTabIconItemStack(new ItemStack(ChiselBlocks.oak, 1));
-		//tabMetalChiselBlocks.setTabIconItemStack(new ItemStack(ChiselBlocks.technical, 1));
-		//tabOtherChiselBlocks.setTabIconItemStack(new ItemStack(ChiselBlocks.litpumpkin, 1));
-		//tabModdedChiselBlocks.setTabIconItemStack(new ItemStack(ChiselBlocks.voidstone, 1));
+		tabStoneChiselBlocks.setTabIconItemStack(new ItemStack(ChiselBlocks.holystone, 1));
+		tabWoodChiselBlocks.setTabIconItemStack(new ItemStack(ChiselBlocks.oak, 1));
+		tabMetalChiselBlocks.setTabIconItemStack(new ItemStack(ChiselBlocks.technical, 1));
+		tabOtherChiselBlocks.setTabIconItemStack(new ItemStack(ChiselBlocks.litpumpkin, 1));
+		tabModdedChiselBlocks.setTabIconItemStack(new ItemStack(ChiselBlocks.voidstone, 1));
 		tabChisel.setTabIconItemStack(new ItemStack(ChiselItems.obsidianChisel, 1));
 	}
 }

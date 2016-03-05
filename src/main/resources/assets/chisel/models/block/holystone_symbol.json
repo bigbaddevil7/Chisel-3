@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "particle": "chisel:blocks/holystone/particles/star",
+    "particle": "chisel:blocks/holystone/love",
     "all": "chisel:blocks/holystone/love"
   }
 }

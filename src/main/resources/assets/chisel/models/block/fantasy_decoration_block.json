@@ -1,6 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
+    "particle": "chisel:blocks/fantasy/decor-block",
     "all": "chisel:blocks/fantasy/decor-block"
   }
 }

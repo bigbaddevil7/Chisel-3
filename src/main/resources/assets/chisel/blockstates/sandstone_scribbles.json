@@ -40,7 +40,13 @@
       "model": "chisel:sandstone_scribbles_12"
     },
     "variant=sandstone_scribbles_13": {
+      "model": "chisel:sandstone_scribbles_13"
+    },
+    "variant=sandstone_scribbles_14": {
       "model": "chisel:sandstone_scribbles_14"
+    },
+    "variant=sandstone_scribbles_15": {
+      "model": "chisel:sandstone_scribbles_15"
     }
   }
 }

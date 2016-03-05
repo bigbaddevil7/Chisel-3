@@ -1,6 +1,7 @@
 {
   "parent": "chisel:block/cube_multipass",
   "textures": {
+    "particle": "chisel:blocks/hexPlating/hexAnim1",
     "layer0": "chisel:blocks/hexPlating/hexAnim1",
     "layer1": "chisel:blocks/hexPlating/hexBase"
   }

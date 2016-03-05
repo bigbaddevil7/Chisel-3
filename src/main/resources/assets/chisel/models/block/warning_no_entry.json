@@ -1,6 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
+    "particle": "chisel:blocks/warning/noentry",
     "all": "chisel:blocks/warning/noentry"
   }
 }

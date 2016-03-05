@@ -1,6 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
+    "particle": "chisel:blocks/technical/fanFast",
     "all": "chisel:blocks/technical/fanFast"
   }
 }

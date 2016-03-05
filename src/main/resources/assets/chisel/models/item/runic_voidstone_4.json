@@ -1,5 +1,5 @@
 {
-  "parent": "chisel:block/laboratory_tiles_enammelled_small",
+  "parent": "chisel:block/runic_voidstone_4",
   "display": {
     "thirdperson": {
       "rotation": [

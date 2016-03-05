@@ -3,7 +3,7 @@
     "variant=factory_rusty_dotted": {
       "model": "chisel:factory_rusty_dotted"
     },
-    "variant=factory_rusty_plate": {
+    "variant=factory_rusted_plate": {
       "model": "chisel:factory_rusted_plate"
     },
     "variant=factory_rusty_very": {

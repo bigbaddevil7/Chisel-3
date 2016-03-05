@@ -1,11 +1,8 @@
 package com.cricketcraft.chisel.inventory;
 
-import com.cricketcraft.chisel.api.CarvingRegistry;
 import com.cricketcraft.chisel.item.chisel.ItemChisel;
-import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
 import net.minecraft.util.IChatComponent;
@@ -123,34 +120,7 @@ public class InventoryChiselSelection implements IInventory {
     }
 
     public void updateItems(ItemStack stackInChiselSlot) {
-        ItemStack chiseledItem = inventory[normalSlots];
-        clearItems();
 
-        if (chiseledItem == null) {
-            container.onChiselSlotChanged();
-            return;
-        }
-
-        Item item = chiseledItem.getItem();
-        if (item == null)
-            return;
-
-        if (Block.getBlockFromItem(item) == null)
-            return;
-        ItemStack[] stacks;
-        if (CarvingRegistry.getRecipeFromFirstItem(stackInChiselSlot) != null) {
-            stacks = CarvingRegistry.getRecipeFromFirstItem(stackInChiselSlot).getChiselResults();
-
-            activeVariations = 0;
-            while (activeVariations < normalSlots && activeVariations < stacks.length) {
-                if (Block.blockRegistry.getNameForObject(Block.getBlockFromItem(stacks[activeVariations].getItem())) != null) {
-                    inventory[activeVariations] = stacks[activeVariations];
-                    activeVariations++;
-                }
-            }
-        }
-
-        container.onChiselSlotChanged();
     }
 
     @Override

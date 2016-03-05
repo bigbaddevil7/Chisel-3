@@ -30,9 +30,6 @@
     "variant=sandstone_block": {
       "model": "chisel:sandstone_block"
     },
-    "variant=sandstone_block_small": {
-      "model": "chisel:sandstone_block_small"
-    },
     "variant=sandstone_blocks": {
       "model": "chisel:sandstone_blocks"
     },

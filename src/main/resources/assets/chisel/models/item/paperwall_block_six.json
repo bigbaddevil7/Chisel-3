@@ -1,5 +1,5 @@
 {
-  "parent": "chisel:block/laboratory_tiles_enammelled_large",
+  "parent": "chisel:block/paperwall_block_six",
   "display": {
     "thirdperson": {
       "rotation": [
