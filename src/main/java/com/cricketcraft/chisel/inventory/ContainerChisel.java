@@ -1,9 +1,10 @@
 package com.cricketcraft.chisel.inventory;
 
+import com.cricketcraft.chisel.inventory.slots.SlotChiselInput;
 import com.cricketcraft.chisel.inventory.slots.SlotChiselSelection;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
-import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 
@@ -16,19 +17,27 @@ public class ContainerChisel extends Container {
      * 61-87: Player Inventory
      * 88-96: Hotbar
      */
-    public ContainerChisel(IInventory player, InventoryChiselSelection chiselSelection) {
-        for (int i = 0; i < 3; ++i) {
-            for (int j = 0; j < 9; ++j) {
-                addSlotToContainer(new Slot(player, j + i * 9 + 62, 16 + j * 18, 84 + i * 18));
-            }
-        }
-
-        for (int k = 0; k < 9; ++k) {
-            addSlotToContainer(new Slot(player, k, 8 + k * 18, 142));
-        }
-
+    public ContainerChisel(InventoryPlayer player, InventoryChiselSelection chiselSelection) {
         for(int c = 0; c < 60; c++) {
             addSlotToContainer(new SlotChiselSelection(chiselSelection, c, 62 + ((c % 10) * 18), 8 + ((c / 10) * 18)));
+        }
+
+        addSlotToContainer(new SlotChiselInput(chiselSelection, InventoryChiselSelection.normalSlots, 24, 24));
+
+        bindPlayerInventory(player);
+    }
+
+    private void bindPlayerInventory(InventoryPlayer inventoryPlayer) {
+        int top = 120;
+        int left = 71;
+        // main inv
+        for (int i = 0; i < 27; i++) {
+            addSlotToContainer(new Slot(inventoryPlayer, i + 9, left + ((i % 9) * 18), top + (i / 9) * 18));
+        }
+
+        top += 58;
+        for (int i = 0; i < 9; i++) {
+            addSlotToContainer(new Slot(inventoryPlayer, i, left + ((i % 9) * 18), top + (i / 9) * 18));
         }
     }
 
