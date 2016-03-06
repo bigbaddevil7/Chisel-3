@@ -1,9 +1,7 @@
 package com.cricketcraft.chisel.api;
 
-import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 
 /**
@@ -25,7 +23,7 @@ public interface IChiselItem {
 	boolean canOpenGui(World world, EntityPlayer player, ItemStack chisel);
 
 	/**
-	 * Allows you to control if your item has chiseling modes.
+	 * Allows you to control the mode if your item has chiseling modes.
 	 *
 	 * @param chisel
 	 *            The {@link ItemStack} representing the chisel.
@@ -34,19 +32,10 @@ public interface IChiselItem {
 	boolean hasModes(ItemStack chisel);
 
 	/**
-	 * Allows you to control if your item can chisel this block in the world.
-	 *
-	 * @param world
-	 *            World object
-	 * @param player
-	 *            {@link EntityPlayer The player} holding the chisel.
-	 * @param pos
-	 * 			  The position the block is at.
-	 * @param block
-	 *            The {@link Block} being chiseled
-	 * @param metadata
-	 *            The blocks' metadata
-	 * @return True if the chiseling should take place. False otherwise.
-	 */
-	boolean canChiselBlock(World world, EntityPlayer player, BlockPos pos, Block block, int metadata);
+	 * Gets the current mode
+	 * @param chisel
+	 * @param name
+     * @return
+     */
+	IChiselMode getMode(ItemStack chisel, String name);
 }

@@ -2,17 +2,16 @@ package com.cricketcraft.chisel.item.chisel;
 
 import com.cricketcraft.chisel.Chisel;
 import com.cricketcraft.chisel.api.IChiselItem;
+import com.cricketcraft.chisel.api.IChiselMode;
 import com.cricketcraft.chisel.config.Configurations;
 import com.cricketcraft.chisel.init.ChiselTabs;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
-import net.minecraft.block.Block;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockPos;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
@@ -108,7 +107,7 @@ public class ItemChisel extends Item implements IChiselItem {
     }
 
     @Override
-    public boolean canChiselBlock(World world, EntityPlayer player, BlockPos pos, Block block, int metadata) {
-        return type == ChiselType.DIAMOND || type == ChiselType.OBSIDIAN || Configurations.ironChiselCanLeftClick;
+    public IChiselMode getMode(ItemStack chisel, String name) {
+        return ChiselController.getMode(chisel);
     }
 }

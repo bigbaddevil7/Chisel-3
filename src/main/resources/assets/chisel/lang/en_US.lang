@@ -1,5 +1,5 @@
 # GUI localizations
-gui.title=Chisel
+chisel.gui.title=Chisel
 gui.mode=TODO
 
 # Key localizations
@@ -112,33 +112,27 @@ tile.antiBlock.15.desc=Gray Anti Block
 
 #Diorite
 tile.diorite.name=Diorite
-tile.diorite.0.desc=Generates in your world
-tile.diorite.1.desc=Polished Diorite
-tile.diorite.2.desc=Diorite Pillar
-tile.diorite.3.desc=Diorite Bricks
-tile.diorite.4.desc=Ornate Diorite
-tile.diorite.5.desc=Prismatic Diorite
-tile.diorite.6.desc=Diorite Small Tiles
+tile.diorite.0.desc=Diorite Pillar
+tile.diorite.1.desc=Diorite Bricks
+tile.diorite.2.desc=Ornate Diorite
+tile.diorite.3.desc=Prismatic Diorite
+tile.diorite.4.desc=Diorite Small Tiles
 
 #Andesite
 tile.andesite.name=Andesite
-tile.andesite.0.desc=Generates in your world
-tile.andesite.1.desc=Polished Andesite
-tile.andesite.2.desc=Andesite Pillar
-tile.andesite.3.desc=Andesite Bricks
-tile.andesite.4.desc=Ornate Andesite
-tile.andesite.5.desc=Prismatic Andesite
-tile.andesite.6.desc=Andesite Small Tiles
+tile.andesite.0.desc=Andesite Pillar
+tile.andesite.1.desc=Andesite Bricks
+tile.andesite.2.desc=Ornate Andesite
+tile.andesite.3.desc=Prismatic Andesite
+tile.andesite.4.desc=Andesite Small Tiles
 
 #Granite
 tile.granite.name=Granite
-tile.granite.0.desc=Generates in your world
-tile.granite.1.desc=Polished Granite
-tile.granite.2.desc=Granite Pillar
-tile.granite.3.desc=Granite Bricks
-tile.granite.4.desc=Ornate Granite
-tile.granite.5.desc=Prismatic Granite
-tile.granite.6.desc=Granite Small Tiles
+tile.granite.0.desc=Granite Pillar
+tile.granite.1.desc=Granite Bricks
+tile.granite.2.desc=Ornate Granite
+tile.granite.3.desc=Prismatic Granite
+tile.granite.4.desc=Granite Small Tiles
 
 #Auto Chisel
 tile.autoChisel.name=Auto Chisel

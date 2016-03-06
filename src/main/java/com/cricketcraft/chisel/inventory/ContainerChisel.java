@@ -10,6 +10,9 @@ import net.minecraft.item.ItemStack;
 
 public class ContainerChisel extends Container {
 
+    public InventoryChiselSelection inventory;
+    public ItemStack chisel;
+
     /**
      * Slot IDs:
      * 0-59: Chisel GUI
@@ -22,10 +25,12 @@ public class ContainerChisel extends Container {
             addSlotToContainer(new SlotChiselSelection(chiselSelection, c, 62 + ((c % 10) * 18), 8 + ((c / 10) * 18)));
         }
 
-        addSlotToContainer(new SlotChiselInput(chiselSelection, InventoryChiselSelection.normalSlots, 24, 24));
+        addSlotToContainer(new SlotChiselInput(chiselSelection, 60, 24, 24));
 
         bindPlayerInventory(player);
     }
+
+
 
     private void bindPlayerInventory(InventoryPlayer inventoryPlayer) {
         int top = 120;
@@ -42,6 +47,12 @@ public class ContainerChisel extends Container {
     }
 
     @Override
+    public ItemStack slotClick(int slotId, int clickedButton, int mode, EntityPlayer playerIn) {
+
+        return super.slotClick(slotId, clickedButton, mode, playerIn);
+    }
+
+    @Override
     public boolean canInteractWith(EntityPlayer playerIn) {
         return true;
     }
@@ -55,7 +66,7 @@ public class ContainerChisel extends Container {
             ItemStack current = slot.getStack();
             previous = current.copy();
 
-            if(index < 62) {
+            if(index < 60) {
                 //From Chisel
                 if(!mergeItemStack(current, 62, 98, true))
                     return null;

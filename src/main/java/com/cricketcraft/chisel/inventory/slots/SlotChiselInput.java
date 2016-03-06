@@ -1,11 +1,22 @@
 package com.cricketcraft.chisel.inventory.slots;
 
-import net.minecraft.inventory.IInventory;
+import com.cricketcraft.chisel.inventory.InventoryChiselSelection;
 import net.minecraft.inventory.Slot;
 
 public class SlotChiselInput extends Slot {
 
-    public SlotChiselInput(IInventory inventoryIn, int index, int xPosition, int yPosition) {
-        super(inventoryIn, index, xPosition, yPosition);
+    private int id;
+    private InventoryChiselSelection selection;
+
+    public SlotChiselInput(InventoryChiselSelection inv, int slotID, int xPos, int yPos) {
+        super(inv, slotID, xPos, yPos);
+        selection = inv;
+        id = slotID;
+    }
+
+    @Override
+    public void onSlotChanged() {
+        super.onSlotChanged();
+        selection.updateItems(selection.getStackInSlot(id));
     }
 }

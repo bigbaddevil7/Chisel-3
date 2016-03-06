@@ -1,9 +1,11 @@
 package com.cricketcraft.chisel.client.gui;
 
 import com.cricketcraft.chisel.api.IChiselItem;
+import com.cricketcraft.chisel.api.IChiselMode;
 import com.cricketcraft.chisel.inventory.ContainerChisel;
 import com.cricketcraft.chisel.inventory.InventoryChiselSelection;
 import com.cricketcraft.chisel.inventory.slots.SlotChiselInput;
+import com.cricketcraft.chisel.item.chisel.ChiselController;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
@@ -24,6 +26,8 @@ public class GuiChisel extends GuiContainer {
 
 	public ContainerChisel container;
 
+	private IChiselMode currentMode;
+
 	public GuiChisel(InventoryPlayer iinventory, InventoryChiselSelection menu) {
 		super(new ContainerChisel(iinventory, menu));
 		player = iinventory.player;
@@ -43,12 +47,12 @@ public class GuiChisel extends GuiContainer {
 	public void initGui() {
 		super.initGui();
 
-//		if (showMode()) {
-//			int x = this.width / 2 - 120;
-//			int y = this.height / 2 - 6;
-//			buttonList.add(new GuiButton(0, x, y, 53, 20, ""));
-//			setButtonText();
-//		}
+		if (showMode()) {
+			int x = this.width / 2 - 120;
+			int y = this.height / 2 - 6;
+			buttonList.add(new GuiButton(0, x, y, 53, 20, ""));
+			setButtonText();
+		}
 	}
 
 	@Override
@@ -60,28 +64,28 @@ public class GuiChisel extends GuiContainer {
 		}
 	}
 
-//	private void setButtonText() {
-//		((GuiButton) buttonList.get(0)).displayString = I18n.format(container.inventory.getName() + ".mode.");//+ currentMode.name().toLowerCase());
-//	}
-//
-//	private boolean showMode() {
-//		if (container.chisel != null && container.chisel.getItem() instanceof IChiselItem) {
-//			return ((IChiselItem) container.chisel.getItem()).hasModes(container.chisel);
-//		}
-//		return false;
-//	}
+	private void setButtonText() {
+		(buttonList.get(0)).displayString = I18n.format(container.inventory.getName() + ".mode." + currentMode.name().toLowerCase());
+	}
+
+	private boolean showMode() {
+		if (container.chisel != null && container.chisel.getItem() instanceof IChiselItem) {
+			return ((IChiselItem) container.chisel.getItem()).hasModes(container.chisel);
+		}
+		return false;
+	}
 
 	@Override
 	protected void drawGuiContainerForegroundLayer(int j, int i) {
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 
 		String line = I18n.format(StatCollector.translateToLocal("chisel.gui.title"));
-		fontRendererObj.drawSplitString(line, 50 - fontRendererObj.getStringWidth(line) / 2, 60, 40, 0x404040);
+		fontRendererObj.drawSplitString(line, 32 - fontRendererObj.getStringWidth(line) / 2, 60, 40, 0x404040);
 
-//		if (showMode()) {
-//			line = I18n.format(StatCollector.translateToLocal("chisel.gui.mode"));
-//			fontRendererObj.drawString(line, fontRendererObj.getStringWidth(line) / 2 + 6, 85, 0x404040);
-//		}
+		if (showMode()) {
+			line = I18n.format(StatCollector.translateToLocal("chisel.gui.mode"));
+			fontRendererObj.drawString(line, fontRendererObj.getStringWidth(line) / 2 + 6, 85, 0x404040);
+		}
 	}
 
 	@Override
@@ -94,18 +98,15 @@ public class GuiChisel extends GuiContainer {
 		int i = (this.width - this.xSize) / 2;
 		int j = (this.height - this.ySize) / 2;
 		this.drawTexturedModalRect(i, j, 0, 0, this.xSize, this.ySize);
-
-		int x = (width - xSize) / 2;
-		int y = (height - ySize) / 2;
-
-		Slot main = (Slot) container.inventorySlots.get(0);
-		if (main.getStack() == null) {
-			//GuiAutoChisel.drawSlotOverlay(this, x + 14, y + 14, main, 0, ySize, 60);
-		}
 	}
 
 	@Override
 	protected void actionPerformed(GuiButton button) {
+		if(button.id == 0) {
+			if(container.chisel.getItem() instanceof IChiselItem) {
+				currentMode = ChiselController.getMode(container.chisel);
+			}
+		}
 	}
 
 	@Override

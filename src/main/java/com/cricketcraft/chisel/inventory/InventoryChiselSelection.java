@@ -1,5 +1,7 @@
 package com.cricketcraft.chisel.inventory;
 
+import com.cricketcraft.chisel.api.CarvingRegistry;
+import com.cricketcraft.chisel.api.ChiselRecipe;
 import com.cricketcraft.chisel.item.chisel.ItemChisel;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
@@ -11,7 +13,6 @@ public class InventoryChiselSelection implements IInventory {
     ItemStack chisel = null;
     public static final int normalSlots = 60;
     public int activeVariations = 0;
-    ContainerChisel container;
     ItemStack[] inventory;
 
     public InventoryChiselSelection(ItemStack c) {
@@ -20,8 +21,15 @@ public class InventoryChiselSelection implements IInventory {
         chisel = c;
     }
 
+    /**
+     * onInventorySlotRemoved
+     * @param slot
+     */
     public void onInventoryUpdate(int slot) {
-
+        if(slot == 60) {
+            //Just to make sure its cleared
+            updateItems(getStackInSlot(60));
+        }
     }
 
     @Override
@@ -65,7 +73,7 @@ public class InventoryChiselSelection implements IInventory {
 
     @Override
     public void setInventorySlotContents(int index, ItemStack stack) {
-
+        inventory[index] = stack;
     }
 
     @Override
@@ -95,7 +103,7 @@ public class InventoryChiselSelection implements IInventory {
 
     @Override
     public boolean isUseableByPlayer(EntityPlayer player) {
-        return false;
+        return true;
     }
 
     @Override
@@ -115,12 +123,22 @@ public class InventoryChiselSelection implements IInventory {
         }
     }
 
-    public ItemStack getStackInSpecialSlot() {
-        return inventory[normalSlots];
-    }
-
     public void updateItems(ItemStack stackInChiselSlot) {
-
+        if(stackInChiselSlot != null) {
+            if(CarvingRegistry.getRecipeFromItemStack(stackInChiselSlot) != null) {
+                ChiselRecipe recipe = CarvingRegistry.getRecipeFromItemStack(stackInChiselSlot);
+                if(recipe != null) {
+                    ItemStack[] stacks = recipe.getChiselResults();
+                    for (int c = 0; c < stacks.length; c++) {
+                        inventory[c] = recipe.getChiselResults()[c];
+                    }
+                }
+            }
+        } else {
+            for(int c = 0; c < 60; c++) {
+                inventory[c] = null;
+            }
+        }
     }
 
     @Override

@@ -10,6 +10,7 @@ import com.cricketcraft.chisel.init.ChiselRecipes;
 import com.cricketcraft.chisel.init.ChiselTabs;
 import com.cricketcraft.chisel.item.chisel.ChiselController;
 import com.cricketcraft.chisel.network.ChiselGuiHandler;
+import com.cricketcraft.chisel.network.PacketHandler;
 import com.cricketcraft.chisel.proxy.CommonProxy;
 import com.cricketcraft.chisel.world.GeneratorChisel;
 import net.minecraft.block.Block;
@@ -126,6 +127,7 @@ public class Chisel {
 		ChiselTabs.preInit();
 		ChiselController.INSTANCE.preInit();
 		CarvingRegistry.preInit();
+		PacketHandler.init();
 
 		proxy.preInit();
 	}
