@@ -27,7 +27,6 @@ public final class ChiselBlocks {
 			bookshelf,
 			carpet,
 			carpet_floor,
-			chest,
 			cobblestone,
 			concrete,
 			copper,
@@ -52,7 +51,6 @@ public final class ChiselBlocks {
 			holystone,
 			ice,
 			ice_pillar,
-			imperial,
 			industrial,
 			iron,
 			jungle,
@@ -75,7 +73,6 @@ public final class ChiselBlocks {
 			paperwall,
 			paperwall_block,
 			purpled_fantasy,
-			rebel,
 			redstone,
 			road_line,
 			runic_voidstone,
@@ -146,7 +143,6 @@ public final class ChiselBlocks {
 		bookshelf = (BlockCarvable) registerBlock("bookshelf", new ChiselBlockBookshelf());
 		carpet = (BlockCarvable) registerBlock("carpet_block", new ChiselBlockCarvableCarpet());
 		carpet_floor = (BlockCarvable) registerBlock("carpet_floor", new ChiselBlockCarpetFloor());
-		chest = (BlockCarvable) registerBlock("present", new ChiselBlockCarvableChest());
 		cobblestone = (BlockCarvable) registerBlock("cobblestone", new ChiselBlockCobblestone());
 		concrete = (BlockCarvable) registerBlock("concrete", new ChiselBlockConcrete());
 		copper = (BlockCarvable) registerBlock("copperblock", new ChiselBlockCopper());
@@ -172,7 +168,6 @@ public final class ChiselBlocks {
 		holystone = (BlockCarvable) registerBlock("holystone", new ChiselBlockHolystone());
 		ice = (BlockCarvable) registerBlock("ice", new ChiselBlockIce());
 		ice_pillar = (BlockCarvable) registerBlock("icePillar", new ChiselBlockIcePillar());
-		imperial = (BlockCarvable) registerBlock("imperial", new ChiselBlockImperial());
 		industrial = (BlockCarvable) registerBlock("industrial", new ChiselBlockIndustrial());
 		iron = (BlockCarvable) registerBlock("iron_block", new ChiselBlockIron());
 		iron_bars = (BlockCarvablePane) registerBlock("iron_bars", new ChiselBlockIronBars());
@@ -198,7 +193,6 @@ public final class ChiselBlocks {
 		paperwall_block = (BlockCarvable) registerBlock("paperwall_block", new ChiselBlockPaperWall());
 		pumpkin = registerBlock("pumpkin", ItemCarvablePumpkin.class, new ChiselBlockPumpkin());
 		purpled_fantasy = (BlockCarvable) registerBlock("fantasy", new ChiselBlockFantasyPurple());
-		rebel = (BlockCarvable) registerBlock("rebel", new ChiselBlockRebel());
 		redstone = (BlockCarvable) registerBlock("redstone_block", new ChiselBlockRedstone());
 		road_line = (BlockCarvable) registerBlock("road_line", new ChiselBlockRoadline());
 		runic_voidstone = (BlockCarvable) registerBlock("runic_voidstone", new ChiselBlockRunicVoidstone());

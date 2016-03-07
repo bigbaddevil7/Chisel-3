@@ -43,7 +43,6 @@ public class CarvingRegistry {
         addRecipeForPropVariant(bookshelf, BOOKSHELF_VARIANTS);
         addRecipeForPropVariant(carpet, CARPET_VARIANTS);
         addRecipeForPropVariant(carpet_floor, CARPET_FLOOR_VARIANTS);
-        addRecipeForPropVariant(chest, CHEST_VARIANTS);
         addRecipeForPropVariant(cobblestone, COBBLESTONE_VARIANTS);
         addRecipeForPropVariant(concrete, CONCRETE_VARIANTS);
         addRecipeForPropVariant(copper, COPPER_VARIANTS);
@@ -69,7 +68,6 @@ public class CarvingRegistry {
         addRecipeForPropVariant(holystone, HOLYSTONE_VARIANTS);
         addRecipeForPropVariant(ice, ICE_VARIANTS);
         addRecipeForPropVariant(ice_pillar, ICE_PILLAR_VARIANTS);
-        addRecipeForPropVariant(imperial, IMPERIAL_VARIANTS);
         addRecipeForPropVariant(industrial, INDUSTRIAL_VARIANTS);
         addRecipeForPropVariant(iron, IRON_VARIANTS);
         addRecipeForPropVariant(iron_bars, IRON_BARS_VARIANTS);
@@ -95,7 +93,6 @@ public class CarvingRegistry {
         addRecipeForPropVariant(paperwall_block, PAPERWALL_BLOCK_VARIANTS);
         addRecipeForPropVariant(pumpkin, PUMPKIN_VARIANTS);
         addRecipeForPropVariant(purpled_fantasy, PURPLED_FANTASY_VARIANTS);
-        addRecipeForPropVariant(rebel, REBEL_VARIANTS);
         addRecipeForPropVariant(redstone, REDSTONE_VARIANTS);
         addRecipeForPropVariant(road_line, ROAD_LINE_VARIANTS);
         addRecipeForPropVariant(runic_voidstone, RUNIC_VOIDSTONE_VARIANTS);

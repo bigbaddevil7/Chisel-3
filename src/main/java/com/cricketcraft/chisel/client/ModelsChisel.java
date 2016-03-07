@@ -30,7 +30,6 @@ public class ModelsChisel {
         registerBlockModels(bronze, BRONZE_VARIANTS);
         registerBlockModels(carpet, CARPET_VARIANTS);
         registerBlockModels(carpet_floor, CARPET_FLOOR_VARIANTS);
-        registerBlockModels(chest, CHEST_VARIANTS);
         registerBlockModels(cobblestone, COBBLESTONE_VARIANTS);
         registerBlockModels(concrete, CONCRETE_VARIANTS);
         registerBlockModels(copper, COPPER_VARIANTS);
@@ -56,7 +55,6 @@ public class ModelsChisel {
         registerBlockModels(holystone, HOLYSTONE_VARIANTS);
         registerBlockModels(ice, ICE_VARIANTS);
         registerBlockModels(ice_pillar, ICE_PILLAR_VARIANTS);
-        registerBlockModels(imperial, IMPERIAL_VARIANTS);
         registerBlockModels(industrial, INDUSTRIAL_VARIANTS);
         registerBlockModels(iron, IRON_VARIANTS);
         registerBlockModels(iron_bars, IRON_BARS_VARIANTS);
@@ -79,7 +77,6 @@ public class ModelsChisel {
         registerBlockModels(packed_ice_pillar, PACKED_ICE_PILLAR_VARIANTS);
         registerBlockModels(pumpkin, PUMPKIN_VARIANTS);
         registerBlockModels(purpled_fantasy, PURPLED_FANTASY_VARIANTS);
-        registerBlockModels(rebel, REBEL_VARIANTS);
         registerBlockModels(redstone, REDSTONE_VARIANTS);
         registerBlockModels(road_line, ROAD_LINE_VARIANTS);
         registerBlockModels(runic_voidstone, RUNIC_VOIDSTONE_VARIANTS);

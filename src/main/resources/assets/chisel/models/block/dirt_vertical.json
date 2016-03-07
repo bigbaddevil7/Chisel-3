@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "particle": "chisel:blocks/dirt/vert",
-    "all": "chisel:blocks/dirt/vert"
+    "particle": "chisel:blocks/dirt/vertical-a",
+    "all": "chisel:blocks/dirt/vertical-a"
   }
 }
