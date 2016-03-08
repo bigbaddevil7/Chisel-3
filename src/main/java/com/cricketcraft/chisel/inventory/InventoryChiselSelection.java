@@ -14,6 +14,7 @@ public class InventoryChiselSelection implements IInventory {
     public static final int normalSlots = 60;
     public int activeVariations = 0;
     ItemStack[] inventory;
+    String name = "container.chisel";
 
     public InventoryChiselSelection(ItemStack c) {
         super();
@@ -78,7 +79,7 @@ public class InventoryChiselSelection implements IInventory {
 
     @Override
     public String getName() {
-        return "container.chisel";
+        return name;
     }
 
     @Override

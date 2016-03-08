@@ -68,7 +68,9 @@ public class GuiChisel extends GuiContainer {
 	}
 
 	private void setButtonText() {
-		(buttonList.get(0)).displayString = I18n.format(container.inventory.getName() + ".mode." + currentMode.name().toLowerCase() != null ? currentMode.name().toLowerCase() : "default");
+		if (currentMode != null) {
+			(buttonList.get(0)).displayString = I18n.format("gui.mode." + currentMode.name().toLowerCase() != null ? currentMode.name().toLowerCase() : "default");
+		}
 	}
 
 	private boolean showMode() {
