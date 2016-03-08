@@ -28,6 +28,8 @@ public class ContainerChisel extends Container {
         addSlotToContainer(new SlotChiselInput(chiselSelection, 60, 24, 24));
 
         bindPlayerInventory(player);
+
+        chisel = player.getCurrentItem();
     }
 
 

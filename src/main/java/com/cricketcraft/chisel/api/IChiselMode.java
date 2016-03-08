@@ -22,4 +22,6 @@ public interface IChiselMode {
      * @return
      */
     String name();
+
+    IChiselMode next();
 }

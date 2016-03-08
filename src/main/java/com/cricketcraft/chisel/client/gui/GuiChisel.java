@@ -6,6 +6,7 @@ import com.cricketcraft.chisel.inventory.ContainerChisel;
 import com.cricketcraft.chisel.inventory.InventoryChiselSelection;
 import com.cricketcraft.chisel.inventory.slots.SlotChiselInput;
 import com.cricketcraft.chisel.item.chisel.ChiselController;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
@@ -16,6 +17,7 @@ import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StatCollector;
+import net.minecraftforge.fml.common.FMLLog;
 import org.lwjgl.opengl.GL11;
 
 public class GuiChisel extends GuiContainer {
@@ -52,6 +54,7 @@ public class GuiChisel extends GuiContainer {
 			int y = this.height / 2 - 6;
 			buttonList.add(new GuiButton(0, x, y, 53, 20, ""));
 			setButtonText();
+			buttonList.get(0).visible = true;
 		}
 	}
 
@@ -65,7 +68,7 @@ public class GuiChisel extends GuiContainer {
 	}
 
 	private void setButtonText() {
-		(buttonList.get(0)).displayString = I18n.format(container.inventory.getName() + ".mode." + currentMode.name().toLowerCase());
+		(buttonList.get(0)).displayString = I18n.format(container.inventory.getName() + ".mode." + currentMode.name().toLowerCase() != null ? currentMode.name().toLowerCase() : "default");
 	}
 
 	private boolean showMode() {
@@ -83,8 +86,7 @@ public class GuiChisel extends GuiContainer {
 		fontRendererObj.drawSplitString(line, 32 - fontRendererObj.getStringWidth(line) / 2, 60, 40, 0x404040);
 
 		if (showMode()) {
-			line = I18n.format(StatCollector.translateToLocal("chisel.gui.mode"));
-			fontRendererObj.drawString(line, fontRendererObj.getStringWidth(line) / 2 + 6, 85, 0x404040);
+			fontRendererObj.drawString(line, fontRendererObj.getStringWidth(line) / 2 - 4, 20, 0x404040);
 		}
 	}
 
@@ -103,8 +105,10 @@ public class GuiChisel extends GuiContainer {
 	@Override
 	protected void actionPerformed(GuiButton button) {
 		if(button.id == 0) {
+			button.playPressSound(Minecraft.getMinecraft().getSoundHandler());
 			if(container.chisel.getItem() instanceof IChiselItem) {
-				currentMode = ChiselController.getMode(container.chisel);
+				currentMode = ChiselController.getMode(container.chisel).next();
+				FMLLog.info(String.format("Current mode is %s", currentMode.name()));
 			}
 		}
 	}

@@ -112,6 +112,11 @@ public final class ChiselController {
                 ItemStack stack = new ItemStack(world.getBlockState(pos).getBlock(), 1, world.getBlockState(pos).getBlock().getMetaFromState(world.getBlockState(pos)));
                 chiselBlockInWorld(recipe, stack, pos, world, player.isSneaking());
             }
+
+            @Override
+            public IChiselMode next() {
+                return PANEL;
+            }
         },
         PANEL {
             @Override
@@ -134,6 +139,11 @@ public final class ChiselController {
                     }
                 }
             }
+
+            @Override
+            public IChiselMode next() {
+                return COLUMN;
+            }
         },
         COLUMN {
             @Override
@@ -155,6 +165,11 @@ public final class ChiselController {
                         }
                     }
                 }
+            }
+
+            @Override
+            public IChiselMode next() {
+                return ROW;
             }
         },
         ROW {
@@ -181,6 +196,11 @@ public final class ChiselController {
                         }
                     }
                 }
+            }
+
+            @Override
+            public IChiselMode next() {
+                return SINGLE;
             }
         }
     }
