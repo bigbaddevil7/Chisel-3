@@ -26,8 +26,13 @@ public class ChiselBlockCarvableGlass extends BlockCarvable implements IChiselBl
     }
 
     @Override
+    public boolean isFullBlock() {
+        return false;
+    }
+
+    @Override
     public EnumWorldBlockLayer getBlockLayer() {
-        return EnumWorldBlockLayer.CUTOUT_MIPPED;
+        return EnumWorldBlockLayer.CUTOUT;
     }
 
     @Override

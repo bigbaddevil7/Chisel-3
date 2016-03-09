@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "particle": "chisel:blocks/temple/smalltile",
+    "particle": "chisel:blocks/temple/smalltiles",
     "all": "chisel:blocks/temple/smalltiles"
   }
 }

@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "particle": "chisel:blocks/glassdyed/lightgray-buble",
+    "particle": "chisel:blocks/glassdyed/lightgray-bubble",
     "all": "chisel:blocks/glassdyed/lightgray-bubble"
   }
 }
