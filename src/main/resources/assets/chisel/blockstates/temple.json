@@ -9,9 +9,44 @@
     "variant=temple_plate": {
       "model": "chisel:temple_plate"
     },
-    "variant=temple_plate_cracked": {
-      "model": "chisel:temple_plate_cracked"
-    },
+    "variant=temple_plate_cracked": [
+      {
+        "model": "chisel:temple_plate_cracked_0",
+        "weight": 11
+      },
+      {
+        "model": "chisel:temple_plate_cracked_1",
+        "weight": 11
+      },
+      {
+        "model": "chisel:temple_plate_cracked_2",
+        "weight": 11
+      },
+      {
+        "model": "chisel:temple_plate_cracked_3",
+        "weight": 11
+      },
+      {
+        "model": "chisel:temple_plate_cracked_4",
+        "weight": 11
+      },
+      {
+        "model": "chisel:temple_plate_cracked_5",
+        "weight": 11
+      },
+      {
+        "model": "chisel:temple_plate_cracked_6",
+        "weight": 11
+      },
+      {
+        "model": "chisel:temple_plate_cracked_7",
+        "weight": 11
+      },
+      {
+        "model": "chisel:temple_plate_cracked_8",
+        "weight": 11
+      }
+    ],
     "variant=temple_bricks": {
       "model": "chisel:temple_bricks"
     },

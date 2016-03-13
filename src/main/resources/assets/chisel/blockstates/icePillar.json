@@ -1,7 +1,7 @@
 {
   "variants": {
     "variant=ice_pillar_plain_plain": {
-      "model": "chisel:ice_plain_plain"
+      "model": "chisel:ice_pillar_plain_plain"
     },
     "variant=ice_pillar_plain_greek": {
       "model": "chisel:ice_pillar_plain_greek"

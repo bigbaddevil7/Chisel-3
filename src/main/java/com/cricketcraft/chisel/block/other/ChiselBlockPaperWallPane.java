@@ -1,6 +1,6 @@
 package com.cricketcraft.chisel.block.other;
 
-import com.cricketcraft.chisel.block.BlockCarvable;
+import com.cricketcraft.chisel.block.BlockCarvablePane;
 import com.cricketcraft.chisel.init.ChiselProperties;
 import com.cricketcraft.chisel.init.ChiselTabs;
 import com.cricketcraft.chisel.util.BlockVariant;
@@ -11,17 +11,22 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.List;
 
-public class ChiselBlockPaperWallPane extends BlockCarvable implements IChiselBlock {
+public class ChiselBlockPaperWallPane extends BlockCarvablePane implements IChiselBlock {
     public ChiselBlockPaperWallPane() {
         super(Material.wood);
         setCreativeTab(ChiselTabs.tabOtherChiselBlocks);
-        //TODO: Make this function like a pane
         setDefaultState(this.getBlockState().getBaseState().withProperty(ChiselProperties.PAPERWALL_VARIANTS, ChiselProperties.PAPERWALL_VARIANTS.fromMeta(0)));
+    }
+
+    @Override
+    public EnumWorldBlockLayer getBlockLayer() {
+        return EnumWorldBlockLayer.TRANSLUCENT;
     }
 
     @Override
@@ -50,6 +55,6 @@ public class ChiselBlockPaperWallPane extends BlockCarvable implements IChiselBl
 
     @Override
     protected BlockState createBlockState() {
-        return new BlockState(this, ChiselProperties.PAPERWALL_VARIANTS);
+        return new BlockState(this, ChiselProperties.PAPERWALL_VARIANTS, NORTH, SOUTH, EAST, WEST);
     }
 }

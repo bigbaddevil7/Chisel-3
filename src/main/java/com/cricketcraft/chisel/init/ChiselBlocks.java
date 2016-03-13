@@ -70,7 +70,6 @@ public final class ChiselBlocks {
 			obsidian,
 			packed_ice,
 			packed_ice_pillar,
-			paperwall,
 			paperwall_block,
 			purpled_fantasy,
 			redstone,
@@ -113,6 +112,7 @@ public final class ChiselBlocks {
 			woolen_clay;
 	public static BlockCarvablePane glass_pane,
 			iron_bars,
+			paperwall,
 			stained_glass_pane_black,
 			stained_glass_pane_red,
 			stained_glass_pane_green,
@@ -189,7 +189,7 @@ public final class ChiselBlocks {
 		obsidian = (BlockCarvable) registerBlock("obsidian", new ChiselBlockObsidian());
 		packed_ice = (BlockCarvable) registerBlock("packed_ice", new ChiselBlockPackedIce());
 		packed_ice_pillar = (BlockCarvable) registerBlock("packed_ice_pillar", new ChiselBlockPackedIcePillar());
-		paperwall = (BlockCarvable) registerBlock("paperwall", new ChiselBlockPaperWallPane());
+		paperwall = (BlockCarvablePane) registerBlock("paperwall", new ChiselBlockPaperWallPane());
 		paperwall_block = (BlockCarvable) registerBlock("paperwall_block", new ChiselBlockPaperWall());
 		pumpkin = registerBlock("pumpkin", ItemCarvablePumpkin.class, new ChiselBlockPumpkin());
 		purpled_fantasy = (BlockCarvable) registerBlock("fantasy", new ChiselBlockFantasyPurple());

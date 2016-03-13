@@ -1,5 +1,5 @@
 {
-  "parent": "chisel:block/temple_plate_cracked",
+  "parent": "chisel:block/lead_shipping",
   "display": {
     "thirdperson": {
       "rotation": [
