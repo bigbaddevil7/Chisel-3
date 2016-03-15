@@ -12,6 +12,9 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -19,12 +22,18 @@ import java.util.List;
 
 public class ChiselBlockCarpetFloor extends BlockCarvable implements IChiselBlock {
 
+    protected static final AxisAlignedBB CARPET_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.0625D, 1.0D);
+
     public ChiselBlockCarpetFloor() {
         super(Material.cloth);
-        setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.0625F, 1.0F);
         setTickRandomly(true);
         setCreativeTab(ChiselTabs.tabOtherChiselBlocks);
         setDefaultState(this.getBlockState().getBaseState().withProperty(ChiselProperties.CARPET_FLOOR_VARIANTS, ChiselProperties.CARPET_FLOOR_VARIANTS.fromMeta(0)));
+    }
+
+    @Override
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+        return CARPET_AABB;
     }
 
     @Override

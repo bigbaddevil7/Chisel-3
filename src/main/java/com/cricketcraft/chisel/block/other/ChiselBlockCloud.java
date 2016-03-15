@@ -7,6 +7,7 @@ import com.cricketcraft.chisel.init.ChiselTabs;
 import com.cricketcraft.chisel.util.BlockVariant;
 import com.cricketcraft.chisel.util.IChiselBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
@@ -14,9 +15,9 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -32,7 +33,7 @@ public class ChiselBlockCloud extends BlockCarvable implements IChiselBlock {
         this.setHardness(0.2F);
         this.setCreativeTab(ChiselTabs.tabOtherChiselBlocks);
         this.setLightOpacity(3);
-        this.setStepSound(Block.soundTypeCloth);
+        this.setStepSound(SoundType.CLOTH);
         this.useNeighborBrightness = true;
         this.setDefaultState(this.getBlockState().getBaseState().withProperty(ChiselProperties.CLOUD_VARIANTS, BlockVariants.CLOUD_NORMAL));
     }
@@ -49,12 +50,12 @@ public class ChiselBlockCloud extends BlockCarvable implements IChiselBlock {
     }
 
     @Override
-    public boolean isOpaqueCube() {
+    public boolean isOpaqueCube(IBlockState state) {
         return false;
     }
 
     @Override
-    public boolean isFullCube() {
+    public boolean isFullCube(IBlockState state) {
         return false;
     }
 
@@ -65,18 +66,24 @@ public class ChiselBlockCloud extends BlockCarvable implements IChiselBlock {
 
     @SideOnly(Side.CLIENT)
     @Override
-    public boolean shouldSideBeRendered(IBlockAccess world, BlockPos pos, EnumFacing side) {
+    public boolean shouldSideBeRendered(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing side) {
         Block block = world.getBlockState(pos).getBlock();
         if (block == this) {
             return false;
         }
 
-        return super.shouldSideBeRendered(world, pos, side);
+        return super.shouldSideBeRendered(state, world, pos, side);
+    }
+
+    @SideOnly(Side.CLIENT)
+    @Override
+    public AxisAlignedBB getCollisionBoundingBox(IBlockState state, World world, BlockPos pos) {
+        return state.getBoundingBox(world, pos).offset(pos);
     }
 
     @Override
-    public AxisAlignedBB getCollisionBoundingBox(World world, BlockPos pos, IBlockState state) {
-        return AxisAlignedBB.fromBounds(pos.getX() + 0.2, pos.getY(), pos.getZ() + 0.2, pos.getX() + 0.8, pos.getY() + 0.2, pos.getZ() + 0.8);
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+        return new AxisAlignedBB(pos.getX() + 0.2, pos.getY(), pos.getZ() + 0.2, pos.getX() + 0.8, pos.getY() + 0.2, pos.getZ() + 0.8);
     }
 
     @Override

@@ -49,12 +49,6 @@ public class ContainerChisel extends Container {
     }
 
     @Override
-    public ItemStack slotClick(int slotId, int clickedButton, int mode, EntityPlayer playerIn) {
-
-        return super.slotClick(slotId, clickedButton, mode, playerIn);
-    }
-
-    @Override
     public boolean canInteractWith(EntityPlayer playerIn) {
         return true;
     }

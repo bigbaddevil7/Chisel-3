@@ -1,11 +1,13 @@
 package com.cricketcraft.chisel.entity;
 
-import com.cricketcraft.chisel.Chisel;
+import com.cricketcraft.chisel.init.ChiselSound;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
@@ -56,7 +58,7 @@ public class EntityBallOMoss extends EntityThrowable {
 		setDead();
 
 		if (worldObj.isRemote) {
-			worldObj.playSound(x, y, z, Chisel.MOD_ID + ":random.squash", 1.0f, 1.0f, false);
+			worldObj.playSound((EntityPlayer) null, x, y, z, ChiselSound.ballomoss, SoundCategory.NEUTRAL, 1.0f, 1.0f);
 
 			return;
 		}

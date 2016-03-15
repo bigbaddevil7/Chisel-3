@@ -3,7 +3,12 @@ package com.cricketcraft.chisel.item;
 import com.cricketcraft.chisel.entity.EntitySmashingRock;
 import com.cricketcraft.chisel.init.ChiselTabs;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.EnumActionResult;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 
 public class ItemSmashingRock extends BaseItem {
@@ -13,18 +18,18 @@ public class ItemSmashingRock extends BaseItem {
 	}
 
 	@Override
-	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer) {
-		if (!par3EntityPlayer.capabilities.isCreativeMode) {
-			--par1ItemStack.stackSize;
+	public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World world, EntityPlayer player, EnumHand hand) {
+		if (!player.capabilities.isCreativeMode) {
+			--stack.stackSize;
 		}
 
-		if (par2World.isRemote)
-			par2World.playSoundAtEntity(par3EntityPlayer, "random.bow", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
+		if (world.isRemote)
+			world.playSound(player, player.posX, player.posY, player.posZ, SoundEvents.entity_arrow_shoot, SoundCategory.NEUTRAL, 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 
-		if (!par2World.isRemote) {
-			par2World.spawnEntityInWorld(new EntitySmashingRock(par2World, par3EntityPlayer));
+		if (!world.isRemote) {
+			world.spawnEntityInWorld(new EntitySmashingRock(world, player));
 		}
 
-		return par1ItemStack;
+		return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, stack);
 	}
 }

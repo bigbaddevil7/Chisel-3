@@ -22,9 +22,9 @@ public class EntityBallOMossFX extends EntityFX {
 		if (rand.nextInt(10) == 0)
 			particleMaxAge += rand.nextDouble() * 40.0;
 
-		motionX = (rand.nextDouble() - 0.5) * 0.7;
-		motionY = (rand.nextDouble() * 0.5) * 0.7;
-		motionZ = (rand.nextDouble() - 0.5) * 0.7;
+		xSpeed = (rand.nextDouble() - 0.5) * 0.7;
+		ySpeed = (rand.nextDouble() * 0.5) * 0.7;
+		zSpeed = (rand.nextDouble() - 0.5) * 0.7;
 		particleGravity = 2.0f;
 
 		this.setParticleTexture(Minecraft.getMinecraft().getRenderItem().getItemModelMesher().getParticleIcon(ChiselItems.ballOMoss));

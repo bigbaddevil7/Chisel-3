@@ -4,7 +4,6 @@ import com.cricketcraft.chisel.init.ChiselProperties;
 import com.cricketcraft.chisel.init.ChiselTabs;
 import com.cricketcraft.chisel.util.BlockVariant;
 import com.cricketcraft.chisel.util.IChiselBlock;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockTorch;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
@@ -53,12 +52,12 @@ public class ChiselBlockCarvableTorch extends BlockTorch implements IChiselBlock
         return flag && worldIn.isSideSolid(blockpos, facing, true) || facing.equals(EnumFacing.UP) && canPlaceOn(worldIn, blockpos);
     }
 
-    private boolean canPlaceOn(World worldIn, BlockPos pos) {
-        if (World.doesBlockHaveSolidTopSurface(worldIn, pos)) {
+    private boolean canPlaceOn(World world, BlockPos pos) {
+        IBlockState state = world.getBlockState(pos);
+        if (state.isSideSolid(world, pos, EnumFacing.UP)) {
             return true;
         } else {
-            Block block = worldIn.getBlockState(pos).getBlock();
-            return block.canPlaceTorchOnTop(worldIn, pos);
+            return state.getBlock().canPlaceTorchOnTop(state, world, pos);
         }
     }
 

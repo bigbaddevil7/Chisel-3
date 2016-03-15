@@ -13,7 +13,6 @@ import com.cricketcraft.chisel.network.ChiselGuiHandler;
 import com.cricketcraft.chisel.network.PacketHandler;
 import com.cricketcraft.chisel.proxy.CommonProxy;
 import com.cricketcraft.chisel.world.GeneratorChisel;
-import net.minecraft.block.SoundType;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -40,59 +39,6 @@ public class Chisel {
 	public static final String MOD_NAME = "Chisel 3";
 	public static final String VERSION = "@VERSION@";
 	public static final Logger logger = LogManager.getLogger(MOD_NAME);
-
-	public static final SoundType soundTypeHolyStone = new SoundType("chisel:step.holystone", 1, 1) {
-		@Override
-		public SoundType getBreakSound() {
-			return "chisel:dig.holystone";
-		}
-
-		@Override
-		public SoundType getStepSound() {
-			return "chisel:step.holystone";
-		}
-
-		@Override
-		public SoundType getPlaceSound() {
-			return getBreakSound();
-		}
-	};
-
-	public static final SoundType soundTypeGrimstone = new SoundType("chisel:step.grimstone", 1, 1) {
-		@Override
-		public SoundType getBreakSound() {
-			return "chisel:dig.grimstone";
-		}
-
-		@Override
-		public SoundType getStepSound() {
-			return "chisel:step.grimstone";
-		}
-
-		@Override
-		public SoundType getPlaceSound() {
-			return getBreakSound();
-		}
-	};
-
-	public static final SoundType soundTypeChiselMetal = new SoundType("chisel:step.metal", 1, 1) {
-		@Override
-		public SoundType getBreakSound() {
-			return "chisel:dig.metal";
-		}
-
-		@Override
-		public SoundType getStepSound() {
-			return "chisel:step.metal";
-		}
-
-		@Override
-		public SoundType getPlaceSound() {
-			return getBreakSound();
-		}
-	};
-
-	public static final SoundType soundTypeTemple = new SoundType("chisel:step.templeblock", 1, 1);
 
 	@Instance(MOD_ID)
 	public static Chisel instance;

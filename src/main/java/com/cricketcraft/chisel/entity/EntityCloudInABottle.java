@@ -4,6 +4,7 @@ import com.cricketcraft.chisel.init.ChiselBlocks;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -24,7 +25,7 @@ public class EntityCloudInABottle extends EntityThrowable {
 	}
 
 	@Override
-	protected void onImpact(MovingObjectPosition mop) {
+	protected void onImpact(RayTraceResult mop) {
 		if (worldObj.isRemote) {
 			return;
 		}
@@ -99,7 +100,7 @@ public class EntityCloudInABottle extends EntityThrowable {
 						for (int e = nz; e < nz + random.nextInt(4) + 1; e++) {
 							BlockPos positionToLook = new BlockPos(c, d, e);
 
-							if (world.getBlockState(positionToLook).getBlock().isAir(world, positionToLook) && Math.abs(c - nx) + Math.abs(d - ny) + Math.abs(e - nz) < 4 * 1 + random.nextInt(2)) {
+							if (world.getBlockState(positionToLook).getBlock().isAir(world.getBlockState(positionToLook), world, positionToLook) && Math.abs(c - nx) + Math.abs(d - ny) + Math.abs(e - nz) < 4 * 1 + random.nextInt(2)) {
 								world.setBlockState(positionToLook, ChiselBlocks.cloud.getDefaultState());
 								count++;
 							}

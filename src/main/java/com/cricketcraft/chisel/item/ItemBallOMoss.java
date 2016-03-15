@@ -3,10 +3,12 @@ package com.cricketcraft.chisel.item;
 import com.cricketcraft.chisel.entity.EntityBallOMoss;
 import com.cricketcraft.chisel.init.ChiselTabs;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 
 public class ItemBallOMoss extends BaseItem {
@@ -22,7 +24,7 @@ public class ItemBallOMoss extends BaseItem {
 		}
 
 		if (world.isRemote)
-			world.playSoundAtEntity(player, "random.bow", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
+			world.playSound(player, player.posX, player.posY, player.posZ, SoundEvents.entity_arrow_shoot, SoundCategory.NEUTRAL, 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 
 		if (!world.isRemote) {
 			world.spawnEntityInWorld(new EntityBallOMoss(world, player));

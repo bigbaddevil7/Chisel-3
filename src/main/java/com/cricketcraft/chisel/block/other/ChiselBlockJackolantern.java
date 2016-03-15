@@ -5,8 +5,8 @@ import com.cricketcraft.chisel.init.ChiselProperties;
 import com.cricketcraft.chisel.init.ChiselTabs;
 import com.cricketcraft.chisel.util.BlockVariant;
 import com.cricketcraft.chisel.util.IChiselBlock;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
@@ -26,7 +26,7 @@ public class ChiselBlockJackolantern extends BlockDirectional implements IChisel
     public ChiselBlockJackolantern() {
         super(Material.gourd);
         this.setTickRandomly(true);
-        this.setStepSound(Block.soundTypeWood);
+        this.setStepSound(SoundType.WOOD);
         setCreativeTab(ChiselTabs.tabOtherChiselBlocks);
         setLightLevel(10.0F);
         this.setDefaultState(this.getBlockState().getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(ChiselProperties.LITPUMPKIN_VARIANTS, BlockVariants.LITPUMPKIN_0));

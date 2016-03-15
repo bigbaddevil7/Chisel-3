@@ -4,6 +4,7 @@ import com.cricketcraft.chisel.api.CarvingRegistry;
 import com.cricketcraft.chisel.api.ICarvingRecipe;
 import com.cricketcraft.chisel.api.IChiselItem;
 import com.cricketcraft.chisel.api.IChiselMode;
+import com.cricketcraft.chisel.init.ChiselSound;
 import com.google.common.base.Strings;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -12,6 +13,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
@@ -36,7 +38,7 @@ public final class ChiselController {
     @SubscribeEvent
     public void onInteract(PlayerInteractEvent event) {
         EntityPlayer player = event.entityPlayer;
-        ItemStack held = player.getCurrentEquippedItem();
+        ItemStack held = player.getActiveItemStack();
 
         if (held == null || !(held.getItem() instanceof IChiselItem)) {
             return;
@@ -63,7 +65,7 @@ public final class ChiselController {
     public static void chiselBlockInWorld(ICarvingRecipe recipe, ItemStack stack, BlockPos pos, World world, boolean isShifting) {
         int var = 0;
         for(int c = 0; c < recipe.getChiselResults().length; c++) {
-            if(recipe.getChiselResults()[c].getIsItemStackEqual(stack)) {
+            if(recipe.getChiselResults()[c].isItemEqual(stack)) {
                 var = c;
             }
         }
@@ -79,10 +81,10 @@ public final class ChiselController {
         Block block = Block.getBlockFromItem(out.getItem());
         IBlockState state = block.getStateFromMeta(out.getItemDamage());
 
-        if(block.getMaterial() == Material.wood)
-            world.playSoundEffect(pos.getX(), pos.getY(), pos.getZ(), "chisel:chisel.wood", 1, 1);
+        if(block.getMaterial(state) == Material.wood)
+            world.playSound((EntityPlayer) null, pos.getX(), pos.getY(), pos.getZ(), ChiselSound.chiselWood, SoundCategory.NEUTRAL, 1, 1);
         else
-            world.playSoundEffect(pos.getX(), pos.getY(), pos.getZ(), "chisel:chisel.fallback", 1, 1);
+            world.playSound((EntityPlayer) null, pos.getX(), pos.getY(), pos.getZ(), ChiselSound.chiselFallback, SoundCategory.NEUTRAL, 1, 1);
 
         world.setBlockState(pos, state);
     }

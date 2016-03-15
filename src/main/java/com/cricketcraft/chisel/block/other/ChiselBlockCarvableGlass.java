@@ -26,7 +26,7 @@ public class ChiselBlockCarvableGlass extends BlockCarvable implements IChiselBl
     }
 
     @Override
-    public boolean isFullBlock() {
+    public boolean isFullBlock(IBlockState state) {
         return false;
     }
 
