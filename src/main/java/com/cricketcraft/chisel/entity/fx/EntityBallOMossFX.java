@@ -3,7 +3,7 @@ package com.cricketcraft.chisel.entity.fx;
 import com.cricketcraft.chisel.init.ChiselItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.EntityFX;
-import net.minecraft.client.renderer.WorldRenderer;
+import net.minecraft.client.renderer.VertexBuffer;
 import net.minecraft.entity.Entity;
 import net.minecraft.world.World;
 import org.lwjgl.opengl.GL11;
@@ -27,7 +27,7 @@ public class EntityBallOMossFX extends EntityFX {
 		motionZ = (rand.nextDouble() - 0.5) * 0.7;
 		particleGravity = 2.0f;
 
-		this.setParticleIcon(Minecraft.getMinecraft().getRenderItem().getItemModelMesher().getParticleIcon(ChiselItems.ballOMoss));
+		this.setParticleTexture(Minecraft.getMinecraft().getRenderItem().getItemModelMesher().getParticleIcon(ChiselItems.ballOMoss));
 	}
 
 	@Override
@@ -36,7 +36,7 @@ public class EntityBallOMossFX extends EntityFX {
 	}
 
 	@Override
-	public void renderParticle(WorldRenderer renderer, Entity entity, float partialTicks, float rotX, float rotXZ, float rotZ, float rotYZ, float rotXY) {
+	public void renderParticle(VertexBuffer renderer, Entity entity, float partialTicks, float rotX, float rotXZ, float rotZ, float rotYZ, float rotXY) {
 		GL11.glDepthMask(false);
 		GL11.glEnable(3042);
 		GL11.glBlendFunc(770, 771);

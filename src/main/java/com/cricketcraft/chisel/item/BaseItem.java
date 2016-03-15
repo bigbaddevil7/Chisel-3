@@ -3,7 +3,7 @@ package com.cricketcraft.chisel.item;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.StatCollector;
+import net.minecraft.util.text.translation.I18n;
 
 import java.util.Enumeration;
 import java.util.List;
@@ -18,7 +18,7 @@ public class BaseItem extends Item {
 
 	public static void getWrappedDesc(List<String> list, ItemStack stack) {
 		String[] wrappedDesc;
-		wrappedDesc = wrap(StatCollector.translateToLocal(stack.getUnlocalizedName() + ".desc"), 35);
+		wrappedDesc = wrap(I18n.translateToLocal(stack.getUnlocalizedName() + ".desc"), 35);
 		for (String element : wrappedDesc) {
 			list.add(element.trim());
 		}

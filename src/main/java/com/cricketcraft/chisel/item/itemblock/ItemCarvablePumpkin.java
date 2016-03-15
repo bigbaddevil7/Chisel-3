@@ -2,6 +2,7 @@ package com.cricketcraft.chisel.item.itemblock;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
@@ -13,7 +14,7 @@ public class ItemCarvablePumpkin extends ItemBlock {
     }
 
     @Override
-    public boolean isValidArmor(ItemStack itemStack, int armorType, Entity entity) {
+    public boolean isValidArmor(ItemStack stack, EntityEquipmentSlot armorType, Entity entity) {
         return true;
     }
 

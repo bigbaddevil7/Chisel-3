@@ -16,7 +16,6 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.StatCollector;
 import net.minecraftforge.fml.common.FMLLog;
 import org.lwjgl.opengl.GL11;
 
@@ -61,7 +60,7 @@ public class GuiChisel extends GuiContainer {
 	@Override
 	public void updateScreen() {
 		super.updateScreen();
-		ItemStack held = player.getCurrentEquippedItem();
+		ItemStack held = player.getActiveItemStack();
 		if (held == null || !(held.getItem() instanceof IChiselItem)) {
 			mc.displayGuiScreen(null);
 		}
@@ -84,7 +83,7 @@ public class GuiChisel extends GuiContainer {
 	protected void drawGuiContainerForegroundLayer(int j, int i) {
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 
-		String line = I18n.format(StatCollector.translateToLocal("chisel.gui.title"));
+		String line = I18n.format(net.minecraft.util.text.translation.I18n.translateToLocal("chisel.gui.title"));
 		fontRendererObj.drawSplitString(line, 32 - fontRendererObj.getStringWidth(line) / 2, 60, 40, 0x404040);
 
 		if (showMode()) {

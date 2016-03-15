@@ -7,7 +7,7 @@ import com.cricketcraft.chisel.init.ChiselTabs;
 import com.cricketcraft.chisel.util.BlockVariant;
 import com.cricketcraft.chisel.util.IChiselBlock;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.BlockState;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -52,7 +52,7 @@ public class ChiselBlockLimestone extends BlockCarvable implements IChiselBlock 
     }
 
     @Override
-    protected BlockState createBlockState() {
-        return new BlockState(this, ChiselProperties.LIMESTONE_VARIANTS);
+    protected BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, ChiselProperties.LIMESTONE_VARIANTS);
     }
 }

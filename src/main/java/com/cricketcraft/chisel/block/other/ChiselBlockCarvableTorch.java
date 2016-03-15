@@ -6,13 +6,13 @@ import com.cricketcraft.chisel.util.BlockVariant;
 import com.cricketcraft.chisel.util.IChiselBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockTorch;
-import net.minecraft.block.state.BlockState;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
@@ -118,7 +118,7 @@ public class ChiselBlockCarvableTorch extends BlockTorch implements IChiselBlock
     }
 
     @Override
-    protected BlockState createBlockState() {
-        return new BlockState(this, ChiselProperties.TORCH_VARIANTS, FACING);
+    protected BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, ChiselProperties.TORCH_VARIANTS, FACING);
     }
 }

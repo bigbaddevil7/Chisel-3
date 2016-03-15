@@ -1,6 +1,7 @@
 buildscript {
     repositories {
         mavenCentral()
+        mavenLocal()
         maven {
             name = "forge"
             url = "http://files.minecraftforge.net/maven"
@@ -9,10 +10,13 @@ buildscript {
             name = "sonatype"
             url = "https://oss.sonatype.org/content/repositories/snapshots/"
         }
+        maven {
+            name = "modmuss50"
+            url = "http://maven.modmuss50.me/"
+        }
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT'
-        classpath 'org.ajoberstar:gradle-git:0.10.1'
     }
 
 }
@@ -21,22 +25,13 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'maven-publish'
 //apply plugin: 'curseforge'
 
-import org.ajoberstar.grgit.Grgit
-
-def repo = Grgit.open(project.file('.'))
-project.ext.gitHash = repo.log().find().abbreviatedId
-
 boolean dev = project.hasProperty('chisel_dev') && project.chisel_dev.equalsIgnoreCase('true')
 
-ext.buildnumber = 0
-project.buildnumber = System.getenv('BUILD_NUMBER') != null ? System.getenv('BUILD_NUMBER') : project.ext.gitHash
-
-version = "${mod_version}.${buildnumber}"
+version = "${mod_version}"
 group = "com.cricketcraft.chisel" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-//archivesBaseName = dev ? "Chisel2_DEV" : "Chisel2"
 
 minecraft {
-    version = "${minecraft_version}-${forge_version}"
+    version = "${minecraft_version}-${forge_version}-${minecraft_version}"
     mappings = "${forge_mappings}"
     runDir = "run"
 
@@ -53,6 +48,11 @@ repositories {
     maven {
         name 'Prof Mobius Repo'
         url "http://mobiusstrip.eu/maven"
+    }
+
+    maven {
+        name = "Modmuss50"
+        url = "http://maven.modmuss50.me/"
     }
 }
 

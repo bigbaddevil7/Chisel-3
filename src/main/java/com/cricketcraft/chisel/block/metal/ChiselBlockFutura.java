@@ -3,12 +3,12 @@ package com.cricketcraft.chisel.block.metal;
 import com.cricketcraft.chisel.init.ChiselProperties;
 import com.cricketcraft.chisel.util.BlockVariant;
 import com.cricketcraft.chisel.util.IChiselBlock;
-import net.minecraft.block.state.BlockState;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumWorldBlockLayer;
+import net.minecraft.util.BlockRenderLayer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -22,8 +22,8 @@ public class ChiselBlockFutura extends BlockCarvableMetal implements IChiselBloc
     }
 
     @Override
-    public EnumWorldBlockLayer getBlockLayer() {
-        return EnumWorldBlockLayer.CUTOUT;
+    public BlockRenderLayer getBlockLayer() {
+        return BlockRenderLayer.CUTOUT;
     }
 
     @Override
@@ -51,7 +51,7 @@ public class ChiselBlockFutura extends BlockCarvableMetal implements IChiselBloc
     }
 
     @Override
-    protected BlockState createBlockState() {
-        return new BlockState(this, ChiselProperties.FUTURA_VARIANTS);
+    protected BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, ChiselProperties.FUTURA_VARIANTS);
     }
 }

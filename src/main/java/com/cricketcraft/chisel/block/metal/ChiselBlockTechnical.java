@@ -3,7 +3,7 @@ package com.cricketcraft.chisel.block.metal;
 import com.cricketcraft.chisel.init.ChiselProperties;
 import com.cricketcraft.chisel.util.BlockVariant;
 import com.cricketcraft.chisel.util.IChiselBlock;
-import net.minecraft.block.state.BlockState;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -45,7 +45,7 @@ public class ChiselBlockTechnical extends BlockCarvableMetal implements IChiselB
     }
 
     @Override
-    protected BlockState createBlockState() {
-        return new BlockState(this, ChiselProperties.TECHNICAL_VARIANTS);
+    protected BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, ChiselProperties.TECHNICAL_VARIANTS);
     }
 }

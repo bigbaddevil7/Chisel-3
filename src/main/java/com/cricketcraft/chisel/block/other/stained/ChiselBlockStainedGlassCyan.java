@@ -6,12 +6,12 @@ import com.cricketcraft.chisel.init.ChiselTabs;
 import com.cricketcraft.chisel.util.BlockVariant;
 import com.cricketcraft.chisel.util.IChiselBlock;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.BlockState;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumWorldBlockLayer;
+import net.minecraft.util.BlockRenderLayer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -26,8 +26,8 @@ public class ChiselBlockStainedGlassCyan extends BlockCarvable implements IChise
     }
 
     @Override
-    public EnumWorldBlockLayer getBlockLayer() {
-        return EnumWorldBlockLayer.TRANSLUCENT;
+    public BlockRenderLayer getBlockLayer() {
+        return BlockRenderLayer.TRANSLUCENT;
     }
 
     @Override
@@ -55,7 +55,7 @@ public class ChiselBlockStainedGlassCyan extends BlockCarvable implements IChise
     }
 
     @Override
-    protected BlockState createBlockState() {
-        return new BlockState(this, ChiselProperties.STAINED_GLASS_CYAN_VARIANTS);
+    protected BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, ChiselProperties.STAINED_GLASS_CYAN_VARIANTS);
     }
 }

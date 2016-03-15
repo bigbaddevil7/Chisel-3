@@ -12,7 +12,7 @@ public class ChiselGuiHandler implements IGuiHandler {
 	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		switch (ID) {
 		case 0:
-			return new ContainerChisel(player.inventory, new InventoryChiselSelection(player.getCurrentEquippedItem()));
+			return new ContainerChisel(player.inventory, new InventoryChiselSelection(player.getActiveItemStack()));
 		default:
 			return null;
 		}
@@ -22,7 +22,7 @@ public class ChiselGuiHandler implements IGuiHandler {
 	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		switch (ID) {
 		case 0:
-			return new GuiChisel(player.inventory, new InventoryChiselSelection(player.getCurrentEquippedItem()));
+			return new GuiChisel(player.inventory, new InventoryChiselSelection(player.getActiveItemStack()));
 		default:
 			return null;
 		}

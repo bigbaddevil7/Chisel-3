@@ -1,5 +1,6 @@
 package com.cricketcraft.chisel.util;
 
+import com.google.common.base.Optional;
 import net.minecraft.block.properties.IProperty;
 
 import java.util.Collection;
@@ -40,6 +41,11 @@ public class PropertyVariant implements IProperty {
     @Override
     public Class<BlockVariant> getValueClass() {
         return BlockVariant.class;
+    }
+
+    @Override
+    public Optional parseValue(String value) {
+        return null;
     }
 
     @Override

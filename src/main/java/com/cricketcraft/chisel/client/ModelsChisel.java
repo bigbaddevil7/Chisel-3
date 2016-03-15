@@ -5,8 +5,8 @@ import com.cricketcraft.chisel.util.BlockVariant;
 import com.cricketcraft.chisel.util.IItemWithVariants;
 import com.cricketcraft.chisel.util.PropertyVariant;
 import net.minecraft.block.Block;
-import net.minecraft.client.resources.model.ModelBakery;
-import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.client.renderer.block.model.ModelBakery;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
@@ -150,11 +150,12 @@ public class ModelsChisel {
     }
 
     private static void addVariantNames(Item item, String... names) {
+        ResourceLocation[] locations = new ResourceLocation[names.length];
         for (int i = 0; i < names.length; i++) {
-            names[i] = getResource(names[i]);
+            locations[i] = getResourceLocation(names[i]);
         }
 
-        ModelBakery.addVariantName(item, names);
+        ModelBakery.registerItemVariants(item, locations);
     }
 
     private static void registerBlockModels(Block base, PropertyVariant variants) {
@@ -189,6 +190,10 @@ public class ModelsChisel {
             String NAME = item.getUnlocalizedName().substring(5) + "_" + ((IItemWithVariants) item).getVariantNames()[i];
             registerItemModel(item, i, getResource(NAME));
         }
+    }
+
+    public static ResourceLocation getResourceLocation(String resource) {
+        return new ResourceLocation((Chisel.MOD_ID + ":") + resource);
     }
 
     public static String getResource(String resource) {

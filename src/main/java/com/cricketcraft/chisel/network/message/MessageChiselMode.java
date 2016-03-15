@@ -34,7 +34,7 @@ public class MessageChiselMode implements IMessage {
 
         @Override
         public IMessage onMessage(MessageChiselMode message, MessageContext ctx) {
-            ItemStack stack = ctx.getServerHandler().playerEntity.getCurrentEquippedItem();
+            ItemStack stack = ctx.getServerHandler().playerEntity.getActiveItemStack();
             if(stack != null && stack.getItem() instanceof IChiselItem) {
                 ChiselController.setMode(stack, message.mode);
             }

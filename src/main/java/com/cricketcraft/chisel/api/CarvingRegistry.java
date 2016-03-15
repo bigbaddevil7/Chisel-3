@@ -170,7 +170,7 @@ public class CarvingRegistry {
         for (int c = 0; c < recipes.size(); c++) {
             ItemStack[] results = recipes.get(c).getChiselResults();
             for (int d = 0; d < results.length; d++) {
-                if (stack1.getIsItemStackEqual(results[d])) {
+                if (stack1.isItemEqual(results[d])) {
                     return (ChiselRecipe) recipes.get(c);
                 }
             }

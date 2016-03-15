@@ -10,13 +10,18 @@ import com.google.common.collect.Multimap;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.StatCollector;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.EnumActionResult;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 
 import java.util.List;
+import java.util.UUID;
 
 public class ItemChisel extends Item implements IChiselItem {
     public enum ChiselType {
@@ -52,11 +57,11 @@ public class ItemChisel extends Item implements IChiselItem {
     }
 
     @Override
-    public ItemStack onItemRightClick(ItemStack held, World world, EntityPlayer player) {
+    public ActionResult<ItemStack> onItemRightClick(ItemStack held, World world, EntityPlayer player, EnumHand hand) {
         if (!world.isRemote && canOpenGui(world, player, held)) {
             player.openGui(Chisel.instance, 0, world, 0, 0, 0);
         }
-        return held;
+        return new ActionResult<ItemStack>(EnumActionResult.PASS, held);
     }
 
     @Override
@@ -68,10 +73,10 @@ public class ItemChisel extends Item implements IChiselItem {
     @Override
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean held) {
         String base = "item.chisel.desc.";
-        String gui = StatCollector.translateToLocal(base + "gui");
-        String lc1 = StatCollector.translateToLocal(base + "lc1");
-        String lc2 = StatCollector.translateToLocal(base + "lc2");
-        String modes = StatCollector.translateToLocal(base + "modes");
+        String gui = I18n.translateToLocal(base + "gui");
+        String lc1 = I18n.translateToLocal(base + "lc1");
+        String lc2 = I18n.translateToLocal(base + "lc2");
+        String modes = I18n.translateToLocal(base + "modes");
         list.add(gui);
         if (type == ChiselType.DIAMOND || type == ChiselType.OBSIDIAN || Configurations.ironChiselCanLeftClick) {
             list.add(lc1);
@@ -90,9 +95,9 @@ public class ItemChisel extends Item implements IChiselItem {
     }
 
     @Override
-    public Multimap getAttributeModifiers(ItemStack stack) {
+    public Multimap<String, AttributeModifier> getAttributeModifiers(EntityEquipmentSlot slot, ItemStack stack) {
         Multimap<String, AttributeModifier> multiMap = HashMultimap.create();
-        multiMap.put(SharedMonsterAttributes.attackDamage.getAttributeUnlocalizedName(), new AttributeModifier(itemModifierUUID, "Chisel Damage", type.attackDamage, 0));
+        multiMap.put(SharedMonsterAttributes.ATTACK_DAMAGE.getAttributeUnlocalizedName(), new AttributeModifier(UUID.randomUUID(), "Chisel Damage", type.attackDamage, 0));
         return multiMap;
     }
 

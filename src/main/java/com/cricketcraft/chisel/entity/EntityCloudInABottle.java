@@ -3,8 +3,7 @@ package com.cricketcraft.chisel.entity;
 import com.cricketcraft.chisel.init.ChiselBlocks;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityThrowable;
-import net.minecraft.util.BlockPos;
-import net.minecraft.util.MovingObjectPosition;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import java.util.Random;

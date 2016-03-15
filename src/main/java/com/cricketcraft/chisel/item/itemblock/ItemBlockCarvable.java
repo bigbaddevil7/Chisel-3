@@ -4,7 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.StatCollector;
+import net.minecraft.util.text.translation.I18n;
 
 import java.util.Enumeration;
 import java.util.List;
@@ -30,7 +30,7 @@ public class ItemBlockCarvable extends ItemBlock {
 
     public static void getWrappedDesc(List<String> list, ItemStack stack) {
         String[] wrappedDesc;
-        wrappedDesc = wrap(StatCollector.translateToLocal(stack.getUnlocalizedName().replace("chisel.", "") + "." + stack.getItemDamage() + ".desc"), 35);
+        wrappedDesc = wrap(I18n.translateToLocal(stack.getUnlocalizedName().replace("chisel.", "") + "." + stack.getItemDamage() + ".desc"), 35);
         for (String element : wrappedDesc) {
             list.add(element.trim());
         }
