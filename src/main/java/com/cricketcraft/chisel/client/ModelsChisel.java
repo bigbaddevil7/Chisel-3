@@ -55,7 +55,6 @@ public class ModelsChisel {
         registerBlockModels(holystone, HOLYSTONE_VARIANTS);
         registerBlockModels(ice, ICE_VARIANTS);
         registerBlockModels(ice_pillar, ICE_PILLAR_VARIANTS);
-        registerBlockModels(industrial, INDUSTRIAL_VARIANTS);
         registerBlockModels(iron, IRON_VARIANTS);
         registerBlockModels(iron_bars, IRON_BARS_VARIANTS);
         registerBlockModels(jungle, JUNGLE_VARIANTS);

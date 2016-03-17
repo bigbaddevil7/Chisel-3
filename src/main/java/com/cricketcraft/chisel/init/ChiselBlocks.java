@@ -51,7 +51,6 @@ public final class ChiselBlocks {
 			holystone,
 			ice,
 			ice_pillar,
-			industrial,
 			iron,
 			jungle,
 			laboratory,
@@ -168,7 +167,6 @@ public final class ChiselBlocks {
 		holystone = (BlockCarvable) registerBlock("holystone", new ChiselBlockHolystone());
 		ice = (BlockCarvable) registerBlock("ice", new ChiselBlockIce());
 		ice_pillar = (BlockCarvable) registerBlock("icePillar", new ChiselBlockIcePillar());
-		industrial = (BlockCarvable) registerBlock("industrial", new ChiselBlockIndustrial());
 		iron = (BlockCarvable) registerBlock("iron_block", new ChiselBlockIron());
 		iron_bars = (BlockCarvablePane) registerBlock("iron_bars", new ChiselBlockIronBars());
 		jungle = (BlockCarvable) registerBlock("jungle_planks", new ChiselBlockJungle());

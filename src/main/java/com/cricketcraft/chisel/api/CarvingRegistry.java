@@ -4,9 +4,12 @@ import com.cricketcraft.chisel.util.BlockVariant;
 import com.cricketcraft.chisel.util.PropertyVariant;
 import com.google.common.collect.Lists;
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static com.cricketcraft.chisel.init.ChiselBlocks.*;
@@ -33,75 +36,74 @@ public class CarvingRegistry {
      * For internal use only
      */
     public static void init() {
-        addRecipeForPropVariant(acacia, ACACIA_VARIANTS);
+        addRecipeForPropVariant(acacia, ACACIA_VARIANTS, new ItemStack(Blocks.planks, 1, 4));
         addRecipeForPropVariant(aluminum, ALUMINUM_VARIANTS);
-        addRecipeForPropVariant(andesite, ANDESITE_VARIANTS);
+        addRecipeForPropVariant(andesite, ANDESITE_VARIANTS, new ItemStack(Blocks.stone, 1, 5), new ItemStack(Blocks.stone, 1, 6));
         addRecipeForPropVariant(antiblock, ANTIBLOCK_VARIANTS);
-        addRecipeForPropVariant(birch, BIRCH_VARIANTS);
-        addRecipeForPropVariant(bronze, BRONZE_VARIANTS);
-        addRecipeForPropVariant(bricks, BRICKS_VARIANTS);
-        addRecipeForPropVariant(bookshelf, BOOKSHELF_VARIANTS);
+        addRecipeForPropVariant(birch, BIRCH_VARIANTS, new ItemStack(Blocks.planks, 1, 2));
+        addRecipeForPropVariant(bronze, BRONZE_VARIANTS, (ItemStack[]) OreDictionary.getOres("blockBronze").toArray());
+        addRecipeForPropVariant(bricks, BRICKS_VARIANTS, new ItemStack(Blocks.brick_block, 1));
+        addRecipeForPropVariant(bookshelf, BOOKSHELF_VARIANTS, new ItemStack(Blocks.bookshelf));
         addRecipeForPropVariant(carpet, CARPET_VARIANTS);
         addRecipeForPropVariant(carpet_floor, CARPET_FLOOR_VARIANTS);
-        addRecipeForPropVariant(cobblestone, COBBLESTONE_VARIANTS);
+        addRecipeForPropVariant(cobblestone, COBBLESTONE_VARIANTS, (ItemStack[]) OreDictionary.getOres("cobblestone").toArray());
         addRecipeForPropVariant(concrete, CONCRETE_VARIANTS);
-        addRecipeForPropVariant(copper, COPPER_VARIANTS);
+        addRecipeForPropVariant(copper, COPPER_VARIANTS, (ItemStack[]) OreDictionary.getOres("blockCopper").toArray());
         addRecipeForPropVariant(cloud, CLOUD_VARIANTS);
-        addRecipeForPropVariant(dark_oak, DARK_OAK_VARIANTS);
-        addRecipeForPropVariant(diamond, DIAMOND_VARIANTS);
-        addRecipeForPropVariant(diorite, DIORITE_VARIANTS);
+        addRecipeForPropVariant(dark_oak, DARK_OAK_VARIANTS, new ItemStack(Blocks.planks, 1, 5));
+        addRecipeForPropVariant(diamond, DIAMOND_VARIANTS , (ItemStack[]) OreDictionary.getOres("blockDiamond").toArray());
+        addRecipeForPropVariant(diorite, DIORITE_VARIANTS, new ItemStack(Blocks.stone, 1, 3), new ItemStack(Blocks.stone, 1, 4));
         addRecipeForPropVariant(dirt, DIRT_VARIANTS);
-        addRecipeForPropVariant(emerald, EMERALD_VARIANTS);
+        addRecipeForPropVariant(emerald, EMERALD_VARIANTS, (ItemStack[]) OreDictionary.getOres("blockEmerald").toArray());
         addRecipeForPropVariant(energised_voidstone, ENERGISED_VOIDSTONE_VARIANTS);
         addRecipeForPropVariant(energised_voidstone_pillar, ENERGISED_VOIDSTONE_PILLAR_VARIANTS);
         addRecipeForPropVariant(factory, FACTORY_VARIANTS);
         addRecipeForPropVariant(fantasy, FANTASY_VARIANTS);
         addRecipeForPropVariant(futura, FUTURA_VARIANTS);
-        addRecipeForPropVariant(glass, GLASS_VARIANTS);
-        addRecipeForPropVariant(glass_pane, GLASS_PANE_VARIANTS);
-        addRecipeForPropVariant(glowstone, GLOWSTONE_VARIANTS);
-        addRecipeForPropVariant(gold, GOLD_VARIANTS);
-        addRecipeForPropVariant(gold2, GOLD2_VARIANTS);
-        addRecipeForPropVariant(granite, GRANITE_VARIANTS);
+        addRecipeForPropVariant(glass, GLASS_VARIANTS, (ItemStack[]) OreDictionary.getOres("blockGlassColorless").toArray());
+        addRecipeForPropVariant(glass_pane, GLASS_PANE_VARIANTS, (ItemStack[]) OreDictionary.getOres("paneGlassColorless").toArray());
+        addRecipeForPropVariant(glowstone, GLOWSTONE_VARIANTS, (ItemStack[]) OreDictionary.getOres("glowstone").toArray());
+        addRecipeForPropVariant(gold, GOLD_VARIANTS, (ItemStack[]) OreDictionary.getOres("blockGold").toArray());
+        addRecipeForPropVariant(gold, GOLD2_VARIANTS);
+        addRecipeForPropVariant(granite, GRANITE_VARIANTS, new ItemStack(Blocks.stone, 1, 1), new ItemStack(Blocks.stone, 1, 2));
         addRecipeForPropVariant(grimstone, GRIMSTONE_VARIANTS);
         addRecipeForPropVariant(hex_plating, HEX_PLATING_VARIANTS);
         addRecipeForPropVariant(holystone, HOLYSTONE_VARIANTS);
         addRecipeForPropVariant(ice, ICE_VARIANTS);
         addRecipeForPropVariant(ice_pillar, ICE_PILLAR_VARIANTS);
-        addRecipeForPropVariant(industrial, INDUSTRIAL_VARIANTS);
-        addRecipeForPropVariant(iron, IRON_VARIANTS);
-        addRecipeForPropVariant(iron_bars, IRON_BARS_VARIANTS);
-        addRecipeForPropVariant(jungle, JUNGLE_VARIANTS);
+        addRecipeForPropVariant(iron, IRON_VARIANTS, (ItemStack[]) OreDictionary.getOres("blockIron").toArray());
+        addRecipeForPropVariant(iron_bars, IRON_BARS_VARIANTS, new ItemStack(Blocks.iron_bars, 1));
+        addRecipeForPropVariant(jungle, JUNGLE_VARIANTS, new ItemStack(Blocks.planks, 1, 3));
         addRecipeForPropVariant(laboratory, LABORATORY_VARIANTS);
-        addRecipeForPropVariant(lapis, LAPIS_VARIANTS);
+        addRecipeForPropVariant(lapis, LAPIS_VARIANTS, (ItemStack[]) OreDictionary.getOres("blockLapis").toArray());
         addRecipeForPropVariant(large_hex_plating, LARGE_HEX_PLATING_VARIANTS);
         addRecipeForPropVariant(lavastone, LAVASTONE_VARIANTS);
-        addRecipeForPropVariant(lead, LEAD_VARIANTS);
-        addRecipeForPropVariant(leaf, LEAF_VARIANTS);
+        addRecipeForPropVariant(lead, LEAD_VARIANTS, (ItemStack[]) OreDictionary.getOres("blockLead").toArray());
+        addRecipeForPropVariant(leaf, LEAF_VARIANTS, (ItemStack[]) OreDictionary.getOres("treeLeaves").toArray());
         addRecipeForPropVariant(limestone, LIMESTONE_VARIANTS);
-        addRecipeForPropVariant(litpumpkin, LITPUMPKIN_VARIANTS);
+        addRecipeForPropVariant(litpumpkin, LITPUMPKIN_VARIANTS, new ItemStack(Blocks.lit_pumpkin, 1));
         addRecipeForPropVariant(marble, MARBLE_VARIANTS);
-        addRecipeForPropVariant(mossy_cobblestone, MOSSY_COBBLESTONE_VARIANTS);
+        addRecipeForPropVariant(mossy_cobblestone, MOSSY_COBBLESTONE_VARIANTS, new ItemStack(Blocks.mossy_cobblestone, 1));
         addRecipeForPropVariant(mossy_temple, MOSSY_TEMPLE_VARIANTS);
         addRecipeForPropVariant(netherbrick, NETHERBRICK_VARIANTS);
         addRecipeForPropVariant(netherrack, NETHERRACK_VARIANTS);
-        addRecipeForPropVariant(oak, OAK_VARIANTS);
-        addRecipeForPropVariant(obsidian, OBSIDIAN_VARIANTS);
-        addRecipeForPropVariant(packed_ice, PACKED_ICE_VARIANTS);
+        addRecipeForPropVariant(oak, OAK_VARIANTS, new ItemStack(Blocks.planks, 1));
+        addRecipeForPropVariant(obsidian, OBSIDIAN_VARIANTS, new ItemStack(Blocks.obsidian, 1));
+        addRecipeForPropVariant(packed_ice, PACKED_ICE_VARIANTS, new ItemStack(Blocks.packed_ice, 1));
         addRecipeForPropVariant(packed_ice_pillar, PACKED_ICE_PILLAR_VARIANTS);
         addRecipeForPropVariant(paperwall, PAPERWALL_VARIANTS);
         addRecipeForPropVariant(paperwall_block, PAPERWALL_BLOCK_VARIANTS);
-        addRecipeForPropVariant(pumpkin, PUMPKIN_VARIANTS);
+        addRecipeForPropVariant(pumpkin, PUMPKIN_VARIANTS, new ItemStack(Blocks.pumpkin, 1));
         addRecipeForPropVariant(purpled_fantasy, PURPLED_FANTASY_VARIANTS);
-        addRecipeForPropVariant(redstone, REDSTONE_VARIANTS);
+        addRecipeForPropVariant(redstone, REDSTONE_VARIANTS, new ItemStack(Blocks.redstone_block, 1));
         addRecipeForPropVariant(road_line, ROAD_LINE_VARIANTS);
         addRecipeForPropVariant(runic_voidstone, RUNIC_VOIDSTONE_VARIANTS);
-        addRecipeForPropVariant(sandstone, SANDSTONE_VARIANTS);
-        addRecipeForPropVariant(sandstone_scribbles, SANDSTONE_SCRIBBLES_VARIANTS);
-        addRecipeForPropVariant(silver, SILVER_VARIANTS);
+        addRecipeForPropVariant(sandstone, SANDSTONE_VARIANTS, new ItemStack(Blocks.sandstone));
+        addRecipeForPropVariant(sandstone, SANDSTONE_SCRIBBLES_VARIANTS);
+        addRecipeForPropVariant(silver, SILVER_VARIANTS, (ItemStack[]) OreDictionary.getOres("blockSilver").toArray());
         addRecipeForPropVariant(snakestone_sand, SNAKESTONE_SAND_VARIANTS);
         addRecipeForPropVariant(snakestone_stone, SNAKESTONE_STONE_VARIANTS);
-        addRecipeForPropVariant(spruce, SPRUCE_VARIANTS);
+        addRecipeForPropVariant(spruce, SPRUCE_VARIANTS, new ItemStack(Blocks.planks, 1, 1));
         addRecipeForPropVariant(stained_glass_black, STAINED_GLASS_BLACK_VARIANTS);
         addRecipeForPropVariant(stained_glass_red, STAINED_GLASS_RED_VARIANTS);
         addRecipeForPropVariant(stained_glass_green, STAINED_GLASS_GREEN_VARIANTS);
@@ -134,15 +136,15 @@ public class CarvingRegistry {
         addRecipeForPropVariant(stained_glass_pane_magenta, STAINED_GLASS_PANE_MAGENTA_VARIANTS);
         addRecipeForPropVariant(stained_glass_pane_orange, STAINED_GLASS_PANE_ORANGE_VARIANTS);
         addRecipeForPropVariant(stained_glass_pane_white, STAINED_GLASS_PANE_WHITE_VARIANTS);
-        addRecipeForPropVariant(steel, STEEL_VARIANTS);
-        addRecipeForPropVariant(stone_bricks, STONE_BRICKS_VARIANTS);
+        addRecipeForPropVariant(steel, STEEL_VARIANTS, (ItemStack[]) OreDictionary.getOres("blockSteel").toArray());
+        addRecipeForPropVariant(stone_bricks, STONE_BRICKS_VARIANTS, (ItemStack[]) OreDictionary.getOres("stone").toArray());
         addRecipeForPropVariant(technical, TECHNICAL_VARIANTS);
         addRecipeForPropVariant(temple, TEMPLE_VARIANTS);
-        addRecipeForPropVariant(tin, TIN_VARIANTS);
+        addRecipeForPropVariant(tin, TIN_VARIANTS, (ItemStack[]) OreDictionary.getOres("blockTin").toArray());
         addRecipeForPropVariant(torch, TORCH_VARIANTS);
         addRecipeForPropVariant(transparent_technical, TRANSPARENT_TECHNICAL_VARIANSTS);
         addRecipeForPropVariant(tyrian, TYRIAN_VARIANTS);
-        addRecipeForPropVariant(uranium, URANIUM_VARIANTS);
+        addRecipeForPropVariant(uranium, URANIUM_VARIANTS, (ItemStack[]) OreDictionary.getOres("blockUranium").toArray());
         addRecipeForPropVariant(valentines, VALENTINES_VARIANTS);
         addRecipeForPropVariant(voidstone, VOIDSTONE_VARIANTS);
         addRecipeForPropVariant(warning, WARNING_VARIANTS);
@@ -155,11 +157,14 @@ public class CarvingRegistry {
         recipes.add(recipe);
     }
 
-    private static void addRecipeForPropVariant(Block block, PropertyVariant variants) {
+    private static void addRecipeForPropVariant(Block block, PropertyVariant variants, ItemStack... stacks) {
         List<ItemStack> list = new ArrayList<ItemStack>();
         for (BlockVariant variant : variants.getAllowedValues()) {
             list.add(new ItemStack(block, 1, variant.getMeta()));
         }
+
+        Collections.addAll(list, stacks);
+
         ItemStack[] recipe = new ItemStack[list.size()];
         list.toArray(recipe);
         addRecipe(recipe);

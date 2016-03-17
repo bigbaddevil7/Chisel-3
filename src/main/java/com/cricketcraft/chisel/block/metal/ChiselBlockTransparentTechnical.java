@@ -8,6 +8,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockRenderLayer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -18,6 +19,11 @@ public class ChiselBlockTransparentTechnical extends BlockCarvableMetal implemen
     public ChiselBlockTransparentTechnical() {
         super();
         setDefaultState(this.getBlockState().getBaseState().withProperty(ChiselProperties.TRANSPARENT_TECHNICAL_VARIANSTS, ChiselProperties.TRANSPARENT_TECHNICAL_VARIANSTS.fromMeta(0)));
+    }
+
+    @Override
+    public BlockRenderLayer getBlockLayer() {
+        return BlockRenderLayer.CUTOUT_MIPPED;
     }
 
     @Override

@@ -61,7 +61,7 @@ public class ItemChisel extends Item implements IChiselItem {
         if (!world.isRemote && canOpenGui(world, player, held)) {
             player.openGui(Chisel.instance, 0, world, 0, 0, 0);
         }
-        return new ActionResult<ItemStack>(EnumActionResult.PASS, held);
+        return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, held);
     }
 
     @Override

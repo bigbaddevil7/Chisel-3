@@ -13,6 +13,7 @@ import com.cricketcraft.chisel.network.ChiselGuiHandler;
 import com.cricketcraft.chisel.network.PacketHandler;
 import com.cricketcraft.chisel.proxy.CommonProxy;
 import com.cricketcraft.chisel.world.GeneratorChisel;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -93,6 +94,7 @@ public class Chisel {
 		CarvingRegistry.init();
 		ChiselRecipes.init();
 		Statistics.init();
+		MinecraftForge.EVENT_BUS.register(this);
 	}
 
 	@EventHandler

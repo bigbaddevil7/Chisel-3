@@ -339,12 +339,12 @@ public class BlockVariants {
             GOLD_STAR_OBSIDIAN_PURPLE = new BlockVariant(11, "gold_star_obsidian_purple"),
             GOLD_STAR_OBSIDIAN = new BlockVariant(12, "gold_star_obsidian"),
             GOLD_SIMPLE = new BlockVariant(13, "gold_simple"),
-            GOLD_CAUTION = new BlockVariant(14, "gold_caution"),
-            GOLD_SHIPPING = new BlockVariant(15, "gold_shipping"),
-            GOLD_THERMAL = new BlockVariant(16, "gold_thermal"),
-            GOLD_125 = new BlockVariant(17, "gold_125"),
-            GOLD_BORDERED = new BlockVariant(18, "gold_bordered"),
-            GOLD_BOLTED = new BlockVariant(19, "gold_bolted"),
+            GOLD_CAUTION = new BlockVariant(0, "gold_caution"),
+            GOLD_SHIPPING = new BlockVariant(1, "gold_shipping"),
+            GOLD_THERMAL = new BlockVariant(2, "gold_thermal"),
+            GOLD_125 = new BlockVariant(3, "gold_125"),
+            GOLD_BORDERED = new BlockVariant(4, "gold_bordered"),
+            GOLD_BOLTED = new BlockVariant(5, "gold_bolted"),
 
             GRANITE_POLISHED = new BlockVariant(0, "granite_polished"),
             GRANITE_PILLAR = new BlockVariant(1, "granite_pillar"),
@@ -424,9 +424,6 @@ public class BlockVariants {
             ICE_PILLAR_CARVED = new BlockVariant(4, "ice_pillar_carved"),
             ICE_PILLAR_ORNAMENTAL = new BlockVariant(5, "ice_pillar_ornamental"),
             ICE_PILLAR_INSCRIBED = new BlockVariant(6, "ice_pillar_inscribed"),
-
-            INDUSTRIAL_FAN = new BlockVariant(0, "industrial_fan"),
-            INDUSTRIAL_PLATING = new BlockVariant(1, "industrial_plating"),
 
             IRON_INGOTS_LARGE = new BlockVariant(0, "iron_ingots_large"),
             IRON_INGOTS_SMALL = new BlockVariant(1, "iron_ingots_small"),

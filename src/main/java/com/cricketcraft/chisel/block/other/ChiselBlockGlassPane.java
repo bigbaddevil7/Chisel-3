@@ -25,8 +25,8 @@ public class ChiselBlockGlassPane extends BlockCarvablePane implements IChiselBl
         super(Material.glass);
         setCreativeTab(ChiselTabs.tabOtherChiselBlocks);
         setDefaultState(getBlockState().getBaseState().withProperty(ChiselProperties.GLASS_PANE_VARIANTS, ChiselProperties.GLASS_PANE_VARIANTS.fromMeta(0))
-                .withProperty(NORTH, false).withProperty(SOUTH, false)
-                .withProperty(EAST, false).withProperty(WEST, false));
+                .withProperty(EAST, false).withProperty(NORTH, false)
+                .withProperty(SOUTH, false).withProperty(WEST, false));
     }
 
     @Override
@@ -55,15 +55,15 @@ public class ChiselBlockGlassPane extends BlockCarvablePane implements IChiselBl
 
     @Override
     protected BlockStateContainer createBlockState() {
-        return new BlockStateContainer(this, ChiselProperties.GLASS_PANE_VARIANTS, NORTH, SOUTH, EAST, WEST);
+        return new BlockStateContainer(this, ChiselProperties.GLASS_PANE_VARIANTS, EAST, NORTH, SOUTH, WEST);
     }
 
     @Override
     public IBlockState getActualState(IBlockState state, IBlockAccess world, BlockPos pos) {
         return state.withProperty(ChiselProperties.GLASS_PANE_VARIANTS, ChiselProperties.GLASS_PANE_VARIANTS.fromMeta(world.getBlockState(pos).getBlock().getMetaFromState(state)))
+                .withProperty(EAST, canPaneConnectTo(world, pos, EnumFacing.EAST))
                 .withProperty(NORTH, canPaneConnectTo(world, pos, EnumFacing.NORTH))
                 .withProperty(SOUTH, canPaneConnectTo(world, pos, EnumFacing.SOUTH))
-                .withProperty(EAST, canPaneConnectTo(world, pos, EnumFacing.EAST))
                 .withProperty(WEST, canPaneConnectTo(world, pos, EnumFacing.WEST));
     }
 }

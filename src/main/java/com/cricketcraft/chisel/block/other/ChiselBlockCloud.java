@@ -17,7 +17,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -30,12 +29,12 @@ public class ChiselBlockCloud extends BlockCarvable implements IChiselBlock {
 
     public ChiselBlockCloud() {
         super(Material.ice);
-        this.setHardness(0.2F);
-        this.setCreativeTab(ChiselTabs.tabOtherChiselBlocks);
-        this.setLightOpacity(3);
-        this.setStepSound(SoundType.CLOTH);
-        this.useNeighborBrightness = true;
-        this.setDefaultState(this.getBlockState().getBaseState().withProperty(ChiselProperties.CLOUD_VARIANTS, BlockVariants.CLOUD_NORMAL));
+        setHardness(0.2F);
+        setCreativeTab(ChiselTabs.tabOtherChiselBlocks);
+        setLightOpacity(3);
+        setStepSound(SoundType.CLOTH);
+        useNeighborBrightness = true;
+        setDefaultState(this.getBlockState().getBaseState().withProperty(ChiselProperties.CLOUD_VARIANTS, BlockVariants.CLOUD_NORMAL));
     }
 
     @Override
@@ -75,16 +74,16 @@ public class ChiselBlockCloud extends BlockCarvable implements IChiselBlock {
         return super.shouldSideBeRendered(state, world, pos, side);
     }
 
-    @SideOnly(Side.CLIENT)
-    @Override
-    public AxisAlignedBB getCollisionBoundingBox(IBlockState state, World world, BlockPos pos) {
-        return state.getBoundingBox(world, pos).offset(pos);
-    }
-
-    @Override
-    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-        return new AxisAlignedBB(pos.getX() + 0.2, pos.getY(), pos.getZ() + 0.2, pos.getX() + 0.8, pos.getY() + 0.2, pos.getZ() + 0.8);
-    }
+//    @SideOnly(Side.CLIENT)
+//    @Override
+//    public AxisAlignedBB getCollisionBoundingBox(IBlockState state, World world, BlockPos pos) {
+//        return state.getBoundingBox(world, pos).offset(pos);
+//    }
+//
+//    @Override
+//    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+//        return new AxisAlignedBB(pos.getX() + 0.2, pos.getY(), pos.getZ() + 0.2, pos.getX() + 0.8, pos.getY() + 0.2, pos.getZ() + 0.8);
+//    }
 
     @Override
     @SuppressWarnings({"rawtypes", "unchecked"})

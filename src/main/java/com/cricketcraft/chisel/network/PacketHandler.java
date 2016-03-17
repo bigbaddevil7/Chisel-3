@@ -5,7 +5,7 @@ import com.cricketcraft.chisel.network.message.MessageChiselMode;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.relauncher.Side;
 
-public class PacketHandler {
+public class PacketHandler{
 
     public static final SimpleNetworkWrapper INSTANCE = new SimpleNetworkWrapper(Chisel.MOD_ID);
 
