@@ -10,10 +10,6 @@ buildscript {
             name = "sonatype"
             url = "https://oss.sonatype.org/content/repositories/snapshots/"
         }
-        maven {
-            name = "modmuss50"
-            url = "http://maven.modmuss50.me/"
-        }
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT'
@@ -48,11 +44,6 @@ repositories {
     maven {
         name 'Prof Mobius Repo'
         url "http://mobiusstrip.eu/maven"
-    }
-
-    maven {
-        name = "Modmuss50"
-        url = "http://maven.modmuss50.me/"
     }
 }
 
@@ -154,9 +145,9 @@ String getChangelogText() {
 //    }
 //}
 
-//minecraft {
-//    useDepAts = true
-//}
+minecraft {
+    useDepAts = true
+}
 
 dependencies {
     //deobfCompile "mezz.jei:jei_1.8.9:2.25.12.152"
